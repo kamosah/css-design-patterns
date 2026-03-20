@@ -2,6 +2,12 @@
 
 A local, interactive CSS practice IDE for CSS Design Patterns. Work through challenges in a split-pane editor with a live preview, persistent progress, and solution reveal.
 
+![Curriculum browser](docs/curriculum.png)
+
+![Challenge IDE — problem view](docs/ide-problem.png)
+
+![Challenge IDE — solution view](docs/ide-solution.png)
+
 ## Features
 
 - **Curriculum browser** — expandable topic accordion with difficulty-tagged challenge cards
