@@ -1,73 +1,104 @@
-# React + TypeScript + Vite
+# CSS Design Patterns Lab
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A local, interactive CSS practice IDE for CSS Design Patterns. Work through challenges in a split-pane editor with a live preview, persistent progress, and solution reveal.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Curriculum browser** — expandable topic accordion with difficulty-tagged challenge cards
+- **Split-pane IDE** — resizable instructions | editor | preview layout with persisted panel sizes
+- **Monaco editor** — VS Code-quality editing with HTML and CSS file tabs, per-model undo history
+- **Live iframe preview** — sandboxed `srcdoc` iframe rebuilt on every keystroke, fully isolated from the shell
+- **Solution toggle** — swap starter ↔ solution code in the editor via Problem/Solution tabs
+- **Progress persistence** — user edits saved to `localStorage` per challenge via Zustand
+- **Starter-change detection** — notifies when upstream challenge files have been updated and offers a one-click reset to the new starter
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| Concern | Library |
+|---|---|
+| Shell | React 19 + TypeScript + Vite |
+| Routing | React Router v7 (data router) |
+| Code editor | `@monaco-editor/react` |
+| Resizable panels | `react-resizable-panels` |
+| State / persistence | Zustand with `persist` middleware |
+| Instructions | `react-markdown` |
+| Styles | CSS Modules |
+| Challenge content | `.html`, `.css`, `.md` files via Vite `?raw` imports |
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Open [http://localhost:5173](http://localhost:5173).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Adding a Challenge
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+1. Create a folder under `src/challenges/<topic-id>/<challenge-id>/`
+2. Add the required files:
+
+```
+<challenge-id>/
+├── meta.ts           # wires all imports, exports a Challenge object
+├── instructions.md   # markdown instructions shown in the left panel
+├── starter.html
+├── starter.css
+├── solution.html
+└── solution.css
+```
+
+3. Export the challenge from the topic's `index.ts` and add the topic to `src/curriculum/index.ts`
+
+### `meta.ts` template
+
+```ts
+import type { Challenge } from '../../../types/challenge'
+import instructions from './instructions.md?raw'
+import starterHtml from './starter.html?raw'
+import starterCss from './starter.css?raw'
+import solutionHtml from './solution.html?raw'
+import solutionCss from './solution.css?raw'
+
+export const challenge: Challenge = {
+  id: 'your-challenge-id',
+  title: 'Your Challenge Title',
+  difficulty: 'easy', // 'easy' | 'medium' | 'hard'
+  instructions,
+  starterHtml,
+  starterCss,
+  solutionHtml,
+  solutionCss,
+}
+```
+
+## Project Structure
+
+```
+src/
+├── App.tsx                          # createBrowserRouter setup
+├── main.tsx
+├── types/challenge.ts               # Challenge, Topic interfaces
+├── curriculum/index.ts              # Map-keyed registry, findChallenge()
+├── store/editorStore.ts             # Zustand store
+├── challenges/
+│   └── <topic-id>/
+│       ├── index.ts                 # Topic metadata
+│       └── <challenge-id>/
+│           ├── meta.ts
+│           ├── instructions.md
+│           ├── starter.html / .css
+│           └── solution.html / .css
+├── components/
+│   ├── NotFoundPage.tsx
+│   ├── curriculum/
+│   │   ├── CurriculumPage.tsx
+│   │   └── TopicSection.tsx
+│   └── editor/
+│       ├── ChallengePage.tsx        # IDE route with data loader
+│       ├── InstructionsPanel.tsx
+│       ├── EditorArea.tsx
+│       └── PreviewFrame.tsx
+└── styles/app.css                   # Shell-only global styles
 ```
