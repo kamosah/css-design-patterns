@@ -1,0 +1,18 @@
+body {
+  font-family: sans-serif;
+  background: #f0f4f8;
+  margin: 0;
+}
+
+.container {
+  background: #e2e8f0;
+  height: 300px;
+  /* TODO: use flexbox to center the child vertically */
+}
+
+.box {
+  background: #7c3aed;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+}

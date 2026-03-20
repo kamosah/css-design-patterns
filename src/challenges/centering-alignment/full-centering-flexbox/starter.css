@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.container {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  width: 100vw;
+  height: 100vh;
+  /* TODO: center .box both horizontally AND vertically */
+}
+
+.box {
+  background: white;
+  padding: 2rem 3rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.box h2 {
+  color: #4f46e5;
+  margin-bottom: 0.5rem;
+}
+
+.box p {
+  color: #6b7280;
+}
