@@ -1,0 +1,19 @@
+body {
+  font-family: sans-serif;
+  background: #f0f4f8;
+}
+
+.container {
+  background: #e2e8f0;
+  padding: 2rem;
+  /* TODO: nothing to change here */
+}
+
+.box {
+  background: #4f46e5;
+  color: white;
+  padding: 1rem 2rem;
+  width: 300px;
+  border-radius: 8px;
+  /* TODO: center this box horizontally using margin */
+}
