@@ -4,7 +4,7 @@ A local, interactive CSS practice IDE for CSS Design Patterns. Work through chal
 
 ![Curriculum browser](docs/curriculum.png)
 
-![Challenge IDE — problem view](docs/ide-problem.png)
+![Challenge IDE — problem view](docs/ide-problem.png?v=2)
 
 ![Challenge IDE — solution view](docs/ide-solution.png)
 
