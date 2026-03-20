@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import ReactMarkdown from 'react-markdown'
 import type { Challenge } from '../../types/challenge'
 import s from './InstructionsPanel.module.css'
@@ -17,6 +17,19 @@ export function InstructionsPanel({
   onToggleSolution,
 }: InstructionsPanelProps) {
   const [activeTab, setActiveTab] = useState<InstructionTab>('problem')
+
+  const solutionSrcdoc = useMemo(
+    () => `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>${challenge.solutionCss}</style>
+</head>
+<body>${challenge.solutionHtml}</body>
+</html>`,
+    [challenge.solutionHtml, challenge.solutionCss]
+  )
 
   function handleTabClick(tab: InstructionTab) {
     setActiveTab(tab)
@@ -48,7 +61,25 @@ export function InstructionsPanel({
 
       {/* CSS module scoped to .content handles all markdown element styles */}
       <div className={s.content}>
-        <ReactMarkdown>{challenge.instructions}</ReactMarkdown>
+        <ReactMarkdown>
+          {activeTab === 'solution' ? challenge.solutionExplanation : challenge.instructions}
+        </ReactMarkdown>
+
+        {activeTab === 'problem' && (
+          <div className={s.targetSection}>
+            <h2 className={s.targetHeading}>Sample visual output</h2>
+            <p className={s.targetSubtitle}>Here's what the output would look like:</p>
+            <div className={s.targetPreview}>
+              <iframe
+                srcDoc={solutionSrcdoc}
+                sandbox="allow-scripts"
+                title="Expected output"
+                className={s.targetIframe}
+              />
+              <div className={s.targetLabel}>Expected output</div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   )
