@@ -1,6 +1,8 @@
 # CSS Design Patterns Lab
 
-A local, interactive CSS practice IDE for CSS Design Patterns. Work through challenges in a split-pane editor with a live preview, persistent progress, and solution reveal.
+**Live demo:** [css-design-patterns.vercel.app](https://css-design-patterns.vercel.app)
+
+An interactive CSS practice IDE for CSS Design Patterns. Work through challenges in a split-pane editor with a live preview, persistent progress, and solution reveal.
 
 ![Curriculum browser](docs/curriculum.png)
 
