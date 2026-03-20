@@ -172,3 +172,49 @@
   color: #e2e8f0;
   font-weight: 600;
 }
+
+/* Sample visual output section */
+.targetSection {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #2d3748;
+}
+
+.targetHeading {
+  color: #e2e8f0;
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0 0 4px;
+}
+
+.targetSubtitle {
+  color: #718096;
+  font-size: 12px;
+  margin: 0 0 12px;
+}
+
+.targetPreview {
+  border: 1px solid #2d3748;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.targetIframe {
+  display: block;
+  width: 100%;
+  height: 220px;
+  border: none;
+  background: white;
+}
+
+.targetLabel {
+  padding: 6px 12px;
+  background: #1a1f2e;
+  border-top: 1px solid #2d3748;
+  font-size: 11px;
+  color: #718096;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-align: center;
+}

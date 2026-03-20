@@ -5,6 +5,7 @@ export interface Challenge {
   title: string
   difficulty: Difficulty
   instructions: string
+  solutionExplanation: string
   starterHtml: string
   starterCss: string
   solutionHtml: string
