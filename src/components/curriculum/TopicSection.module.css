@@ -1,0 +1,104 @@
+.wrapper {
+  border: 1px solid #2d3748;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  background: #1a1f2e;
+  border: none;
+  cursor: pointer;
+  color: #e2e8f0;
+  text-align: left;
+  transition: background 0.15s;
+}
+
+.header:hover {
+  background: #1e2540;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.toggleIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  background: #4f46e5;
+  font-size: 11px;
+  font-weight: 700;
+  flex-shrink: 0;
+  color: white;
+}
+
+.title {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.count {
+  font-size: 11px;
+  color: #718096;
+}
+
+.grid {
+  padding: 12px;
+  background: #0f1117;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 10px;
+}
+
+.card {
+  padding: 14px;
+  background: #151821;
+  border: 1px solid #2d3748;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.15s, background 0.15s;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card:hover {
+  border-color: #4f46e5;
+  background: #1e2333;
+}
+
+.cardTitle {
+  font-size: 13px;
+  font-weight: 500;
+  color: #e2e8f0;
+  line-height: 1.4;
+}
+
+/* Difficulty badge — color driven by data-difficulty attribute */
+.badge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  align-self: flex-start;
+  color: var(--badge-color);
+  background: color-mix(in srgb, var(--badge-color) 13%, transparent);
+}
+
+.badge[data-difficulty='easy']   { --badge-color: #22c55e; }
+.badge[data-difficulty='medium'] { --badge-color: #f59e0b; }
+.badge[data-difficulty='hard']   { --badge-color: #ef4444; }
