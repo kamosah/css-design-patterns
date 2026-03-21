@@ -4,6 +4,7 @@ export interface Challenge {
   id: string
   title: string
   difficulty: Difficulty
+  estimatedMinutes?: number
   instructions: string
   solutionExplanation: string
   starterHtml: string

@@ -7,8 +7,13 @@ interface PreviewFrameProps {
 }
 
 export function PreviewFrame({ html, css }: PreviewFrameProps) {
-  const srcdoc = useMemo(
-    () => `<!DOCTYPE html>
+  const srcdoc = useMemo(() => {
+    const isFullDocument = /^\s*<!doctype|^\s*<html/i.test(html)
+    if (isFullDocument) {
+      // Inject CSS into the existing <head> rather than wrapping the document
+      return html.replace('</head>', `<style>\n${css}\n</style>\n</head>`)
+    }
+    return `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -20,9 +25,8 @@ ${css}
 <body>
 ${html}
 </body>
-</html>`,
-    [html, css]
-  )
+</html>`
+  }, [html, css])
 
   return (
     <div className={s.wrapper}>

@@ -22,3 +22,18 @@ export function findChallenge(topicId: string, challengeId: string) {
 export function findTopic(topicId: string): Topic | null {
   return topicById.get(topicId) ?? null
 }
+
+// Ordered flat list of all {topicId, challengeId} pairs for sequential navigation
+const allChallengeKeys = curriculum.flatMap((topic) =>
+  topic.challenges.map((challenge) => ({ topicId: topic.id, challengeId: challenge.id }))
+)
+
+export function findNextChallenge(
+  topicId: string,
+  challengeId: string
+): { topicId: string; challengeId: string } | null {
+  const idx = allChallengeKeys.findIndex(
+    (k) => k.topicId === topicId && k.challengeId === challengeId
+  )
+  return idx !== -1 && idx + 1 < allChallengeKeys.length ? allChallengeKeys[idx + 1] : null
+}
