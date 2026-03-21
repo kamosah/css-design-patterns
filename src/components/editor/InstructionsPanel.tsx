@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react'
 import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 import type { Challenge } from '../../types/challenge'
 import s from './InstructionsPanel.module.css'
 
@@ -61,7 +62,7 @@ export function InstructionsPanel({
 
       {/* CSS module scoped to .content handles all markdown element styles */}
       <div className={s.content}>
-        <ReactMarkdown>
+        <ReactMarkdown remarkPlugins={[remarkGfm]}>
           {activeTab === 'solution' ? challenge.solutionExplanation : challenge.instructions}
         </ReactMarkdown>
 
