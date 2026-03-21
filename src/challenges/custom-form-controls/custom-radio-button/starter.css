@@ -1,0 +1,19 @@
+.custom-radio {
+  /* TODO: hide input, layout label as inline-flex row, set cursor and spacing */
+}
+
+.custom-radio input {
+  /* TODO: hide the native radio input */
+}
+
+.custom-radio .radio-mark {
+  /* TODO: 20×20px circle, 2px solid #666 border, border-radius 50%, relative positioning */
+}
+
+.custom-radio input:checked + .radio-mark {
+  /* TODO: change border-color to #4CAF50 when checked */
+}
+
+.custom-radio input:checked + .radio-mark::after {
+  /* TODO: draw a 10×10px green dot centered inside the ring */
+}
