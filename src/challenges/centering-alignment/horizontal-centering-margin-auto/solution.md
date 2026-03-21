@@ -1,8 +1,8 @@
 ## Solution: Horizontal Centering with margin: auto
 
-Let's learn to horizontally center a fixed-width `.box` inside its container using `margin: auto` in CSS.
+Let's horizontally center a fixed-width block element inside its container using the `margin` property.
 
-### What changed
+## Solution explanation
 
 A single property was added to `.box` in `styles.css`:
 
@@ -13,17 +13,12 @@ A single property was added to `.box` in `styles.css`:
 }
 ```
 
+**Line 3:** `margin: 0 auto` sets top/bottom margins to `0` and left/right margins to `auto`. When a block element has a fixed width, the browser distributes the remaining horizontal space equally on both sides, placing the element in the center.
+
 ### Why it works
 
-When a block element has a **fixed width**, the browser calculates the remaining horizontal space in the parent. Setting the left and right margins to `auto` tells the browser to distribute that leftover space **equally on both sides**, which places the element in the center.
-
-The shorthand `margin: 0 auto` sets:
-- **top/bottom** margins to `0`
-- **left/right** margins to `auto`
-
-### Key constraints
-
-This technique only works when:
-- The element is a **block-level** element (or `display: block`)
-- The element has an **explicit width** smaller than its parent
-- The parent has a defined width (or stretches to viewport)
+| Technique | Purpose |
+| --- | --- |
+| `margin: 0 auto` | Distributes leftover horizontal space equally on both sides |
+| Fixed `width` on `.box` | Required — without it, the block stretches to fill the parent and there's no space to distribute |
+| Block-level element | `auto` margins only apply to block elements, not inline or flex items |

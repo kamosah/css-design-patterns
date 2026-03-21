@@ -10,6 +10,7 @@ export const challenge: Challenge = {
   id: 'full-centering-flexbox',
   title: 'Full Centering (Horizontal + Vertical)',
   difficulty: 'easy',
+  estimatedMinutes: 15,
   instructions,
   solutionExplanation,
   starterHtml,

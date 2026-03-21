@@ -10,6 +10,7 @@ export const challenge: Challenge = {
   id: 'custom-radio-button',
   title: 'Custom Radio Button Control',
   difficulty: 'easy',
+  estimatedMinutes: 20,
   instructions,
   solutionExplanation,
   starterHtml,

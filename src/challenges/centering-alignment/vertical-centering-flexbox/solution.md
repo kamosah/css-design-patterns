@@ -1,31 +1,28 @@
 ## Solution: Vertical Centering with Flexbox
 
-Let's learn to vertically center a child element inside a fixed-height container using flexbox.
+Let's vertically center a child element inside a fixed-height container by applying flexbox to the parent.
 
-### What changed
+## Solution explanation
 
 Two properties were added to `.container` in `styles.css`:
 
 ```css
 .container {
-  height: 300px;
+  height: 100vh;
   display: flex;       /* ← turns container into a flex parent */
   align-items: center; /* ← centers children on the cross axis */
   padding: 0 2rem;
 }
 ```
 
+**Line 3:** `display: flex` creates a flex formatting context. The main axis runs horizontally (left → right) by default, and the cross axis runs vertically (top → bottom).
+
+**Line 4:** `align-items: center` positions all flex children at the midpoint of the cross axis — in this case, vertically centered within the full viewport height.
+
 ### Why it works
 
-By default, the **main axis** of a flex container runs horizontally (left → right), and the **cross axis** runs vertically (top → bottom).
-
-`align-items: center` positions children along the **cross axis** — in this case vertically — centering them within the container's full height.
-
-Without flexbox, achieving vertical centering required hacks like absolute positioning or line-height tricks. Flexbox makes it a single property.
-
-### Key takeaway
-
-| Property | Axis controlled |
-|---|---|
-| `justify-content` | Main axis (horizontal by default) |
-| `align-items` | Cross axis (vertical by default) |
+| Property | Axis controlled | Effect |
+| --- | --- | --- |
+| `display: flex` | — | Enables flex layout on the container |
+| `align-items: center` | Cross axis (vertical by default) | Centers children vertically |
+| `justify-content: center` | Main axis (horizontal by default) | Would center children horizontally (not needed here) |
