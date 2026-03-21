@@ -1,0 +1,24 @@
+.custom-file {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.custom-file input {
+  display: none;
+}
+
+.custom-file .button-text {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 40px;
+  background-color: #007BFF;
+  color: #FFF;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.custom-file .button-text:hover {
+  background-color: #0056B3;
+}

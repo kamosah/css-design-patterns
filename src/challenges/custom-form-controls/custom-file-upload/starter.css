@@ -1,0 +1,15 @@
+.custom-file {
+  /* Your code here: container display and cursor */
+}
+
+.custom-file input {
+  /* Your code here: hide native file input */
+}
+
+.custom-file .button-text {
+  /* Your code here: size, background, text styling, border-radius, alignment */
+}
+
+.custom-file .button-text:hover {
+  /* Your code here: hover background color */
+}
