@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useLoaderData, useNavigate, type LoaderFunctionArgs } from 'react-router-dom'
 import { Panel, Group as PanelGroup, Separator } from 'react-resizable-panels'
-import { findChallenge } from '../../curriculum'
+import { findChallenge, findNextChallenge } from '../../curriculum'
 import { useEditorStore } from '../../store/editorStore'
 import { InstructionsPanel } from './InstructionsPanel'
 import { EditorArea } from './EditorArea'
@@ -57,6 +57,8 @@ export function ChallengePage() {
   const {
     html,
     css,
+    currentKey,
+    savedEdits,
     showingSolution,
     starterChanged,
     loadChallenge,
@@ -67,10 +69,19 @@ export function ChallengePage() {
   } = useEditorStore()
 
   const challengeKey = `${topicId}:${challengeId}`
+  const nextChallenge = findNextChallenge(topicId, challengeId)
 
   useEffect(() => {
     loadChallenge(challengeKey, challenge.starterHtml, challenge.starterCss)
   }, [challengeKey]) // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Derive correct html/css immediately at render time rather than waiting for
+  // the useEffect to call loadChallenge. This prevents the PreviewFrame from
+  // receiving stale content from the previous challenge on first render.
+  const isLoaded = currentKey === challengeKey
+  const saved = savedEdits[challengeKey]
+  const previewHtml = isLoaded ? html : (saved?.html ?? challenge.starterHtml)
+  const previewCss = isLoaded ? css : (saved?.css ?? challenge.starterCss)
 
   return (
     <div className={s.page}>
@@ -112,6 +123,11 @@ export function ChallengePage() {
                   challenge.starterCss
                 )
               }
+              onNext={
+                nextChallenge
+                  ? () => navigate(`/challenge/${nextChallenge.topicId}/${nextChallenge.challengeId}`)
+                  : undefined
+              }
             />
           </Panel>
 
@@ -126,8 +142,8 @@ export function ChallengePage() {
             >
               <Panel id="editor" defaultSize={V_DEFAULTS.editor} minSize={20}>
                 <EditorArea
-                  html={html}
-                  css={css}
+                  html={previewHtml}
+                  css={previewCss}
                   onHtmlChange={setHtml}
                   onCssChange={setCss}
                   starterChanged={starterChanged}
@@ -138,7 +154,7 @@ export function ChallengePage() {
               <Separator className={s.vSeparator} />
 
               <Panel id="preview" defaultSize={V_DEFAULTS.preview} minSize={15}>
-                <PreviewFrame html={html} css={css} />
+                <PreviewFrame html={previewHtml} css={previewCss} />
               </Panel>
             </PanelGroup>
           </Panel>

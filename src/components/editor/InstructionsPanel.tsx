@@ -10,27 +10,33 @@ interface InstructionsPanelProps {
   challenge: Challenge
   showingSolution: boolean
   onToggleSolution: () => void
+  onNext?: () => void
 }
 
 export function InstructionsPanel({
   challenge,
   showingSolution,
   onToggleSolution,
+  onNext,
 }: InstructionsPanelProps) {
   const [activeTab, setActiveTab] = useState<InstructionTab>('problem')
 
-  const solutionSrcdoc = useMemo(
-    () => `<!DOCTYPE html>
+  const solutionSrcdoc = useMemo(() => {
+    const { solutionHtml, solutionCss } = challenge
+    const isFullDocument = /^\s*<!doctype|^\s*<html/i.test(solutionHtml)
+    if (isFullDocument) {
+      return solutionHtml.replace('</head>', `<style>\n${solutionCss}\n</style>\n</head>`)
+    }
+    return `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>${challenge.solutionCss}</style>
+  <style>${solutionCss}</style>
 </head>
-<body>${challenge.solutionHtml}</body>
-</html>`,
-    [challenge.solutionHtml, challenge.solutionCss]
-  )
+<body>${solutionHtml}</body>
+</html>`
+  }, [challenge.solutionHtml, challenge.solutionCss])
 
   function handleTabClick(tab: InstructionTab) {
     setActiveTab(tab)
@@ -46,6 +52,15 @@ export function InstructionsPanel({
           <span className={s.badge} data-difficulty={challenge.difficulty}>
             {challenge.difficulty}
           </span>
+          {challenge.estimatedMinutes != null && (
+            <span className={s.timeBadge}>
+              <svg className={s.clockIcon} viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <circle cx="8" cy="8" r="6.5" stroke="currentColor" strokeWidth="1.5" />
+                <path d="M8 4.5V8l2 2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              {challenge.estimatedMinutes} min
+            </span>
+          )}
         </div>
         <div className={s.tabRow}>
           {(['problem', 'solution'] as InstructionTab[]).map((tab) => (
@@ -79,6 +94,14 @@ export function InstructionsPanel({
               />
               <div className={s.targetLabel}>Expected output</div>
             </div>
+          </div>
+        )}
+
+        {onNext && (
+          <div className={s.nextRow}>
+            <button className={s.nextBtn} onClick={onNext}>
+              Next →
+            </button>
           </div>
         )}
       </div>
