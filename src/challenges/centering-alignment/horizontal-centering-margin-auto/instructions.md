@@ -1,20 +1,16 @@
 ## Problem: Horizontal Centering with margin: auto
 
-Try to horizontally center a fixed-width block element inside its container using only the `margin` property.
+Try to center a `.box` element (200px wide) horizontally inside a 600px-wide container using only CSS.
 
 ## Problem description
 
-Given an HTML page containing a `.container` div wrapping a `.box` div (with `width: 300px` and a blue background), write CSS to:
-
-- Center `.box` horizontally within `.container` using the `margin` property.
+The container has a fixed width of `600px` and contains a child element `.box` that is `200px` wide. The task is to center the `.box` horizontally within its parent so that it sits exactly in the middle.
 
 ## Goal
 
-Write a CSS rule so that `.box` appears centered horizontally within `.container`, with equal space on its left and right sides.
+Position the `.box` exactly at 50% of the container's width.
 
 ## Constraints
 
-- Use only CSS (no JavaScript).
-- Use only the `margin` property — no flexbox or grid.
-- `.box` already has `width: 300px`; do not change it.
-- The centering must work when the container is wider than the box.
+- You may only modify or add CSS properties.
+- No additional HTML wrappers or JavaScript are permitted.
