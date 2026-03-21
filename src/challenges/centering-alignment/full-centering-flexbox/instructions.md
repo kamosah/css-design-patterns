@@ -1,29 +1,21 @@
-## Full Centering with Flexbox
+## Problem: Full Centering (Horizontal + Vertical)
 
-The most requested CSS pattern: centering something **perfectly in the middle of the screen** (or any container).
+Try to center an element both horizontally and vertically inside a full-viewport container using Flexbox.
 
-### The Holy Grail
+## Problem description
 
-```css
-.container {
-  display: flex;
-  align-items: center;     /* vertical center */
-  justify-content: center; /* horizontal center */
-}
-```
+Given an HTML page containing a `.container` div (`100vw × 100vh`, gradient background) wrapping a white card `.box`, write CSS to:
 
-That's it. Three lines. This works in any modern browser and is the recommended approach.
+- Turn `.container` into a flex container.
+- Center `.box` both horizontally and vertically using `align-items` and `justify-content`.
 
-### Why This Works
+## Goal
 
-- `display: flex` creates a **flex formatting context**
-- `align-items` controls alignment on the **cross axis** — by default that's vertical
-- `justify-content` controls alignment on the **main axis** — by default that's horizontal
+Write CSS rules on `.container` so that `.box` appears dead-center on the screen in both dimensions.
 
-### The Container Needs Size
+## Constraints
 
-For the centering to be visible, the container must be larger than the item. In this challenge, the container is `100vw × 100vh` (full viewport).
-
-### Your Task
-
-Center the white card `.box` both horizontally and vertically within the gradient `.container`.
+- Use only CSS (no JavaScript).
+- Apply flexbox to `.container` only — do not modify `.box`.
+- Use `align-items` for vertical centering and `justify-content` for horizontal centering.
+- `.container` already has `width: 100vw` and `height: 100vh`; do not remove them.

@@ -1,30 +1,21 @@
-## Vertical Centering with Flexbox
+## Problem: Vertical Centering with Flexbox
 
-Vertical centering has historically been one of the trickiest problems in CSS. **Flexbox** makes it trivial.
+Try to vertically center a child element inside a fixed-height container using Flexbox properties applied to the parent.
 
-### The Pattern
+## Problem description
 
-Apply flexbox to the **parent container** and use `align-items` to control vertical positioning:
+Given an HTML page containing a `.container` div (with `height: 100vh`) wrapping a `.box` div, write CSS to:
 
-```css
-.container {
-  display: flex;
-  align-items: center; /* vertically centers all flex children */
-}
-```
+- Turn `.container` into a flex container.
+- Vertically center `.box` within `.container` using `align-items`.
 
-### Key Properties
+## Goal
 
-| Property | Effect |
-|---|---|
-| `display: flex` | Turns container into a flex formatting context |
-| `align-items: center` | Aligns children along the **cross axis** (vertical by default) |
-| `justify-content: center` | Aligns children along the **main axis** (horizontal by default) |
+Write CSS rules on `.container` so that `.box` appears vertically centered within the full height of the container.
 
-### Important
+## Constraints
 
-The container needs an explicit **height** for vertical centering to be visible. Without it, the container shrinks to wrap its content and there's no extra space to distribute.
-
-### Your Task
-
-Make the `.box` vertically centered within the `.container` using Flexbox.
+- Use only CSS (no JavaScript).
+- Apply flexbox to `.container` only — do not modify `.box`.
+- Use `align-items` to achieve vertical centering.
+- `.container` already has `height: 100vh`; do not remove it.

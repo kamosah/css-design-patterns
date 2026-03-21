@@ -2,7 +2,7 @@
 
 Let's create a custom radio button with a styled circular ring and center dot for selected state using only CSS.
 
-### What changed
+## Solution explanation
 
 Six rule blocks were added to `styles.css`:
 
@@ -53,16 +53,8 @@ Six rule blocks were added to `styles.css`:
 
 | Technique | Purpose |
 | --- | --- |
-| `display: none` on `input` | Removes the native control visually and from layout; the `<label>` keeps it interactive |
-| `input:checked + .radio-mark` | Adjacent sibling combinator — fires only when the hidden input is in `:checked` state |
-| `position: relative` on `.radio-mark` | Creates a positioning context for the `::after` pseudo-element |
-| `top: 50%` + `left: 50%` + `transform: translate(-50%, -50%)` | Centers the dot regardless of parent size — universal pattern for absolutely positioned elements |
+| `display: none` on `input` | Removes the native control from layout; the `<label>` wrapper keeps it interactive |
+| `input:checked + .radio-mark` | Adjacent sibling combinator — activates only when the hidden input is `:checked` |
+| `position: relative` on `.radio-mark` | Creates a positioning context so `::after` can be placed absolutely inside it |
+| `top: 50%` + `left: 50%` + `transform: translate(-50%, -50%)` | Centers the dot regardless of parent size — the standard pattern for absolutely positioned elements |
 | `border-radius: 50%` | Turns any square element into a perfect circle |
-
-### Why `display: none` instead of `opacity: 0`
-
-`display: none` removes the element from the layout entirely, so it doesn't occupy space or create invisible click targets. The `<label>` wrapper takes over all interactivity, so the input doesn't need to be visible or hittable.
-
-### Why the dot uses `::after` instead of a child element
-
-Pseudo-elements keep the HTML clean — no extra `<span>` needed. The dot only exists in CSS and is toggled via `:checked`, making the entire interaction pure CSS with zero JavaScript.

@@ -6,7 +6,7 @@ body {
 
 .container {
   background: #e2e8f0;
-  height: 300px;
+  height: 100vh;
   /* TODO: use flexbox to center the child vertically */
 }
 

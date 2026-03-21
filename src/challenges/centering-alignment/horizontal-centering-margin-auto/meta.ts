@@ -10,6 +10,7 @@ export const challenge: Challenge = {
   id: 'horizontal-centering-margin-auto',
   title: 'Horizontal Centering with margin: auto',
   difficulty: 'easy',
+  estimatedMinutes: 10,
   instructions,
   solutionExplanation,
   starterHtml,
