@@ -6,9 +6,9 @@ An interactive CSS practice IDE for CSS Design Patterns. Work through challenges
 
 ![Curriculum browser](docs/curriculum.png)
 
-![Challenge IDE — problem view](docs/ide-problem.png?v=2)
+![Challenge IDE — starter CSS tab](docs/ide-css-starter.png)
 
-![Challenge IDE — solution view](docs/ide-solution.png)
+![Challenge IDE — solution CSS tab](docs/ide-css-solution.png)
 
 ## Features
 
