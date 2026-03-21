@@ -1,28 +1,32 @@
 ## Solution: Vertical Centering with Flexbox
 
-Let's vertically center a child element inside a fixed-height container by applying flexbox to the parent.
+Let's learn to vertically center a fixed-size `.box` inside a container using only CSS, without modifying the HTML structure.
 
 ## Solution explanation
 
-Two properties were added to `.container` in `styles.css`:
+In the `styles.css` file, on line 6 (`align-items: center;`), Flexbox aligns children along the cross axis (vertical), centering the `.box` within the container's height.
 
 ```css
 .container {
-  height: 100vh;
-  display: flex;       /* ← turns container into a flex parent */
-  align-items: center; /* ← centers children on the cross axis */
-  padding: 0 2rem;
+  width: 400px;
+  height: 200px;
+  border: 1px solid #000;
+  display: flex;
+  align-items: center; /* ← this line was added */
+}
+
+.box {
+  width: 200px;
+  height: 100px;
+  border: 1px solid #000;
+  background: lightcoral;
 }
 ```
 
-**Line 3:** `display: flex` creates a flex formatting context. The main axis runs horizontally (left → right) by default, and the cross axis runs vertically (top → bottom).
-
-**Line 4:** `align-items: center` positions all flex children at the midpoint of the cross axis — in this case, vertically centered within the full viewport height.
-
 ### Why it works
 
-| Property | Axis controlled | Effect |
-| --- | --- | --- |
-| `display: flex` | — | Enables flex layout on the container |
-| `align-items: center` | Cross axis (vertical by default) | Centers children vertically |
-| `justify-content: center` | Main axis (horizontal by default) | Would center children horizontally (not needed here) |
+| Technique | Purpose |
+| --- | --- |
+| `display: flex` | Establishes a flex formatting context on the container |
+| `align-items: center` | Aligns flex children along the cross axis (vertical by default), placing `.box` at the vertical midpoint |
+| Fixed `height` on `.container` | Required — without it, the container shrinks to wrap its content and there is no extra space to distribute |
