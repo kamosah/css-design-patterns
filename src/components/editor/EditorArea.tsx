@@ -21,7 +21,7 @@ export function EditorArea({
   starterChanged = false,
   onReset,
 }: EditorAreaProps) {
-  const [activeTab, setActiveTab] = useState<FileTab>('html')
+  const [activeTab, setActiveTab] = useState<FileTab>('css')
 
   return (
     <div className={s.wrapper}>
@@ -58,6 +58,13 @@ export function EditorArea({
             if (activeTab === 'html') onHtmlChange(value ?? '')
             else onCssChange(value ?? '')
           }}
+          loading={
+            <div className={s.skeleton}>
+              {[70, 50, 85, 40, 60, 75, 45, 55, 80, 35].map((width, i) => (
+                <div key={i} className={s.skeletonLine} style={{ width: `${width}%` }} />
+              ))}
+            </div>
+          }
           theme="vs-dark"
           options={{
             minimap: { enabled: false },
