@@ -14,9 +14,11 @@ An interactive CSS practice IDE for CSS Design Patterns. Work through challenges
 
 - **Curriculum browser** — expandable topic accordion with difficulty-tagged challenge cards
 - **Split-pane IDE** — resizable instructions | editor | preview layout with persisted panel sizes
-- **Monaco editor** — VS Code-quality editing with HTML and CSS file tabs, per-model undo history
+- **Monaco editor** — VS Code-quality editing with HTML and CSS file tabs, per-model undo history, loading skeleton
+- **Structured instructions** — each challenge has Problem description, Goal, Constraints, and Sample visual output sections with difficulty badge and time estimate
 - **Live iframe preview** — sandboxed `srcdoc` iframe rebuilt on every keystroke, fully isolated from the shell
 - **Solution toggle** — swap starter ↔ solution code in the editor via Problem/Solution tabs
+- **Sequential navigation** — Next button advances to the next challenge across topics
 - **Progress persistence** — user edits saved to `localStorage` per challenge via Zustand
 - **Starter-change detection** — notifies when upstream challenge files have been updated and offers a one-click reset to the new starter
 
@@ -50,7 +52,8 @@ Open [http://localhost:5173](http://localhost:5173).
 ```
 <challenge-id>/
 ├── meta.ts           # wires all imports, exports a Challenge object
-├── instructions.md   # markdown instructions shown in the left panel
+├── instructions.md   # problem instructions (Problem description, Goal, Constraints)
+├── solution.md       # solution explanation shown in the Solution tab
 ├── starter.html
 ├── starter.css
 ├── solution.html
@@ -64,6 +67,7 @@ Open [http://localhost:5173](http://localhost:5173).
 ```ts
 import type { Challenge } from '../../../types/challenge'
 import instructions from './instructions.md?raw'
+import solutionExplanation from './solution.md?raw'
 import starterHtml from './starter.html?raw'
 import starterCss from './starter.css?raw'
 import solutionHtml from './solution.html?raw'
@@ -73,7 +77,9 @@ export const challenge: Challenge = {
   id: 'your-challenge-id',
   title: 'Your Challenge Title',
   difficulty: 'easy', // 'easy' | 'medium' | 'hard'
+  estimatedMinutes: 15,
   instructions,
+  solutionExplanation,
   starterHtml,
   starterCss,
   solutionHtml,
@@ -88,7 +94,7 @@ src/
 ├── App.tsx                          # createBrowserRouter setup
 ├── main.tsx
 ├── types/challenge.ts               # Challenge, Topic interfaces
-├── curriculum/index.ts              # Map-keyed registry, findChallenge()
+├── curriculum/index.ts              # Map-keyed registry, findChallenge(), findNextChallenge()
 ├── store/editorStore.ts             # Zustand store
 ├── challenges/
 │   └── <topic-id>/
