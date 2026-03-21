@@ -1,21 +1,15 @@
-## Problem: Full Centering (Horizontal + Vertical)
+## Problem: Full Centering (Both Axes) with Flexbox
 
-Try to center an element both horizontally and vertically inside a full-viewport container using Flexbox.
+Try to use Flexbox properties to center a child element perfectly both horizontally and vertically within its container.
 
 ## Problem description
 
-Given an HTML page containing a `.container` div (`100vw × 100vh`, gradient background) wrapping a white card `.box`, write CSS to:
-
-- Turn `.container` into a flex container.
-- Center `.box` both horizontally and vertically using `align-items` and `justify-content`.
+A flex container measures `400px` by `200px` and contains a child `.box`. The task is to center the `.box` both horizontally and vertically within the container.
 
 ## Goal
 
-Write CSS rules on `.container` so that `.box` appears dead-center on the screen in both dimensions.
+Position the `.box` at the exact center of its parent on both axes.
 
 ## Constraints
 
-- Use only CSS (no JavaScript).
-- Apply flexbox to `.container` only — do not modify `.box`.
-- Use `align-items` for vertical centering and `justify-content` for horizontal centering.
-- `.container` already has `width: 100vw` and `height: 100vh`; do not remove them.
+- Only CSS changes are allowed; the HTML must remain unchanged and JavaScript cannot be used.

@@ -1,33 +1,36 @@
-## Solution: Full Centering (Horizontal + Vertical)
+## Solution: Full Centering (Both Axes) with Flexbox
 
-Let's center an element perfectly in both dimensions by combining two flexbox properties on the parent container.
+Let's use Flexbox properties to center a child element perfectly both horizontally and vertically within its container.
 
 ## Solution explanation
 
-Two properties were added to `.container` in `styles.css`:
+In the `styles.css` file, you'll find the following:
+
+**Line 6** (`justify-content: center;`): The flex container centers items along the main (horizontal) axis.
+
+**Line 7** (`align-items: center;`): It centers items along the cross (vertical) axis, achieving full centering.
 
 ```css
 .container {
-  width: 100vw;
-  height: 100vh;
+  width: 400px;
+  height: 200px;
+  border: 1px solid #000;
   display: flex;
-  align-items: center;      /* ← centers vertically (cross axis) */
-  justify-content: center;  /* ← centers horizontally (main axis) */
+  justify-content: center; /* ← centers horizontally */
+  align-items: center;     /* ← centers vertically */
+}
+
+.box {
+  width: 200px;
+  height: 100px;
+  border: 1px solid #000;
+  background: lightcoral;
 }
 ```
 
-**Line 4:** `display: flex` creates a flex formatting context on the container.
+### Why it works
 
-**Line 5:** `align-items: center` positions `.box` at the midpoint of the cross axis (vertical).
-
-**Line 6:** `justify-content: center` positions `.box` at the midpoint of the main axis (horizontal).
-
-Together, these two properties place `.box` at the exact center of the `100vw × 100vh` container.
-
-### Why flexbox beats other approaches
-
-| Approach | Limitation |
-| --- | --- |
-| `margin: auto` | Horizontal only; requires a fixed width |
-| `position: absolute` + `transform` | Requires `position: relative` on the parent |
-| Flexbox (`align-items` + `justify-content`) | Works for any child size, no explicit dimensions needed |
+| Property | Axis | Effect |
+| --- | --- | --- |
+| `justify-content: center` | Main axis (horizontal) | Centers `.box` left-to-right within the 400px container |
+| `align-items: center` | Cross axis (vertical) | Centers `.box` top-to-bottom within the 200px container |
