@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import MonacoEditor from '@monaco-editor/react'
+import { useThemeStore } from '../../store/themeStore'
 import s from './EditorArea.module.css'
 
 type FileTab = 'html' | 'css'
@@ -22,6 +23,7 @@ export function EditorArea({
   onReset,
 }: EditorAreaProps) {
   const [activeTab, setActiveTab] = useState<FileTab>('css')
+  const theme = useThemeStore((s) => s.theme)
 
   return (
     <div className={s.wrapper}>
@@ -65,7 +67,7 @@ export function EditorArea({
               ))}
             </div>
           }
-          theme="vs-dark"
+          theme={theme === 'dark' ? 'vs-dark' : 'vs'}
           options={{
             minimap: { enabled: false },
             fontSize: 13,

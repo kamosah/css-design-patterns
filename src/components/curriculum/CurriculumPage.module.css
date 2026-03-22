@@ -1,13 +1,20 @@
 .page {
   min-height: 100vh;
-  background: #0f1117;
+  background: var(--bg-base);
 }
 
 .hero {
   padding: 48px 24px 32px;
-  background: linear-gradient(180deg, #1a1f2e 0%, #0f1117 100%);
-  border-bottom: 1px solid #1a1f2e;
+  background: linear-gradient(180deg, var(--bg-elevated) 0%, var(--bg-base) 100%);
+  border-bottom: 1px solid var(--bg-elevated);
   text-align: center;
+  position: relative;
+}
+
+.heroActions {
+  position: absolute;
+  top: 16px;
+  right: 16px;
 }
 
 .badge {
@@ -23,7 +30,7 @@
 
 .badgeText {
   font-size: 11px;
-  color: #818cf8;
+  color: var(--accent-subtle);
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -33,14 +40,14 @@
   margin: 0 0 10px;
   font-size: 32px;
   font-weight: 800;
-  color: #f8fafc;
+  color: var(--text-heading);
   letter-spacing: -0.02em;
 }
 
 .subtext {
   margin: 0 auto 20px;
   font-size: 15px;
-  color: #718096;
+  color: var(--text-secondary);
   max-width: 480px;
 }
 
@@ -58,12 +65,12 @@
 .statValue {
   font-size: 24px;
   font-weight: 700;
-  color: #e2e8f0;
+  color: var(--text-primary);
 }
 
 .statLabel {
   font-size: 11px;
-  color: #718096;
+  color: var(--text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -71,7 +78,7 @@
 .statDivider {
   width: 1px;
   height: 32px;
-  background: #2d3748;
+  background: var(--border);
 }
 
 .content {

@@ -3,6 +3,7 @@ import { useLoaderData, useNavigate, type LoaderFunctionArgs } from 'react-route
 import { Panel, Group as PanelGroup, Separator } from 'react-resizable-panels'
 import { findChallenge, findNextChallenge } from '../../curriculum'
 import { useEditorStore } from '../../store/editorStore'
+import { ThemeToggle } from '../ThemeToggle'
 import { InstructionsPanel } from './InstructionsPanel'
 import { EditorArea } from './EditorArea'
 import { PreviewFrame } from './PreviewFrame'
@@ -102,6 +103,8 @@ export function ChallengePage() {
         >
           Reset
         </button>
+
+        <ThemeToggle />
       </header>
 
       <div className={s.panels}>

@@ -1,5 +1,5 @@
 .wrapper {
-  border: 1px solid #2d3748;
+  border: 1px solid var(--border);
   border-radius: 8px;
   overflow: hidden;
   margin-bottom: 12px;
@@ -11,16 +11,16 @@
   align-items: center;
   justify-content: space-between;
   padding: 14px 20px;
-  background: #1a1f2e;
+  background: var(--bg-elevated);
   border: none;
   cursor: pointer;
-  color: #e2e8f0;
+  color: var(--text-primary);
   text-align: left;
   transition: background 0.15s;
 }
 
 .header:hover {
-  background: #1e2540;
+  background: var(--bg-hover);
 }
 
 .headerLeft {
@@ -36,7 +36,7 @@
   width: 20px;
   height: 20px;
   border-radius: 4px;
-  background: #4f46e5;
+  background: var(--accent);
   font-size: 11px;
   font-weight: 700;
   flex-shrink: 0;
@@ -50,12 +50,12 @@
 
 .count {
   font-size: 11px;
-  color: #718096;
+  color: var(--text-secondary);
 }
 
 .grid {
   padding: 12px;
-  background: #0f1117;
+  background: var(--bg-base);
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 10px;
@@ -63,8 +63,8 @@
 
 .card {
   padding: 14px;
-  background: #151821;
-  border: 1px solid #2d3748;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
   border-radius: 6px;
   cursor: pointer;
   text-align: left;
@@ -75,14 +75,14 @@
 }
 
 .card:hover {
-  border-color: #4f46e5;
-  background: #1e2333;
+  border-color: var(--accent);
+  background: var(--bg-inset);
 }
 
 .cardTitle {
   font-size: 13px;
   font-weight: 500;
-  color: #e2e8f0;
+  color: var(--text-primary);
   line-height: 1.4;
 }
 

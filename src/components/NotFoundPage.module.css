@@ -1,0 +1,19 @@
+.page {
+  padding: 4rem;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.code {
+  font-size: 48px;
+  margin: 0 0 16px;
+}
+
+.message {
+  margin-bottom: 24px;
+}
+
+.link {
+  color: var(--accent);
+  font-size: 14px;
+}
