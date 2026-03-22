@@ -1,0 +1,83 @@
+/* ─── Design Tokens ─────────────────────────────────────────────────────────
+   Dark theme is the default (:root). Light theme overrides via [data-theme="light"]
+   applied to <html> by themeStore + App.tsx.
+   ──────────────────────────────────────────────────────────────────────────── */
+
+:root {
+  /* Backgrounds */
+  --bg-base:     #0f1117; /* page background */
+  --bg-surface:  #151821; /* headers, tabs */
+  --bg-elevated: #1a1f2e; /* hero, topic header, scrollbar track */
+  --bg-inset:    #1e2333; /* cards hover, code bg, table header */
+  --bg-hover:    #1e2540; /* topic header hover */
+  --bg-code:     #0d1117; /* pre blocks */
+
+  /* Borders */
+  --border:        #2d3748;
+  --border-subtle: #1a1f2e;
+
+  /* Text */
+  --text-heading:   #f8fafc;
+  --text-primary:   #e2e8f0;
+  --text-body:      #cbd5e0;
+  --text-secondary: #718096;
+  --text-tertiary:  #a0aec0;
+  --text-muted:     #4a5568;
+
+  /* Accent — indigo, same in both themes */
+  --accent:        #4f46e5;
+  --accent-hover:  #4338ca;
+  --accent-subtle: #818cf8;
+
+  /* Warning bar */
+  --warning-bg:     #1c1a0e;
+  --warning-border: #854d0e44;
+  --warning-text:   #fbbf24;
+
+  /* Inline code / code blocks */
+  --code-bg:   #1e2333;
+  --code-text: #7dd3fc;
+
+  /* Monaco editor skeleton (matches Monaco's own canvas background) */
+  --editor-bg:          #1e1e1e;
+  --skeleton-base:      #2d2d2d;
+  --skeleton-highlight: #3a3a3a;
+}
+
+[data-theme="light"] {
+  /* Backgrounds */
+  --bg-base:     #f8fafc;
+  --bg-surface:  #ffffff;
+  --bg-elevated: #f1f5f9;
+  --bg-inset:    #e8edf5;
+  --bg-hover:    #dde3ef;
+  --bg-code:     #f8fafc;
+
+  /* Borders */
+  --border:        #e2e8f0;
+  --border-subtle: #f1f5f9;
+
+  /* Text */
+  --text-heading:   #0f172a;
+  --text-primary:   #1e293b;
+  --text-body:      #475569;
+  --text-secondary: #64748b;
+  --text-tertiary:  #94a3b8;
+  --text-muted:     #94a3b8;
+
+  /* Accent unchanged */
+
+  /* Warning bar */
+  --warning-bg:     #fefce8;
+  --warning-border: #fbbf2444;
+  --warning-text:   #92400e;
+
+  /* Inline code / code blocks */
+  --code-bg:   #f1f5f9;
+  --code-text: #0369a1;
+
+  /* Monaco editor skeleton */
+  --editor-bg:          #fffffe;
+  --skeleton-base:      #e8e8e8;
+  --skeleton-highlight: #f0f0f0;
+}

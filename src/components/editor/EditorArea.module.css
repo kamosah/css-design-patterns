@@ -7,8 +7,8 @@
 .tabs {
   display: flex;
   align-items: center;
-  background: #151821;
-  border-bottom: 1px solid #2d3748;
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border);
   padding: 0 4px;
   flex-shrink: 0;
 }
@@ -21,22 +21,22 @@
   border: none;
   border-bottom: 2px solid transparent;
   background: transparent;
-  color: #718096;
+  color: var(--text-secondary);
   transition: color 0.15s, border-color 0.15s, background 0.15s;
 }
 
 .tab:hover {
-  color: #a0aec0;
+  color: var(--text-tertiary);
 }
 
 .tabActive {
-  border-bottom-color: #4f46e5;
-  background: #1e2333;
-  color: #e2e8f0;
+  border-bottom-color: var(--accent);
+  background: var(--bg-inset);
+  color: var(--text-primary);
 }
 
 .tabActive:hover {
-  color: #e2e8f0;
+  color: var(--text-primary);
 }
 
 .editor {
@@ -48,7 +48,7 @@
 /* Editor loading skeleton */
 .skeleton {
   height: 100%;
-  background: #1e1e1e;
+  background: var(--editor-bg);
   padding: 12px 16px;
   display: flex;
   flex-direction: column;
@@ -61,9 +61,9 @@
   border-radius: 3px;
   background: linear-gradient(
     90deg,
-    #2d2d2d 0%,
-    #3a3a3a 40%,
-    #2d2d2d 80%
+    var(--skeleton-base) 0%,
+    var(--skeleton-highlight) 40%,
+    var(--skeleton-base) 80%
   );
   background-size: 200% 100%;
   animation: shimmer 1.4s ease-in-out infinite;
@@ -79,14 +79,14 @@
   align-items: center;
   justify-content: space-between;
   padding: 5px 12px;
-  background: #1c1a0e;
-  border-bottom: 1px solid #854d0e44;
+  background: var(--warning-bg);
+  border-bottom: 1px solid var(--warning-border);
   gap: 8px;
 }
 
 .starterChangedText {
   font-size: 11px;
-  color: #fbbf24;
+  color: var(--warning-text);
   display: flex;
   align-items: center;
   gap: 6px;
@@ -100,7 +100,7 @@
 .starterChangedBtn {
   font-size: 11px;
   font-weight: 600;
-  color: #fbbf24;
+  color: var(--warning-text);
   background: #fbbf2415;
   border: 1px solid #fbbf2440;
   border-radius: 4px;

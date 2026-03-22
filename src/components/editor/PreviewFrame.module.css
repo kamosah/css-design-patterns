@@ -6,10 +6,10 @@
 
 .label {
   padding: 6px 12px;
-  background: #1a1f2e;
-  border-bottom: 1px solid #2d3748;
+  background: var(--bg-elevated);
+  border-bottom: 1px solid var(--border);
   font-size: 11px;
-  color: #718096;
+  color: var(--text-secondary);
   letter-spacing: 0.05em;
   text-transform: uppercase;
   font-weight: 600;

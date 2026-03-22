@@ -1,5 +1,6 @@
 import { curriculum } from '../../curriculum'
 import { TopicSection } from './TopicSection'
+import { ThemeToggle } from '../ThemeToggle'
 import s from './CurriculumPage.module.css'
 
 export function CurriculumPage() {
@@ -8,6 +9,7 @@ export function CurriculumPage() {
   return (
     <div className={s.page}>
       <div className={s.hero}>
+        <div className={s.heroActions}><ThemeToggle /></div>
         <div className={s.badge}>
           <span className={s.badgeText}>CSS Design Patterns Lab</span>
         </div>
