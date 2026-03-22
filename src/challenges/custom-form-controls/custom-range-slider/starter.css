@@ -1,0 +1,15 @@
+.custom-range {
+  /* Your code here: width, remove default appearance, transparent background */
+}
+
+.custom-range:focus {
+  /* Your code here: remove outline */
+}
+
+.custom-range::-webkit-slider-runnable-track {
+  /* Your code here: track size, background, border-radius */
+}
+
+.custom-range::-webkit-slider-thumb {
+  /* Your code here: thumb size, shape, background, vertical centering */
+}
