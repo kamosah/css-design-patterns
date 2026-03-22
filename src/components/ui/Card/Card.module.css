@@ -1,0 +1,104 @@
+/*
+ * Card — Compound component + container queries + data-variant
+ *
+ * PATTERN: @container lets the card respond to its own width rather than
+ * the viewport. This is essential for components that appear inside panels
+ * of varying sizes — the card doesn't need to know where it lives.
+ *
+ * Container query syntax:
+ *   .card { container-type: inline-size; }
+ *   @container (max-width: 280px) { .footer { flex-direction: column; } }
+ *
+ * Compound component structure:
+ *   <Card>               → .card   (container root)
+ *     <Card.Header>      → .header
+ *     <Card.Body>        → .body
+ *     <Card.Footer>      → .footer
+ *   </Card>
+ */
+
+.card {
+  /* Establish container context for @container queries */
+  container-type: inline-size;
+
+  border-radius: 10px;
+  overflow: hidden;   /* clips child content to rounded corners */
+  display: flex;
+  flex-direction: column;
+
+  /* Default: outlined */
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+}
+
+/* ── Variants ── */
+.card[data-variant='elevated'] {
+  border: 1px solid var(--border-subtle);
+  box-shadow:
+    0 1px 2px color-mix(in srgb, black 10%, transparent),
+    0 4px 12px color-mix(in srgb, black 12%, transparent);
+}
+
+.card[data-variant='flat'] {
+  background: var(--bg-inset);
+  border: none;
+}
+
+.card[data-variant='ghost'] {
+  background: transparent;
+  border: 1px dashed var(--border);
+}
+
+/* ── Header ── */
+.header {
+  padding: 16px 20px 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.headerTitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-heading);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.headerSubtitle {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin: 4px 0 0;
+}
+
+/* ── Body ── */
+.body {
+  padding: 16px 20px;
+  flex: 1;
+  color: var(--text-body);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* ── Footer ── */
+.footer {
+  padding: 12px 20px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+/* ── Container query: narrow card → stack footer actions ── */
+@container (max-width: 280px) {
+  .header {
+    flex-direction: column;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

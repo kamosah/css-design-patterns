@@ -1,0 +1,127 @@
+/*
+ * RangeSlider — ::-webkit-slider-* pseudo-elements + component tokens
+ *
+ * PATTERN: WebKit vendor pseudo-elements allow full control over the
+ * native range input's track and thumb. Both -webkit-appearance: none
+ * calls are required — once on the input (unlocks track styling) and
+ * again inside ::-webkit-slider-thumb (unlocks thumb sizing).
+ *
+ * Centering formula:
+ *   margin-top = (trackHeight - thumbSize) / 2
+ *   e.g. (6px - 16px) / 2 = -5px
+ *
+ * Component tokens create an override surface so consumers can restyle
+ * without touching this file:
+ *   style={{ '--range-thumb-color': 'var(--warning-text)' }}
+ */
+
+.range {
+  /* ── Component-level token defaults ── */
+  --range-track-color:  var(--border);
+  --range-track-radius: 3px;
+  --range-track-height: 6px;
+  --range-thumb-color:  var(--accent);
+  --range-thumb-size:   16px;
+
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  background: transparent;
+  cursor: pointer;
+  padding: 6px 0;  /* increase click target without affecting layout */
+}
+
+.range:focus {
+  outline: none;
+}
+
+.range:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+/* ── Track (WebKit / Blink) ── */
+.range::-webkit-slider-runnable-track {
+  width: 100%;
+  height: var(--range-track-height);
+  background: var(--range-track-color);
+  border-radius: var(--range-track-radius);
+}
+
+/* ── Thumb (WebKit / Blink) ── */
+.range::-webkit-slider-thumb {
+  /* Required: unlock sizing in WebKit */
+  -webkit-appearance: none;
+  appearance: none;
+
+  width: var(--range-thumb-size);
+  height: var(--range-thumb-size);
+  background: var(--range-thumb-color);
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0 1px 4px color-mix(in srgb, black 25%, transparent);
+
+  /* Center thumb on track: (trackHeight - thumbSize) / 2 */
+  margin-top: calc((var(--range-track-height) - var(--range-thumb-size)) / 2);
+
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.range::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--range-thumb-color) 40%, transparent);
+}
+
+.range:active::-webkit-slider-thumb {
+  transform: scale(0.95);
+}
+
+/* ── Track (Firefox) ── */
+.range::-moz-range-track {
+  width: 100%;
+  height: var(--range-track-height);
+  background: var(--range-track-color);
+  border-radius: var(--range-track-radius);
+  border: none;
+}
+
+/* ── Thumb (Firefox) ── */
+.range::-moz-range-thumb {
+  width: var(--range-thumb-size);
+  height: var(--range-thumb-size);
+  background: var(--range-thumb-color);
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0 1px 4px color-mix(in srgb, black 25%, transparent);
+  cursor: pointer;
+}
+
+/* ── Wrapper for label + value display ── */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.label {
+  font-size: 13px;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.value {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  font-family: ui-monospace, monospace;
+  min-width: 32px;
+  text-align: right;
+}
