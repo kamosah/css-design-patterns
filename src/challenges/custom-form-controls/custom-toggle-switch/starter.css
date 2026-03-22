@@ -1,0 +1,23 @@
+.switch {
+  /* Your code here: hide input, positioning */
+}
+
+.switch input {
+  /* Your code here: hide native checkbox */
+}
+
+.switch .slider {
+  /* Your code here: size, background, border-radius, transition */
+}
+
+.switch .slider::before {
+  /* Your code here: knob size, color, position, transition */
+}
+
+.switch input:checked + .slider {
+  /* Your code here: checked track background */
+}
+
+.switch input:checked + .slider::before {
+  /* Your code here: move knob to the right */
+}
