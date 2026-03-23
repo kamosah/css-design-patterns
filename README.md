@@ -94,7 +94,7 @@ Four story groups under **Design System** in the sidebar:
 `src/components/ui/` — reusable components built on the design token system. Each component demonstrates one or more scalable CSS + React patterns. Import from the barrel export:
 
 ```ts
-import { Button, Badge, Toggle, RangeSlider, Card, Alert } from './components/ui'
+import { Button, Badge, Toggle, RangeSlider, Card, Alert, CustomSelect } from './components/ui'
 ```
 
 | Component | Key patterns |
@@ -105,6 +105,7 @@ import { Button, Badge, Toggle, RangeSlider, Card, Alert } from './components/ui
 | **RangeSlider** | `::-webkit-slider-runnable-track` / `::-webkit-slider-thumb` · `-webkit-appearance: none` · calc-based centering formula · controlled + uncontrolled modes |
 | **Card** | Compound components (`Card.Header` / `Card.Body` / `Card.Footer`) · `@container` queries · `overflow: hidden` corner clipping |
 | **Alert** | Icon slot (render prop) · `color-mix()` tint · dismissible `useState` · `data-variant` |
+| **CustomSelect** | `appearance: none` native arrow removal · `::after` custom arrow · `pointer-events: none` click-through · component tokens · `data-size` variants · `:has()` compound state |
 
 Each component has a `.stories.tsx` file in the same folder. View them in Storybook under **Components**.
 
@@ -194,7 +195,8 @@ src/
 │       ├── Toggle/                  # :checked + sibling + ::before animation
 │       ├── RangeSlider/             # ::-webkit-slider-* pseudo-elements
 │       ├── Card/                    # Compound components + @container
-│       └── Alert/                   # Icon slot + color-mix() + dismissible
+│       ├── Alert/                   # Icon slot + color-mix() + dismissible
+│       └── CustomSelect/            # appearance: none + ::after arrow + component tokens
 ├── stories/
 │   └── design-system/
 │       ├── ColorTokens.stories.tsx
