@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { useEffect } from 'react'
 import { useLoaderData, useNavigate, type LoaderFunctionArgs } from 'react-router-dom'
 import { Panel, Group as PanelGroup, Separator } from 'react-resizable-panels'

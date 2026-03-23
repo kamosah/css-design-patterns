@@ -1,0 +1,94 @@
+/*
+ * Toggle — :checked + adjacent sibling combinator + ::before transform
+ *
+ * PATTERN: The native <input type="checkbox"> is visually hidden but
+ * remains in the DOM and focus order. CSS drives all visual state via
+ * the :checked pseudo-class and the adjacent sibling combinator (+).
+ * No JavaScript state is needed for the visual transition.
+ *
+ * Key techniques:
+ *   1. Visually hidden input via 1px size + clipping keeps it focusable and in the a11y tree
+ *   2. `input:checked + .track` — sibling combinator targets the track
+ *   3. `::before` pseudo-element is the sliding knob
+ *   4. `transform: translateX()` animates the knob
+ *   5. Component tokens --toggle-on / --toggle-off for color theming
+ */
+
+.wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.wrapper:has(input:disabled) {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ── Hide native checkbox — but keep it in DOM for accessibility ── */
+.input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ── Track ── */
+.track {
+  /* Component-level tokens */
+  --toggle-on:     var(--accent);
+  --toggle-off:    var(--border);
+  --toggle-size:   24px;   /* height */
+  --toggle-width:  50px;
+  --toggle-knob:   20px;   /* knob diameter */
+
+  position: relative;
+  display: inline-block;
+  width: var(--toggle-width);
+  height: var(--toggle-size);
+  border-radius: var(--toggle-size);
+  background: var(--toggle-off);
+  transition: background 0.2s ease-in-out;
+  flex-shrink: 0;
+}
+
+/* ── Knob via ::before ── */
+.track::before {
+  content: '';
+  position: absolute;
+  top: calc((var(--toggle-size) - var(--toggle-knob)) / 2);
+  left:  calc((var(--toggle-size) - var(--toggle-knob)) / 2);
+  width: var(--toggle-knob);
+  height: var(--toggle-knob);
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px color-mix(in srgb, black 20%, transparent);
+  transition: transform 0.2s ease-in-out;
+}
+
+/* ── :checked states via adjacent sibling combinator ── */
+.input:checked + .track {
+  background: var(--toggle-on);
+}
+
+.input:checked + .track::before {
+  /* travel = width - knob - 2 * offset = 50 - 20 - 4 = 26px */
+  transform: translateX(calc(var(--toggle-width) - var(--toggle-knob) - (var(--toggle-size) - var(--toggle-knob))));
+}
+
+/* ── :focus-visible ring on the hidden input propagated to track ── */
+.input:focus-visible + .track {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ── Label text ── */
+.label {
+  font-size: 13px;
+  color: var(--text-primary);
+  line-height: 1.4;
+}

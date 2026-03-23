@@ -1,0 +1,46 @@
+/*
+ * Badge — data-variant + color-mix() tint
+ *
+ * PATTERN: A single CSS custom property --badge-color fans out to
+ * background, border, and text using color-mix(). Adding a new variant
+ * is one line: set --badge-color. The tint ratios never need to change.
+ *
+ * Override example:
+ *   style={{ '--badge-color': '#a855f7' }}  → purple badge, no code change
+ */
+
+.badge {
+  /* ── Component token default ── */
+  --badge-color: var(--accent-subtle);
+
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 9999px;  /* pill */
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  line-height: 1.6;
+
+  /* All three derived from a single token */
+  color: var(--badge-color);
+  background: color-mix(in srgb, var(--badge-color) 13%, transparent);
+  border: 1px solid color-mix(in srgb, var(--badge-color) 25%, transparent);
+}
+
+/* ── Semantic variants ── */
+.badge[data-variant='success'] { --badge-color: #22c55e; }
+.badge[data-variant='warning'] { --badge-color: #f59e0b; }
+.badge[data-variant='danger']  { --badge-color: #ef4444; }
+.badge[data-variant='accent']  { --badge-color: var(--accent-subtle); }
+.badge[data-variant='info']    { --badge-color: #38bdf8; }
+.badge[data-variant='neutral'] { --badge-color: var(--text-tertiary); }
+
+/* ── Size variant ── */
+.badge[data-size='md'] {
+  font-size: 12px;
+  padding: 3px 10px;
+}
