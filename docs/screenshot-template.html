@@ -1,0 +1,87 @@
+<!--
+  PR SCREENSHOT TEMPLATE
+  ======================
+  Storybook-style canvas for capturing before/after component screenshots.
+  Used in PR descriptions as a 2-column before/after grid.
+
+  VIEWPORT SIZING RULES
+  ─────────────────────
+  Resize the browser before screenshotting based on component scale:
+
+  Inline / small (toggles, badges, buttons, inputs, segmented controls)
+    → 480 × 300   — tight crop, component fills the spotlight
+
+  Medium (dropdowns, form groups, cards, modals)
+    → 640 × 400   — room to breathe without excess whitespace
+
+  Block / page-level (full layouts, page sections, grid systems)
+    → 1280 × 720  — full viewport, no forced centering needed
+
+  WORKFLOW (with Playwright MCP)
+  ──────────────────────────────
+  1. Copy this file to docs/_tmp_starter.html and docs/_tmp_solution.html
+  2. In _tmp_starter.html:  paste starter HTML + no component CSS
+  3. In _tmp_solution.html: paste solution HTML + full component CSS
+     (add width to .component-wrapper if flex: 1 children collapse)
+  4. Serve the docs/ directory:
+       python3 -m http.server 8765
+  5. Resize viewport to match the sizing rule above, then navigate and screenshot:
+       browser_resize   → target dimensions
+       browser_navigate → http://localhost:8765/_tmp_starter.html
+       browser_take_screenshot → docs/<name>-starter.png
+       browser_navigate → http://localhost:8765/_tmp_solution.html
+       browser_take_screenshot → docs/<name>-solution.png
+  6. Kill the server and delete the _tmp_* files
+  7. Use the PR table below in the pull request body
+
+  PR DESCRIPTION TABLE
+  ────────────────────
+  | Starter | Solution |
+  |---------|----------|
+  | ![Starter](https://raw.githubusercontent.com/<owner>/<repo>/<branch>/docs/<name>-starter.png) | ![Solution](https://raw.githubusercontent.com/<owner>/<repo>/<branch>/docs/<name>-solution.png) |
+
+  Replace <owner>, <repo>, <branch>, and <name> to match your branch.
+  Use raw.githubusercontent.com so images render inline without clicking.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: #f8f8f8;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 14px;
+    }
+
+    /*
+      .component-wrapper is optional — use it when the component needs a
+      fixed width to prevent flex children from collapsing (e.g. flex: 1 labels).
+      Remove it for naturally-sized components.
+    */
+    .component-wrapper {
+      /* width: 320px; */
+    }
+
+    /* ─── PASTE COMPONENT CSS BELOW ─────────────────────────────────────── */
+
+
+    /* ─── END COMPONENT CSS ──────────────────────────────────────────────── */
+  </style>
+</head>
+<body>
+
+  <!-- PASTE COMPONENT HTML BELOW -->
+
+
+  <!-- END COMPONENT HTML -->
+
+</body>
+</html>

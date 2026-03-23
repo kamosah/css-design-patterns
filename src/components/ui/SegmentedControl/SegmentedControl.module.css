@@ -1,0 +1,117 @@
+/*
+ * SegmentedControl — hidden radios + adjacent sibling combinator
+ *
+ * PATTERN: Each option is a hidden <input type="radio"> immediately followed
+ * by a <label>. The label is the visible segment; all visual state is driven
+ * by CSS pseudo-classes and the adjacent sibling combinator (+):
+ *
+ *   input:checked        + label  → active segment
+ *   input:disabled       + label  → dimmed option
+ *   input:focus-visible  + label  → keyboard focus ring
+ *
+ * label:first-of-type / label:last-of-type apply corner radii to the outer
+ * segments even though <input> elements precede them in the DOM. :*-of-type
+ * matches by element type among siblings, not by overall DOM position.
+ *
+ * overflow: hidden on the root clips the border-radius pill. Labels carry
+ * full border declarations; border-inline-end is removed on all but the last
+ * to avoid a doubled 2px line between adjacent segments.
+ */
+
+.root {
+  /* Component tokens — override via the style prop */
+  --seg-active-bg:   var(--accent);
+  --seg-active-text: #fff;
+  --seg-border:      var(--border);
+  --seg-radius:      4px;
+
+  display: inline-flex;
+  overflow: hidden;
+  border-radius: var(--seg-radius);
+}
+
+/* ── Visually hidden inputs — remain in DOM for keyboard nav + a11y ── */
+.input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ── Segment labels ── */
+.label {
+  flex: 1;
+  padding-block: var(--seg-py, 0.4rem);
+  padding-inline: var(--seg-px, 0.875rem);
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  font-size: var(--seg-font-size, 0.875rem);
+  color: var(--text-primary);
+  background: var(--bg-surface);
+  border: 1px solid var(--seg-border);
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.label:not(:last-of-type) {
+  border-inline-end: none;
+}
+
+.label:first-of-type {
+  border-start-start-radius: var(--seg-radius);
+  border-end-start-radius: var(--seg-radius);
+}
+
+.label:last-of-type {
+  border-start-end-radius: var(--seg-radius);
+  border-end-end-radius: var(--seg-radius);
+}
+
+/* ── Size variants via component-level tokens ── */
+.root[data-size='sm'] {
+  --seg-py:        0.25rem;
+  --seg-px:        0.625rem;
+  --seg-font-size: 0.75rem;
+}
+
+.root[data-size='md'] {
+  --seg-py:        0.4rem;
+  --seg-px:        0.875rem;
+  --seg-font-size: 0.875rem;
+}
+
+.root[data-size='lg'] {
+  --seg-py:        0.625rem;
+  --seg-px:        1.125rem;
+  --seg-font-size: 1rem;
+}
+
+/* ── Active state ── */
+.input:checked + .label {
+  background: var(--seg-active-bg);
+  color: var(--seg-active-text);
+  border-color: var(--seg-active-bg);
+}
+
+/* ── Keyboard focus ring on the hidden input, surfaced on the label ── */
+.input:focus-visible + .label {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Disabled: full control ── */
+.root[data-disabled] {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* ── Disabled: individual option ── */
+.input:disabled + .label {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
