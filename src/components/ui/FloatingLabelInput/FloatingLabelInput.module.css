@@ -1,0 +1,83 @@
+/*
+ * FloatingLabelInput — :not(:placeholder-shown) + :focus + adjacent sibling combinator
+ *
+ * PATTERN: The input has placeholder=" " (a single space). This makes
+ * :placeholder-shown true when empty and :not(:placeholder-shown) true when
+ * filled. Combined with :focus, the adjacent sibling combinator (+) targets
+ * the label that immediately follows the input in the DOM:
+ *
+ *   input:focus                  + .label → float on focus
+ *   input:not(:placeholder-shown) + .label → persist float when filled
+ *
+ * The label is positioned absolutely over the input, centred vertically via
+ * top: 50% + translateY(-50%). A bg-surface background masks the border when
+ * the label lifts above it. pointer-events: none lets clicks pass through.
+ *
+ * margin-block-start on the wrapper reserves space for the floated label so
+ * it doesn't clip above the component's layout box.
+ */
+
+.wrapper {
+  /* Component tokens — override via the style prop */
+  --float-accent:       var(--accent);
+  --float-border:       var(--border);
+  --float-radius:       4px;
+  --float-label-color:  var(--text-secondary);
+
+  position: relative;
+  margin-block-start: 1.5rem;
+}
+
+/* ── Input ── */
+.input {
+  width: 100%;
+  padding-block: 0.75rem;
+  padding-inline: 0.5rem;
+  border: 1px solid var(--float-border);
+  border-radius: var(--float-radius);
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.input:focus {
+  border-color: var(--float-accent);
+}
+
+.input:focus-visible {
+  outline: 2px solid var(--float-accent);
+  outline-offset: 2px;
+}
+
+/* ── Label — initially positioned as placeholder text ── */
+.label {
+  position: absolute;
+  inset-inline-start: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--bg-surface);
+  padding-block: 0;
+  padding-inline: 0.25rem;
+  color: var(--float-label-color);
+  font-size: 1rem;
+  pointer-events: none;
+  transition: top 0.2s ease, transform 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+}
+
+/* ── Floated state: input focused or filled ── */
+.input:focus + .label,
+.input:not(:placeholder-shown) + .label {
+  top: 0;
+  transform: translateY(-100%) scale(0.8);
+  font-size: 0.8rem;
+  color: var(--float-accent);
+}
+
+/* ── Disabled ── */
+.wrapper[data-disabled] {
+  opacity: 0.5;
+  pointer-events: none;
+}
