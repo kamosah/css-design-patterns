@@ -1,4 +1,4 @@
-import type { CSSProperties, ElementType, ComponentPropsWithoutRef } from 'react'
+import React, { type CSSProperties, type ElementType, type ComponentPropsWithoutRef } from 'react'
 import s from './Button.module.css'
 
 type Variant = 'primary' | 'secondary' | 'ghost' | 'danger' | 'warning'
@@ -25,17 +25,29 @@ export function Button<E extends ElementType = 'button'>({
   disabled,
   children,
   className,
+  onClick,
+  tabIndex,
   ...props
 }: PolymorphicProps<E>) {
   const Tag = as ?? 'button'
+  const isButton = Tag === 'button'
+  const isDisabledLike = Boolean(disabled || loading)
+
   return (
     <Tag
       className={`${s.btn} ${className ?? ''}`.trim()}
       data-variant={variant}
       data-size={size}
       data-loading={loading || undefined}
-      disabled={Tag === 'button' ? (disabled ?? loading) : undefined}
-      aria-disabled={loading || disabled || undefined}
+      data-disabled={!isButton && isDisabledLike ? '' : undefined}
+      disabled={isButton ? (disabled ?? loading) : undefined}
+      aria-disabled={isDisabledLike || undefined}
+      tabIndex={!isButton && isDisabledLike ? -1 : tabIndex}
+      onClick={
+        !isButton && isDisabledLike
+          ? (e: React.MouseEvent) => { e.preventDefault(); e.stopPropagation() }
+          : onClick
+      }
       {...props}
     >
       {loading && <span className={s.spinner} aria-hidden="true" />}

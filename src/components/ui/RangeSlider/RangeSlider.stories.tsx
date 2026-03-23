@@ -38,19 +38,21 @@ export const Uncontrolled: Story = {
   ),
 }
 
+function ControlledDemo() {
+  const [val, setVal] = useState(50)
+  return (
+    <div style={{ maxWidth: 320, display: 'flex', flexDirection: 'column', gap: 12 }}>
+      <RangeSlider label="Temperature" value={val} onChange={setVal} />
+      <p style={{ fontSize: 12, color: 'var(--text-secondary)', margin: 0 }}>
+        Value: <strong style={{ color: 'var(--accent)' }}>{val}</strong>
+      </p>
+    </div>
+  )
+}
+
 export const Controlled: Story = {
   name: 'Controlled (value + onChange)',
-  render: () => {
-    const [val, setVal] = useState(50)
-    return (
-      <div style={{ maxWidth: 320, display: 'flex', flexDirection: 'column', gap: 12 }}>
-        <RangeSlider label="Temperature" value={val} onChange={setVal} />
-        <p style={{ fontSize: 12, color: 'var(--text-secondary)', margin: 0 }}>
-          Value: <strong style={{ color: 'var(--accent)' }}>{val}</strong>
-        </p>
-      </div>
-    )
-  },
+  render: () => <ControlledDemo />,
 }
 
 export const TokenOverrides: Story = {

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import type { CSSProperties } from 'react'
+import type { CSSProperties, ReactNode } from 'react'
 import { useState } from 'react'
 import { Button } from '../../components/ui/Button/Button'
 import { Badge } from '../../components/ui/Badge/Badge'
@@ -9,13 +9,13 @@ import { Card } from '../../components/ui/Card/Card'
 import { Alert } from '../../components/ui/Alert/Alert'
 
 /* ─── shared demo helpers ──────────────────────────────── */
-const Row = ({ children }: { children: React.ReactNode }) => (
+const Row = ({ children }: { children: ReactNode }) => (
   <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', alignItems: 'center' }}>
     {children}
   </div>
 )
 
-const Section = ({ label, children }: { label: string; children: React.ReactNode }) => (
+const Section = ({ label, children }: { label: string; children: ReactNode }) => (
   <div style={{ marginBottom: 24 }}>
     <p style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--text-tertiary)', marginBottom: 10 }}>{label}</p>
     {children}
@@ -364,11 +364,9 @@ For purely presentational composition like Card, static properties are sufficien
 /* ═══════════════════════════════════════════════════════════
    7. Modern CSS
 ═══════════════════════════════════════════════════════════ */
-export const ModernCSS: Story = {
-  name: '7 · Modern CSS',
-  render: () => {
-    const [val, setVal] = useState(50)
-    return (
+function ModernCSSDemo() {
+  const [val, setVal] = useState(50)
+  return (
       <div>
         <Section label="color-mix() — single token fans out to bg, border, text">
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10, maxWidth: 480 }}>
@@ -428,8 +426,12 @@ export const ModernCSS: Story = {
 /* CSS logical properties — RTL/i18n ready */
 .btn { padding-inline: var(--btn-px); padding-block: var(--btn-py); }`}</Code>
       </div>
-    )
-  },
+  )
+}
+
+export const ModernCSS: Story = {
+  name: '7 · Modern CSS',
+  render: () => <ModernCSSDemo />,
   parameters: {
     docs: {
       description: {

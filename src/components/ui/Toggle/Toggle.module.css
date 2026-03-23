@@ -7,7 +7,7 @@
  * No JavaScript state is needed for the visual transition.
  *
  * Key techniques:
- *   1. `display: none` on input removes it visually (label click still works)
+ *   1. Visually hidden input via 1px size + clipping keeps it focusable and in the a11y tree
  *   2. `input:checked + .track` — sibling combinator targets the track
  *   3. `::before` pseudo-element is the sliding knob
  *   4. `transform: translateX()` animates the knob

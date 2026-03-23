@@ -56,9 +56,11 @@
   outline-offset: 2px;
 }
 
-/* ── :disabled and loading ── */
+/* ── :disabled, loading, and non-button disabled state ── */
 .btn:disabled,
-.btn[data-loading='true'] {
+.btn[data-loading='true'],
+.btn[aria-disabled='true'],
+.btn[data-disabled] {
   opacity: 0.5;
   cursor: not-allowed;
   pointer-events: none;

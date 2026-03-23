@@ -43,7 +43,7 @@ export function Alert({
       {icon && <span className={s.icon} aria-hidden="true">{icon}</span>}
       <div className={s.content}>
         {title && <p className={s.title}>{title}</p>}
-        <p className={s.body}>{children}</p>
+        <div className={s.body}>{children}</div>
       </div>
       {onDismiss !== undefined && (
         <button
