@@ -1,0 +1,107 @@
+.section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 24px 48px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.headingRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 32px 0 20px;
+}
+
+.heading {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.storybookLink {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accent-subtle);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.storybookLink:hover {
+  color: var(--accent);
+}
+
+/* ── Block: label + content row ── */
+.block {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 12px 0;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.blockLabel {
+  flex: 0 0 72px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding-top: 2px;
+}
+
+/* ── Color groups ── */
+.colorGroups {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 24px;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.groupLabel {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.swatches {
+  display: flex;
+  gap: 6px;
+}
+
+.swatchItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.swatch {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+}
+
+.swatchName {
+  font-size: 9px;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* ── Component rows ── */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
