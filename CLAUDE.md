@@ -166,6 +166,53 @@ Story requirements: Default (with controls), All Variants, States (hover/disable
 - Dismiss buttons: `aria-label="Dismiss"`
 - Disabled: set both `disabled` attribute and `aria-disabled`
 
+## PR Screenshots
+
+Every PR that adds or changes a visible component or challenge should include a Starter/Solution screenshot grid in the PR description. Use `docs/screenshot-template.html` as the capture canvas.
+
+### Viewport sizing
+
+| Component scale | Viewport | Examples |
+|---|---|---|
+| Inline / small | 480 × 300 | toggles, badges, buttons, segmented controls |
+| Medium | 640 × 400 | dropdowns, form groups, cards |
+| Block / page-level | 1280 × 720 | full layouts, page sections |
+
+### Capture workflow
+
+```bash
+# 1. Copy and fill the template
+cp docs/screenshot-template.html docs/_tmp_before.html
+cp docs/screenshot-template.html docs/_tmp_after.html
+# Edit each: paste starter/solution HTML+CSS into the marked sections
+
+# 2. Serve docs/
+python3 -m http.server 8765
+
+# 3. Screenshot via Playwright MCP
+#    browser_resize  → target viewport dimensions
+#    browser_navigate → http://localhost:8765/_tmp_starter.html
+#    browser_take_screenshot → docs/<challenge>-starter.png
+#    browser_navigate → http://localhost:8765/_tmp_solution.html
+#    browser_take_screenshot → docs/<challenge>-solution.png
+
+# 4. Clean up
+kill $(lsof -ti:8765)
+rm docs/_tmp_starter.html docs/_tmp_solution.html
+```
+
+If labels or flex children collapse (e.g. `flex: 1` with no container width), add `width` to `.component-wrapper` in the temp file — not in the challenge solution CSS.
+
+### PR description table
+
+```markdown
+| Starter | Solution |
+|---------|----------|
+| ![Starter](https://raw.githubusercontent.com/<owner>/<repo>/<branch>/docs/<name>-starter.png) | ![Solution](https://raw.githubusercontent.com/<owner>/<repo>/<branch>/docs/<name>-solution.png) |
+```
+
+Use `raw.githubusercontent.com` URLs pointing at the **PR branch** so images render inline before the PR is merged.
+
 ## Adding a Challenge
 
 Challenges live in `src/challenges/<topic>/`. Each challenge is a directory with a `meta.ts` file conforming to the `Challenge` interface in `src/types/challenge.ts`. Register in the topic's `index.ts` and the curriculum registry in `src/curriculum/index.ts`.
