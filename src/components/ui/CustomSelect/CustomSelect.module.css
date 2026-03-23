@@ -1,0 +1,105 @@
+/*
+ * CustomSelect — appearance: none + ::after custom arrow + border-color transitions
+ *
+ * PATTERNS:
+ *   1. `appearance: none` (+ vendor prefixes) strips the browser-native dropdown arrow
+ *      cross-browser. The wrapper's `::after` injects a custom "▼" in its place.
+ *   2. `pointer-events: none` on `::after` lets all clicks fall through to the <select>.
+ *   3. Component tokens (--select-border, --select-border-focus) drive both default and
+ *      active border from one declaration per state — no duplicated color values.
+ *   4. `transition: border-color` only — avoids layout jank from animating width/height.
+ *   5. `data-size` attribute drives size variants (sm / md / lg) on the wrapper so a
+ *      single token change propagates to both the select and the arrow position.
+ *   6. `:has(.select:disabled)` on the wrapper dims the `::after` arrow in sync with
+ *      the disabled select — CSS compound state without JS.
+ */
+
+.wrapper {
+  /* Component tokens */
+  --select-border:        var(--border);
+  --select-border-focus:  var(--accent);
+  --select-arrow:         var(--text-secondary);
+  --select-bg:            var(--bg-surface);
+  --select-height:        40px;
+  --select-width:         200px;
+  --select-radius:        4px;
+  --select-font-size:     13px;
+  --select-arrow-size:    0.6rem;
+  --select-px:            1rem;
+
+  position: relative;
+  display: inline-block;
+  width: var(--select-width);
+}
+
+/* ── Size variants ── */
+.wrapper[data-size='sm'] {
+  --select-height:    32px;
+  --select-width:     160px;
+  --select-font-size: 12px;
+}
+
+.wrapper[data-size='lg'] {
+  --select-height:    48px;
+  --select-width:     240px;
+  --select-font-size: 14px;
+}
+
+/* ── Custom arrow via ::after ── */
+.wrapper::after {
+  content: "▼";
+  position: absolute;
+  right: var(--select-px);
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: var(--select-arrow-size);
+  color: var(--select-arrow);
+  /* Clicks pass through to the <select> underneath */
+  pointer-events: none;
+  transition: color 0.2s ease;
+}
+
+/* ── Select element ── */
+.select {
+  width: 100%;
+  height: var(--select-height);
+  /* Extra right padding reserves space for the custom arrow */
+  padding-inline: var(--select-px) calc(var(--select-px) * 2.5);
+  border: 1px solid var(--select-border);
+  border-radius: var(--select-radius);
+  background: var(--select-bg);
+  color: var(--text-primary);
+  font-size: var(--select-font-size);
+  font-family: inherit;
+  cursor: pointer;
+  /* Animate border-color only — width/height changes cause layout reflow */
+  transition: border-color 0.2s ease;
+
+  /* Cross-browser native arrow removal */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* ── Hover ── */
+.select:hover {
+  border-color: var(--select-border-focus);
+}
+
+/* ── Keyboard focus ── */
+.select:focus-visible {
+  outline: none;
+  border-color: var(--select-border-focus);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--select-border-focus) 20%, transparent);
+}
+
+/* ── Disabled ── */
+.select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Dim the custom arrow in sync — :has() compound state on wrapper */
+.wrapper:has(.select:disabled)::after {
+  opacity: 0.5;
+}
