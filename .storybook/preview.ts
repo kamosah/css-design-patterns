@@ -13,7 +13,7 @@ const preview: Preview = {
         Dark: '',
         Light: 'light',
       },
-      defaultTheme: 'Dark',
+      defaultTheme: 'Light',
       attributeName: 'data-theme',
     }),
   ],
