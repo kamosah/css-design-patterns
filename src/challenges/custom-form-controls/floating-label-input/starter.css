@@ -1,0 +1,16 @@
+.float-label {
+  /* Your code here: set position relative for wrapper */
+}
+
+.float-label .floating-input {
+  /* Your code here: width, padding, border, border-radius */
+}
+
+.float-label label {
+  /* Your code here: position absolute, initial placement, background, pointer-events none, transition */
+}
+
+.float-label input:focus + label,
+.float-label input:not(:placeholder-shown) + label {
+  /* Your code here: floated label styles (position, transform, font-size, color) */
+}
