@@ -1,0 +1,37 @@
+.custom-select-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.custom-select {
+  width: 200px;
+  height: 40px;
+  padding: 0 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  transition: border-color 0.2s ease;
+}
+
+.custom-select-wrapper::after {
+  content: "▼";
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.6rem;
+  color: #666;
+  pointer-events: none;
+}
+
+.custom-select:hover {
+  border-color: #0066cc;
+}
+
+.custom-select:focus {
+  outline: none;
+  border-color: #0066cc;
+}

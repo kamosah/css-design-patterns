@@ -1,0 +1,19 @@
+.custom-select-wrapper {
+  /* Your code here: positioning and display */
+}
+
+.custom-select {
+  /* Your code here: size, padding, border, radius, background, appearance removal, transition */
+}
+
+.custom-select-wrapper::after {
+  /* Your code here: create arrow icon, size, positioning, non-interactive */
+}
+
+.custom-select:hover {
+  /* Your code here: hover border-color */
+}
+
+.custom-select:focus {
+  /* Your code here: remove outline, focus border-color */
+}
