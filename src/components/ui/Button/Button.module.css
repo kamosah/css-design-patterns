@@ -1,0 +1,127 @@
+/*
+ * Button — data-attribute variants + polymorphic `as` + component-level tokens
+ *
+ * PATTERN: All color and sizing is driven by component-level CSS custom
+ * properties. data-variant and data-size set those properties; consumers
+ * can override any single token without touching this file.
+ *
+ * Override examples:
+ *   style={{ '--btn-radius': '999px' }}   → pill shape
+ *   style={{ '--btn-bg': '#a855f7' }}     → custom color one-off
+ */
+
+.btn {
+  /* ── Component-level token defaults (the "override surface") ── */
+  --btn-bg:        var(--accent);
+  --btn-bg-hover:  var(--accent-hover);
+  --btn-color:     #fff;
+  --btn-border:    transparent;
+  --btn-radius:    6px;
+  --btn-py:        6px;
+  --btn-px:        16px;
+  --btn-font-size: 13px;
+
+  /* ── Base styles ── */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: var(--btn-bg);
+  color: var(--btn-color);
+  border: 1px solid var(--btn-border);
+  border-radius: var(--btn-radius);
+
+  /* Logical properties for i18n-readiness */
+  padding-block: var(--btn-py);
+  padding-inline: var(--btn-px);
+
+  font-size: var(--btn-font-size);
+  font-weight: 600;
+  font-family: inherit;
+  line-height: 1;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.15s, border-color 0.15s, color 0.15s, opacity 0.15s;
+  user-select: none;
+}
+
+.btn:hover {
+  background: var(--btn-bg-hover, color-mix(in srgb, var(--btn-bg) 85%, black));
+}
+
+/* ── :focus-visible — keyboard only, not pointer focus ── */
+.btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ── :disabled, loading, and non-button disabled state ── */
+.btn:disabled,
+.btn[data-loading='true'],
+.btn[aria-disabled='true'],
+.btn[data-disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ── Variants via data attributes ── */
+
+.btn[data-variant='secondary'] {
+  --btn-bg:       var(--bg-surface);
+  --btn-bg-hover: var(--bg-inset);
+  --btn-color:    var(--text-primary);
+  --btn-border:   var(--border);
+}
+
+.btn[data-variant='ghost'] {
+  --btn-bg:       transparent;
+  --btn-bg-hover: var(--bg-elevated);
+  --btn-color:    var(--text-primary);
+  --btn-border:   transparent;
+}
+
+.btn[data-variant='danger'] {
+  --btn-bg:       #ef4444;
+  --btn-bg-hover: #dc2626;
+  --btn-color:    #fff;
+  --btn-border:   transparent;
+}
+
+.btn[data-variant='warning'] {
+  --btn-bg:       var(--warning-bg);
+  --btn-bg-hover: color-mix(in srgb, var(--warning-text) 20%, transparent);
+  --btn-color:    var(--warning-text);
+  --btn-border:   var(--warning-border);
+}
+
+/* ── Sizes via data attributes ── */
+
+.btn[data-size='sm'] {
+  --btn-py:        3px;
+  --btn-px:        10px;
+  --btn-font-size: 11px;
+  --btn-radius:    4px;
+}
+
+.btn[data-size='lg'] {
+  --btn-py:        10px;
+  --btn-px:        24px;
+  --btn-font-size: 15px;
+}
+
+/* ── Loading spinner ── */
+.spinner {
+  width: 12px;
+  height: 12px;
+  border: 2px solid color-mix(in srgb, currentColor 30%, transparent);
+  border-top-color: currentColor;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
