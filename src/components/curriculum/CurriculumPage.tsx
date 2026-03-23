@@ -1,6 +1,7 @@
 import { curriculum } from '../../curriculum'
 import { TopicSection } from './TopicSection'
 import { ThemeToggle } from '../ThemeToggle'
+import { DesignSystemPreview } from './DesignSystemPreview'
 import s from './CurriculumPage.module.css'
 
 export function CurriculumPage() {
@@ -35,6 +36,8 @@ export function CurriculumPage() {
           <TopicSection key={topic.id} topic={topic} defaultOpen={i === 0} />
         ))}
       </div>
+
+      <DesignSystemPreview />
     </div>
   )
 }
