@@ -21,8 +21,8 @@ export function InstructionsPanel({
 }: InstructionsPanelProps) {
   const [activeTab, setActiveTab] = useState<InstructionTab>('problem')
 
+  const { solutionHtml, solutionCss } = challenge
   const solutionSrcdoc = useMemo(() => {
-    const { solutionHtml, solutionCss } = challenge
     const isFullDocument = /^\s*<!doctype|^\s*<html/i.test(solutionHtml)
     if (isFullDocument) {
       return solutionHtml.replace('</head>', `<style>\n${solutionCss}\n</style>\n</head>`)
@@ -36,7 +36,7 @@ export function InstructionsPanel({
 </head>
 <body>${solutionHtml}</body>
 </html>`
-  }, [challenge.solutionHtml, challenge.solutionCss])
+  }, [solutionHtml, solutionCss])
 
   function handleTabClick(tab: InstructionTab) {
     setActiveTab(tab)

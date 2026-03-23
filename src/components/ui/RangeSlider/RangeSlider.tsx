@@ -1,4 +1,4 @@
-import type { CSSProperties } from 'react'
+import { useState, type CSSProperties } from 'react'
 import s from './RangeSlider.module.css'
 
 interface RangeSliderProps {
@@ -37,15 +37,22 @@ export function RangeSlider({
   if (thumbColor)  tokenOverrides['--range-thumb-color'] = thumbColor
 
   const isControlled = value !== undefined
+  const [uncontrolledValue, setUncontrolledValue] = useState(defaultValue ?? min)
+
+  const displayValue = isControlled ? value : uncontrolledValue
+
+  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const next = Number(e.target.value)
+    if (!isControlled) setUncontrolledValue(next)
+    onChange?.(next)
+  }
 
   return (
     <div className={s.wrapper}>
       {label && (
         <div className={s.header}>
           <span className={s.label}>{label}</span>
-          <span className={s.value}>
-            {isControlled ? value : (defaultValue ?? min)}
-          </span>
+          <span className={s.value}>{displayValue}</span>
         </div>
       )}
       <input
@@ -55,9 +62,10 @@ export function RangeSlider({
         max={max}
         step={step}
         {...(isControlled
-          ? { value, onChange: (e) => onChange?.(Number(e.target.value)) }
+          ? { value }
           : { defaultValue: defaultValue ?? min }
         )}
+        onChange={handleChange}
         disabled={disabled}
         style={{ ...tokenOverrides, ...style }}
       />

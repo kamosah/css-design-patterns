@@ -38,19 +38,21 @@ export const Uncontrolled: Story = {
   ),
 }
 
+function ControlledDemo() {
+  const [on, setOn] = useState(false)
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+      <Toggle label="Feature flag" checked={on} onChange={setOn} />
+      <p style={{ fontSize: 12, color: 'var(--text-secondary)', margin: 0 }}>
+        State: <strong style={{ color: 'var(--accent)' }}>{on ? 'on' : 'off'}</strong>
+      </p>
+    </div>
+  )
+}
+
 export const Controlled: Story = {
   name: 'Controlled (value + onChange)',
-  render: () => {
-    const [on, setOn] = useState(false)
-    return (
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-        <Toggle label="Feature flag" checked={on} onChange={setOn} />
-        <p style={{ fontSize: 12, color: 'var(--text-secondary)', margin: 0 }}>
-          State: <strong style={{ color: 'var(--accent)' }}>{on ? 'on' : 'off'}</strong>
-        </p>
-      </div>
-    )
-  },
+  render: () => <ControlledDemo />,
   parameters: {
     docs: {
       description: {

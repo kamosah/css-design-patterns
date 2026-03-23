@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
 // ─── Full token comparison data ───────────────────────────────────────────────
@@ -99,7 +100,7 @@ const ALL_TOKENS = [
 
 // ─── Overview component ───────────────────────────────────────────────────────
 
-const INFO_CARD_STYLE: React.CSSProperties = {
+const INFO_CARD_STYLE: CSSProperties = {
   background: "var(--bg-surface)",
   border: "1px solid var(--border)",
   borderRadius: "8px",

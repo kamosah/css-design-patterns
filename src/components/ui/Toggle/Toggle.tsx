@@ -38,10 +38,11 @@ export function Toggle({
         id={id}
         type="checkbox"
         className={s.input}
-        checked={checked}
-        defaultChecked={defaultChecked}
+        {...(checked !== undefined
+          ? { checked, onChange: handleChange }
+          : { defaultChecked }
+        )}
         disabled={disabled}
-        onChange={handleChange}
       />
       <span className={s.track} aria-hidden="true" />
       {label && <span className={s.label}>{label}</span>}
