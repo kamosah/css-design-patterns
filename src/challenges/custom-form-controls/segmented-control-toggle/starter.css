@@ -1,0 +1,27 @@
+.segmented-control {
+  /* Your code here: display flex and prevent overflow */
+}
+
+.segmented-control input {
+  /* Your code here: hide native radio controls */
+}
+
+.segmented-control label {
+  /* Your code here: flex layout, padding, text-align, border, transition */
+}
+
+.segmented-control label:not(:last-of-type) {
+  /* Your code here: remove right border on non-last labels */
+}
+
+.segmented-control label:first-of-type {
+  /* Your code here: apply top-left and bottom-left border-radius */
+}
+
+.segmented-control label:last-of-type {
+  /* Your code here: apply top-right and bottom-right border-radius */
+}
+
+.segmented-control input:checked + label {
+  /* Your code here: selected background-color and text color */
+}
