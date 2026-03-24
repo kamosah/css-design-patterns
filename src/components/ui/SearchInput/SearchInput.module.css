@@ -1,0 +1,86 @@
+/*
+ * SearchInput — ::before icon · WebKit suppression · width transition via tokens
+ *
+ * PATTERN: The wrapper is position: relative / inline-block so ::before can be
+ * anchored inside it. The magnifier icon lives in ::before with pointer-events:none
+ * so clicks pass through to the input. Native search decorations are removed via
+ * four ::-webkit-search-* pseudo-elements set to display:none.
+ *
+ * Width expansion on focus uses two component tokens (--search-width /
+ * --search-width-focus). CSS resolves each token to a concrete px value before
+ * running the transition, so the browser's transition engine sees two plain
+ * numeric widths and interpolates normally.
+ *
+ * outline: none is set on the base input; :focus-visible adds it back for
+ * keyboard navigation only, leaving mouse/touch interactions without a ring.
+ */
+
+.wrapper {
+  /* Component tokens — override via the style prop */
+  --search-accent:      var(--accent);
+  --search-border:      var(--border);
+  --search-radius:      4px;
+  --search-width:       200px;
+  --search-width-focus: 300px;
+  --search-icon-color:  var(--text-secondary);
+
+  position: relative;
+  display: inline-block;
+}
+
+/* ── Magnifier icon ── */
+.wrapper::before {
+  content: "🔍";
+  position: absolute;
+  inset-inline-start: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  color: var(--search-icon-color);
+  pointer-events: none;
+}
+
+/* ── Input ── */
+.input {
+  width: var(--search-width);
+  height: 2rem;
+  padding-block: 0;
+  padding-inline: 2rem 1rem;
+  border: 1px solid var(--search-border);
+  border-radius: var(--search-radius);
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-family: inherit;
+  -webkit-appearance: none;
+  outline: none;
+  transition: width 0.3s ease, border-color 0.2s ease;
+}
+
+.input:focus {
+  width: var(--search-width-focus);
+  border-color: var(--search-accent);
+}
+
+.input:focus-visible {
+  outline: 2px solid var(--search-accent);
+  outline-offset: 2px;
+}
+
+.input::placeholder {
+  color: var(--text-secondary);
+}
+
+/* ── Remove native WebKit search decorations ── */
+.input::-webkit-search-decoration,
+.input::-webkit-search-cancel-button,
+.input::-webkit-search-results-button,
+.input::-webkit-search-results-decoration {
+  display: none;
+}
+
+/* ── Disabled ── */
+.wrapper[data-disabled] {
+  opacity: 0.5;
+  pointer-events: none;
+}
