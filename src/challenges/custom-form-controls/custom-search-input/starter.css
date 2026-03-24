@@ -1,0 +1,21 @@
+.search-wrapper {
+  /* Your code here: positioning and display */
+}
+
+.search-wrapper::before {
+  /* Your code here: icon content, absolute positioning, non-interactive styling */
+}
+
+.custom-search {
+  /* Your code here: initial width, height, padding, border, border-radius, transitions, hide default appearance */
+}
+
+.custom-search:focus {
+  /* Your code here: expanded width, border-color, outline removal */
+}
+
+.custom-search::placeholder {
+  /* Your code here: placeholder text color */
+}
+
+/* Your code here: vendor pseudo-elements to hide default search decorations */
