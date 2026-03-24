@@ -1,0 +1,88 @@
+/*
+ * ColorPicker — appearance removal · swatch pseudo-element styling · hover/focus interactivity
+ *
+ * PATTERN: `appearance: none` strips the native color widget chrome entirely.
+ * The visible swatch is then rebuilt via two pseudo-element layers:
+ *   ::-webkit-color-swatch-wrapper — the inner padding host; zeroed out so the
+ *     swatch fills the full input box.
+ *   ::-webkit-color-swatch / ::-moz-color-swatch — the actual colored area;
+ *     styled with border, border-radius, and transitions.
+ *
+ * Transitions are declared on the swatch pseudo-elements (not the input) because
+ * the properties being animated (`border-color`, `transform`) live there. The
+ * hover selector compound — `.input:hover::-webkit-color-swatch` — reads as
+ * "when the input is hovered, style its swatch pseudo-element".
+ *
+ * Focus ring is applied to the input itself via `box-shadow` rather than
+ * `outline` because `outline` on a color input with `appearance: none` renders
+ * inconsistently across browsers. `box-shadow` is composited and reliable.
+ */
+
+.label {
+  /* Component tokens — override via the style prop */
+  --color-picker-size:       32px;
+  --color-picker-border:     var(--border);
+  --color-picker-accent:     #0066cc;
+  --color-picker-radius:     4px;
+  --color-picker-focus-ring: rgba(0, 102, 204, 0.3);
+
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+/* ── Input shell ── */
+.input {
+  width: var(--color-picker-size);
+  height: var(--color-picker-size);
+  padding: 0;
+  border: none;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  border-radius: var(--color-picker-radius);
+  background: transparent;
+}
+
+/* ── Remove wrapper padding ── */
+.input::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+/* ── Swatch: WebKit ── */
+.input::-webkit-color-swatch {
+  border: 2px solid var(--color-picker-border);
+  border-radius: var(--color-picker-radius);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+/* ── Swatch: Firefox ── */
+.input::-moz-color-swatch {
+  border: 2px solid var(--color-picker-border);
+  border-radius: var(--color-picker-radius);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+/* ── Hover ── */
+.input:hover::-webkit-color-swatch,
+.input:hover::-moz-color-swatch {
+  border-color: var(--color-picker-accent);
+  transform: scale(1.1);
+}
+
+/* ── Focus ── */
+.input:focus {
+  outline: none;
+}
+
+.input:focus-visible {
+  box-shadow: 0 0 0 3px var(--color-picker-focus-ring);
+  border-radius: var(--color-picker-radius);
+}
+
+/* ── Disabled ── */
+.label[data-disabled] {
+  opacity: 0.5;
+  pointer-events: none;
+}
