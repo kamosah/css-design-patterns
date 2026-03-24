@@ -1,0 +1,43 @@
+.color-picker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.custom-color {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.custom-color::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.custom-color::-webkit-color-swatch {
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.custom-color::-moz-color-swatch {
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.custom-color:hover::-webkit-color-swatch,
+.custom-color:hover::-moz-color-swatch {
+  border-color: #0066cc;
+  transform: scale(1.1);
+}
+
+.custom-color:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.3);
+}

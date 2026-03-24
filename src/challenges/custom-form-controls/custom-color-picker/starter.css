@@ -1,0 +1,28 @@
+.color-picker {
+  /* Your code here: inline-flex for label alignment, cursor pointer */
+}
+
+.custom-color {
+  /* Your code here: size, appearance removal, padding/border removal, cursor */
+}
+
+.custom-color::-webkit-color-swatch-wrapper {
+  /* Your code here: remove native padding */
+}
+
+.custom-color::-webkit-color-swatch {
+  /* Your code here: border, border-radius, transition setup */
+}
+
+.custom-color::-moz-color-swatch {
+  /* Your code here: border, border-radius for Firefox */
+}
+
+.custom-color:hover::-webkit-color-swatch,
+.custom-color:hover::-moz-color-swatch {
+  /* Your code here: hover border-color and transform */
+}
+
+.custom-color:focus {
+  /* Your code here: remove outline, add box-shadow focus ring */
+}
