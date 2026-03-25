@@ -1,0 +1,27 @@
+.tri-checkbox {
+  /* Your code here: container layout and cursor */
+}
+
+.tri-checkbox input {
+  /* Your code here: hide native checkbox */
+}
+
+.tri-checkbox .checkmark {
+  /* Your code here: size, border, border-radius, position */
+}
+
+.tri-checkbox input:checked + .checkmark {
+  /* Your code here: checked background-color */
+}
+
+.tri-checkbox input:checked + .checkmark::after {
+  /* Your code here: draw white tick mark */
+}
+
+.tri-checkbox input:indeterminate + .checkmark::before {
+  /* Your code here: draw horizontal dash */
+}
+
+@keyframes pulse {
+  /* Your code here: animate scale from 0.8 to 1.2 */
+}
