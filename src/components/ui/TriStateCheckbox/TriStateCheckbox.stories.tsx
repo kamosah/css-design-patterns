@@ -93,6 +93,68 @@ export const Controlled: Story = {
   },
 }
 
+const ITEMS = ['Read the docs', 'Run the tests', 'Open a PR'] as const
+
+function SelectAllDemo() {
+  const [checked, setChecked] = useState<Record<string, boolean>>({
+    'Read the docs': true,
+    'Run the tests': false,
+    'Open a PR': false,
+  })
+
+  const total = ITEMS.length
+  const selectedCount = Object.values(checked).filter(Boolean).length
+  const allChecked = selectedCount === total
+  const someChecked = selectedCount > 0 && selectedCount < total
+
+  function toggleAll() {
+    const next = !allChecked
+    setChecked({ 'Read the docs': next, 'Run the tests': next, 'Open a PR': next })
+  }
+
+  function toggleItem(label: string) {
+    setChecked((prev) => ({ ...prev, [label]: !prev[label] }))
+  }
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 10, alignItems: 'flex-start' }}>
+      <TriStateCheckbox
+        label="Select all"
+        checked={allChecked}
+        indeterminate={someChecked}
+        onChange={toggleAll}
+        style={{ fontWeight: 600 }}
+      />
+      <div style={{ width: '100%', height: 1, background: 'var(--border, #e2e8f0)' }} />
+      {ITEMS.map((item) => (
+        <TriStateCheckbox
+          key={item}
+          label={item}
+          checked={checked[item]}
+          onChange={() => toggleItem(item)}
+          style={{ paddingInlineStart: '1.5rem' }}
+        />
+      ))}
+      <p style={{ fontSize: 12, color: 'var(--text-secondary, #666)', margin: 0 }}>
+        {selectedCount} of {total} selected
+      </p>
+    </div>
+  )
+}
+
+export const SelectAll: Story = {
+  name: 'Select All (real-world indeterminate use case)',
+  render: () => <SelectAllDemo />,
+  parameters: {
+    docs: {
+      description: {
+        story:
+          '`indeterminate` is designed for "select all" parent checkboxes. When some — but not all — children are checked, the parent is set to `indeterminate` by JS logic, not by the user. Clicking the parent toggles all children; the indeterminate state is computed, never manually assigned.',
+      },
+    },
+  },
+}
+
 export const TokenOverride: Story = {
   name: 'Custom Sizes and Colors via Tokens',
   render: () => (
