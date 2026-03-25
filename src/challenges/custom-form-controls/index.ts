@@ -8,9 +8,10 @@ import { challenge as segmentedControlToggle } from './segmented-control-toggle/
 import { challenge as floatingLabelInput } from './floating-label-input/meta'
 import { challenge as customSearchInput } from './custom-search-input/meta'
 import { challenge as customColorPicker } from './custom-color-picker/meta'
+import { challenge as threeStateCheckbox } from './three-state-checkbox/meta'
 
 export const topic: Topic = {
   id: 'custom-form-controls',
   title: 'Custom Form Controls',
-  challenges: [customRadioButton, customFileUpload, customToggleSwitch, customRangeSlider, customSelectDropdown, segmentedControlToggle, floatingLabelInput, customSearchInput, customColorPicker],
+  challenges: [customRadioButton, customFileUpload, customToggleSwitch, customRangeSlider, customSelectDropdown, segmentedControlToggle, floatingLabelInput, customSearchInput, customColorPicker, threeStateCheckbox],
 }
