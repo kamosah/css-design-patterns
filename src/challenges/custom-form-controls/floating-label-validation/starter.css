@@ -1,0 +1,24 @@
+.validate-wrapper {
+  /* Your code here: define CSS variables and set position relative */
+}
+
+.validate-input {
+  /* Your code here: width, padding, border, border-radius, outline removal */
+}
+
+.validate-input + label {
+  /* Your code here: absolute positioning of label inside input and base styling */
+}
+
+.validate-input:focus + label,
+.validate-input:not(:placeholder-shown) + label {
+  /* Your code here: floating label styles (position, scale, color) */
+}
+
+.validate-wrapper label::after {
+  /* Your code here: content from data-error, positioning, default opacity and transform */
+}
+
+.validate-input:invalid:not(:focus):not(:placeholder-shown) + label::after {
+  /* Your code here: reveal error message */
+}
