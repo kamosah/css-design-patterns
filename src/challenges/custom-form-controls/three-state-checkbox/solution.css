@@ -1,0 +1,56 @@
+.tri-checkbox {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.tri-checkbox input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.tri-checkbox .checkmark {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #666;
+  border-radius: 4px;
+  margin-right: 0.5rem;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.tri-checkbox input:checked + .checkmark {
+  background-color: #2196F3;
+  border-color: #2196F3;
+}
+
+.tri-checkbox input:checked + .checkmark::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  width: 6px;
+  height: 10px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.tri-checkbox input:indeterminate + .checkmark::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 9px;
+  width: 12px;
+  height: 2px;
+  background-color: #666;
+  animation: pulse 1s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%   { transform: scaleX(0.8); }
+  50%  { transform: scaleX(1.2); }
+  100% { transform: scaleX(0.8); }
+}
