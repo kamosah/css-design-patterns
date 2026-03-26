@@ -18,7 +18,9 @@ const Row = ({ children }: { children: ReactNode }) => (
 const Section = ({ label, children }: { label: string; children: ReactNode }) => (
   <div style={{ marginBottom: 24 }}>
     <p style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--text-tertiary)', marginBottom: 10 }}>{label}</p>
-    {children}
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+      {children}
+    </div>
   </div>
 )
 
