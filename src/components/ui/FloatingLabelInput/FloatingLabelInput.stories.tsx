@@ -96,6 +96,54 @@ export const Controlled: Story = {
   },
 }
 
+function ValidationDemo() {
+  const [email, setEmail] = useState('')
+  const [username, setUsername] = useState('taken_name')
+
+  const emailError =
+    email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+      ? 'Please enter a valid email address'
+      : undefined
+  const usernameError = username === 'taken_name' ? 'This username is already taken' : undefined
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', width: 320 }}>
+      <FloatingLabelInput
+        label="Email"
+        type="email"
+        value={email}
+        onChange={setEmail}
+        error={emailError}
+      />
+      <FloatingLabelInput
+        label="Username"
+        type="text"
+        value={username}
+        onChange={setUsername}
+        error={usernameError}
+      />
+      <FloatingLabelInput
+        label="Password (no error)"
+        type="password"
+        defaultValue="valid-value"
+      />
+    </div>
+  )
+}
+
+export const ValidationStates: Story = {
+  name: 'Validation States',
+  render: () => <ValidationDemo />,
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'The `error` prop drives both the border/label colour (`data-invalid` on wrapper) and the error message span. Try typing a non-email in the first field or changing the username away from "taken_name" to clear the error.',
+      },
+    },
+  },
+}
+
 export const TokenOverride: Story = {
   name: 'Custom Colors via Tokens',
   render: () => (
