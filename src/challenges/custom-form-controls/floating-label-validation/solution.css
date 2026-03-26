@@ -1,0 +1,62 @@
+.validate-wrapper {
+  --primary-color: #0066cc;
+  --error-color: #cc0000;
+  --transition-duration: 0.2s;
+  position: relative;
+  width: 300px;
+  padding-top: 1rem;
+  padding-bottom: 1.5rem;
+}
+
+.validate-input {
+  width: 100%;
+  padding: 0.75rem 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  background-color: #fff;
+}
+
+.validate-input + label {
+  position: absolute;
+  left: 0.5rem;
+  top: 2.375rem;
+  transform: translateY(-50%);
+  background: #fff;
+  padding: 0 0.25rem;
+  color: #666;
+  transition: top var(--transition-duration) ease,
+              transform var(--transition-duration) ease,
+              color var(--transition-duration) ease;
+  pointer-events: none;
+  z-index: 1;
+  line-height: 1;
+}
+
+.validate-input:focus + label,
+.validate-input:not(:placeholder-shown) + label {
+  top: 1rem;
+  transform: translateY(-50%) scale(0.8);
+  color: var(--primary-color);
+}
+
+.validate-wrapper label::after {
+  content: attr(data-error);
+  position: absolute;
+  top: 4.5rem;
+  left: 0;
+  font-size: 0.85rem;
+  color: var(--error-color);
+  opacity: 0;
+  transform: translateY(-0.5rem);
+  transition: opacity var(--transition-duration) ease,
+              transform var(--transition-duration) ease;
+  pointer-events: none;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.validate-input:invalid:not(:focus):not(:placeholder-shown) + label::after {
+  opacity: 1;
+  transform: translateY(0);
+}

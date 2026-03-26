@@ -23,9 +23,13 @@
   --float-border:       var(--border);
   --float-radius:       4px;
   --float-label-color:  var(--text-secondary);
+  --float-error:        #ef4444;
 
   position: relative;
-  margin-block-start: 1.5rem;
+  /* Half the floated label height (~0.6rem at 0.8 scale) so the top half doesn't clip */
+  margin-block-start: 0.75rem;
+  /* Reserve space below for the error message without shifting label top: 50% */
+  margin-block-end: 1.5rem;
 }
 
 /* ── Input ── */
@@ -47,9 +51,10 @@
   border-color: var(--float-accent);
 }
 
+/* Remove default outline — border-color change serves as the focus ring.
+ * A separate outline would create a double-ring artifact. */
 .input:focus-visible {
-  outline: 2px solid var(--float-accent);
-  outline-offset: 2px;
+  outline: none;
 }
 
 /* ── Label — initially positioned as placeholder text ── */
@@ -58,26 +63,75 @@
   inset-inline-start: 0.5rem;
   top: 50%;
   transform: translateY(-50%);
-  background: var(--bg-surface);
+  /* Transparent at rest — no visible background behind placeholder-style text */
+  background: transparent;
   padding-block: 0;
   padding-inline: 0.25rem;
   color: var(--float-label-color);
   font-size: 1rem;
   pointer-events: none;
-  transition: top 0.2s ease, transform 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+  transition: top 0.2s ease, transform 0.2s ease, font-size 0.2s ease, color 0.2s ease, background 0.2s ease;
 }
 
 /* ── Floated state: input focused or filled ── */
+/*
+ * translateY(-50%) centres the label on the top border line —
+ * half above, half below — so the background masks the border
+ * behind the text rather than floating the label above the input.
+ */
 .input:focus + .label,
 .input:not(:placeholder-shown) + .label {
   top: 0;
-  transform: translateY(-100%) scale(0.8);
+  transform: translateY(-50%) scale(0.8);
   font-size: 0.8rem;
   color: var(--float-accent);
+  /* bg-surface masks the border line so the label "cuts through" it */
+  background: var(--bg-surface);
 }
 
 /* ── Disabled ── */
 .wrapper[data-disabled] {
   opacity: 0.5;
   pointer-events: none;
+}
+
+/* ── Validation — error border ── */
+/*
+ * [data-invalid] on wrapper → programmatic error (error prop is set)
+ *
+ * Note: we intentionally skip the CSS-native :invalid approach for border
+ * colour because it fires on empty required fields before the user has typed.
+ * Validation feedback is driven by the React error prop instead.
+ */
+.wrapper[data-invalid] .input {
+  border-color: var(--float-error);
+}
+
+/* ── Validation — error label color ── */
+.wrapper[data-invalid] .input + .label {
+  color: var(--float-error);
+}
+
+/* ── Validation — error message span ── */
+/*
+ * Always in the DOM so height is stable and animation runs on removal.
+ * role="alert" on the span announces changes to screen readers.
+ * opacity + translateY give a subtle slide-in without layout shift.
+ */
+.errorMessage {
+  position: absolute;
+  inset-block-start: calc(100% + 0.25rem);
+  inset-inline-start: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--float-error);
+  opacity: 0;
+  transform: translateY(-0.25rem);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+  min-height: 1em;
+}
+
+.wrapper[data-invalid] .errorMessage {
+  opacity: 1;
+  transform: translateY(0);
 }
