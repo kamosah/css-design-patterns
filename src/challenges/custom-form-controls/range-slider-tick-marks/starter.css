@@ -1,0 +1,47 @@
+.range-container {
+  /* Your code here: define --tick-count, --track-height, --thumb-size; position relative; padding */
+}
+
+/* Base input */
+.marked-range {
+  /* Your code here: full width, remove default appearance, transparent background */
+}
+
+/* Focus state — update CSS variables for thumb styling */
+.marked-range:focus-visible {
+  /* Your code here: update --thumb-border-color and --thumb-shadow */
+}
+
+/* Track for WebKit */
+.marked-range::-webkit-slider-runnable-track {
+  /* Your code here: height, repeating-linear-gradient tick marks, background-color, border-radius */
+}
+
+/* Track for Firefox */
+.marked-range::-moz-range-track {
+  /* Your code here: same as WebKit track */
+}
+
+/* Thumb for WebKit */
+.marked-range::-webkit-slider-thumb {
+  /* Your code here: size, background, border, border-radius, margin-top, appearance, cursor, transition */
+}
+
+/* Thumb for Firefox */
+.marked-range::-moz-range-thumb {
+  /* Your code here: same as WebKit thumb */
+}
+
+/* Min and max labels */
+.range-container::before,
+.range-container::after {
+  /* Your code here: position absolute, top, font-size, color */
+}
+
+.range-container::before {
+  /* Your code here: content "0", left: 0 */
+}
+
+.range-container::after {
+  /* Your code here: content "100", right: 0 */
+}
