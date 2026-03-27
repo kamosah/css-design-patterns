@@ -55,10 +55,47 @@ export const Controlled: Story = {
   render: () => <ControlledDemo />,
 }
 
+export const WithTickMarks: Story = {
+  name: 'Tick Marks',
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 24, maxWidth: 320 }}>
+      <RangeSlider label="Step: 10" min={0} max={100} step={10} defaultValue={40} tickMarks />
+      <RangeSlider label="Step: 25" min={0} max={100} step={25} defaultValue={50} tickMarks />
+      <RangeSlider label="Step: 5 (custom range)" min={0} max={50} step={5} defaultValue={20} tickMarks />
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story:
+          '`tickMarks` computes `--range-tick-count` from `(max - min) / step + 1` and sets it inline on the `<input>`. The CSS reads it inside `repeating-linear-gradient` on the track pseudo-element.',
+      },
+    },
+  },
+}
+
+export const WithLabels: Story = {
+  name: 'Tick Marks + Labels',
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 28, maxWidth: 320 }}>
+      <RangeSlider label="Volume" min={0} max={100} step={10} defaultValue={60} tickMarks showLabels />
+      <RangeSlider label="Temperature (°C)" min={16} max={30} step={2} defaultValue={22} tickMarks showLabels />
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story:
+          '`showLabels` renders a flex row of `<span>` elements with `justify-content: space-between` — dynamic min/max values from props, no pseudo-element `content:` hardcoding needed.',
+      },
+    },
+  },
+}
+
 export const TokenOverrides: Story = {
   name: 'Custom Colors via Tokens',
   render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 20, maxWidth: 320 }}>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 24, maxWidth: 320 }}>
       <RangeSlider
         label="Warning"
         defaultValue={60}
@@ -71,12 +108,22 @@ export const TokenOverrides: Story = {
         thumbColor="#22c55e"
         trackColor="color-mix(in srgb, #22c55e 30%, transparent)"
       />
+      <RangeSlider
+        label="Custom tick color"
+        defaultValue={50}
+        step={10}
+        tickMarks
+        showLabels
+        tickColor="#a855f7"
+        trackColor="color-mix(in srgb, #a855f7 20%, transparent)"
+        thumbColor="#a855f7"
+      />
     </div>
   ),
   parameters: {
     docs: {
       description: {
-        story: 'Pass `trackColor` and `thumbColor` props — they set `--range-track-color` and `--range-thumb-color` tokens inline.',
+        story: 'Pass `trackColor`, `thumbColor`, and `tickColor` props — they set the corresponding `--range-*` tokens inline.',
       },
     },
   },
