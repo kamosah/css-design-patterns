@@ -1,0 +1,52 @@
+.input-wrapper {
+  --valid-color: #28a745;
+  --invalid-color: #dc3545;
+  --transition-duration: 0.2s;
+  position: relative;
+  width: 300px;
+}
+
+.validation-input {
+  width: 100%;
+  height: 2rem;
+  padding: 0 2rem 0 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color var(--transition-duration) ease;
+  outline: none;
+}
+
+.input-wrapper::after {
+  content: '';
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%) translateX(10px);
+  font-size: 1rem;
+  opacity: 0;
+  transition: opacity var(--transition-duration) ease,
+              transform var(--transition-duration) ease;
+  pointer-events: none;
+}
+
+.input-wrapper:has(input:valid:not(:placeholder-shown)) .validation-input {
+  border-color: var(--valid-color);
+}
+
+.input-wrapper:has(input:valid:not(:placeholder-shown))::after {
+  content: '✔';
+  color: var(--valid-color);
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+.input-wrapper:has(input:invalid:not(:placeholder-shown)) .validation-input {
+  border-color: var(--invalid-color);
+}
+
+.input-wrapper:has(input:invalid:not(:placeholder-shown))::after {
+  content: '✖';
+  color: var(--invalid-color);
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}

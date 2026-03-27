@@ -11,9 +11,10 @@ import { challenge as customColorPicker } from './custom-color-picker/meta'
 import { challenge as threeStateCheckbox } from './three-state-checkbox/meta'
 import { challenge as floatingLabelValidation } from './floating-label-validation/meta'
 import { challenge as rangeSliderTickMarks } from './range-slider-tick-marks/meta'
+import { challenge as customEmailInputValidation } from './custom-email-input-validation/meta'
 
 export const topic: Topic = {
   id: 'custom-form-controls',
   title: 'Custom Form Controls',
-  challenges: [customRadioButton, customFileUpload, customToggleSwitch, customRangeSlider, customSelectDropdown, segmentedControlToggle, floatingLabelInput, customSearchInput, customColorPicker, threeStateCheckbox, floatingLabelValidation, rangeSliderTickMarks],
+  challenges: [customRadioButton, customFileUpload, customToggleSwitch, customRangeSlider, customSelectDropdown, segmentedControlToggle, floatingLabelInput, customSearchInput, customColorPicker, threeStateCheckbox, floatingLabelValidation, rangeSliderTickMarks, customEmailInputValidation],
 }

@@ -1,0 +1,29 @@
+.input-wrapper {
+  /* Your code here: define CSS variables and set position relative */
+}
+
+.validation-input {
+  /* Your code here: width, height, padding, border, border-radius, transition, outline removal */
+}
+
+.input-wrapper::after {
+  /* Your code here: pseudo-element for icon, absolute positioning, initial opacity and transform */
+}
+
+/* Valid state selector using :has() */
+.input-wrapper:has(input:valid:not(:placeholder-shown)) {
+  /* Your code here: change input border-color to var(--valid-color) */
+}
+
+.input-wrapper:has(input:valid:not(:placeholder-shown))::after {
+  /* Your code here: content "✔", color var(--valid-color), opacity 1, transform adjustment */
+}
+
+/* Invalid state selector */
+.input-wrapper:has(input:invalid:not(:placeholder-shown)) {
+  /* Your code here: change input border-color to var(--invalid-color) */
+}
+
+.input-wrapper:has(input:invalid:not(:placeholder-shown))::after {
+  /* Your code here: content "✖", color var(--invalid-color), opacity 1, transform adjustment */
+}
