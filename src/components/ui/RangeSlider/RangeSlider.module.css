@@ -22,6 +22,8 @@
   --range-track-height: 6px;
   --range-thumb-color:  var(--accent);
   --range-thumb-size:   16px;
+  --range-tick-color:   var(--text-tertiary);
+  /* --range-tick-count is set inline when tickMarks=true */
 
   -webkit-appearance: none;
   appearance: none;
@@ -47,6 +49,25 @@
   height: var(--range-track-height);
   background: var(--range-track-color);
   border-radius: var(--range-track-radius);
+}
+
+/*
+ * Tick marks: override only background-image so the base background-color
+ * (var(--range-track-color)) still fills through the gradient's transparent gaps.
+ * The interval is 100% / (tickCount - 1); a 1px line sits at the end of each.
+ *
+ * Note: WebKit and Firefox blocks are separate — mixing them
+ * in one selector list would invalidate the rule in any browser that doesn't
+ * recognize one of the vendor pseudo-elements.
+ */
+.range[data-tick-marks]::-webkit-slider-runnable-track {
+  background-image: repeating-linear-gradient(
+    to right,
+    transparent,
+    transparent calc(100% / (var(--range-tick-count) - 1) - 1px),
+    var(--range-tick-color) calc(100% / (var(--range-tick-count) - 1) - 1px),
+    var(--range-tick-color) calc(100% / (var(--range-tick-count) - 1))
+  );
 }
 
 /* ── Thumb (WebKit / Blink) ── */
@@ -84,6 +105,16 @@
   background: var(--range-track-color);
   border-radius: var(--range-track-radius);
   border: none;
+}
+
+.range[data-tick-marks]::-moz-range-track {
+  background-image: repeating-linear-gradient(
+    to right,
+    transparent,
+    transparent calc(100% / (var(--range-tick-count) - 1) - 1px),
+    var(--range-tick-color) calc(100% / (var(--range-tick-count) - 1) - 1px),
+    var(--range-tick-color) calc(100% / (var(--range-tick-count) - 1))
+  );
 }
 
 /* ── Thumb (Firefox) ── */
@@ -124,4 +155,14 @@
   font-family: ui-monospace, monospace;
   min-width: 32px;
   text-align: right;
+}
+
+/* ── Min / max labels below the track ── */
+.tickLabels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--text-tertiary);
+  margin-top: -4px;
+  user-select: none;
 }
