@@ -11,10 +11,16 @@ interface RangeSliderProps {
   value?: number
   onChange?: (value: number) => void
   label?: string
+  /** Show repeating-linear-gradient tick marks on the track */
+  tickMarks?: boolean
+  /** Show min / max numeric labels below the track (requires tickMarks) */
+  showLabels?: boolean
   /** Override --range-track-color component token */
   trackColor?: string
   /** Override --range-thumb-color component token */
   thumbColor?: string
+  /** Override --range-tick-color component token */
+  tickColor?: string
   disabled?: boolean
   style?: CSSProperties & Record<string, string | number>
 }
@@ -27,14 +33,27 @@ export function RangeSlider({
   value,
   onChange,
   label,
+  tickMarks = false,
+  showLabels = false,
   trackColor,
   thumbColor,
+  tickColor,
   disabled = false,
   style,
 }: RangeSliderProps) {
-  const tokenOverrides: Record<string, string> = {}
+  const tokenOverrides: Record<string, string | number> = {}
   if (trackColor) tokenOverrides['--range-track-color'] = trackColor
-  if (thumbColor)  tokenOverrides['--range-thumb-color'] = thumbColor
+  if (thumbColor) tokenOverrides['--range-thumb-color'] = thumbColor
+  if (tickColor)  tokenOverrides['--range-tick-color']  = tickColor
+
+  /*
+   * Tick count is set as a CSS variable on the <input> so that
+   * ::-webkit-slider-runnable-track and ::-moz-range-track can read it
+   * via repeating-linear-gradient — pseudo-elements only inherit from
+   * their own element, not from ancestors.
+   */
+  const tickCount = Math.round((max - min) / step) + 1
+  if (tickMarks) tokenOverrides['--range-tick-count'] = tickCount
 
   const isControlled = value !== undefined
   const [uncontrolledValue, setUncontrolledValue] = useState(defaultValue ?? min)
@@ -61,6 +80,7 @@ export function RangeSlider({
         min={min}
         max={max}
         step={step}
+        data-tick-marks={tickMarks || undefined}
         {...(isControlled
           ? { value }
           : { defaultValue: defaultValue ?? min }
@@ -69,6 +89,12 @@ export function RangeSlider({
         disabled={disabled}
         style={{ ...tokenOverrides, ...style }}
       />
+      {showLabels && (
+        <div className={s.tickLabels}>
+          <span>{min}</span>
+          <span>{max}</span>
+        </div>
+      )}
     </div>
   )
 }
