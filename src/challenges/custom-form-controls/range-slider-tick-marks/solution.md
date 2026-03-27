@@ -12,7 +12,7 @@ Let's build a custom range slider with tick marks and labels using CSS variables
 
 - **Lines 27–38** — The WebKit track uses `repeating-linear-gradient(to right, ...)` to draw tick marks. Each repeat interval is `100% / (var(--tick-count) - 1)` wide. The gradient paints a transparent band then a 1px `#666` line at the very end of each interval. `background-color: #eee` fills the track base (a shorthand background-image doesn't clear the background-color, so both coexist).
 
-- **Lines 41–52** — Firefox uses the same gradient logic on `::-moz-range-track`. The two vendor blocks are intentionally kept separate — combining them in a selector list would invalidate the entire rule in any browser that doesn't understand one of the pseudo-elements.
+- **Lines 41–52** — Firefox uses the same gradient logic on `::-moz-range-track`. The two vendor blocks are kept separate — combining them in a selector list would invalidate the entire rule in any browser that doesn't understand one of the pseudo-elements.
 
 - **Lines 55–67** — The WebKit thumb is sized `var(--thumb-size)` and positioned on the track centerline via `margin-top: calc((var(--track-height) - var(--thumb-size)) / 2)` — a negative value since the thumb is taller than the track. `appearance: none` is required a second time here; without it, WebKit ignores `width` and `height` on the thumb.
 
