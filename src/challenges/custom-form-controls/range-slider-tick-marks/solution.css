@@ -1,0 +1,99 @@
+.range-container {
+  --tick-count: 11;
+  --track-height: 8px;
+  --thumb-size: 20px;
+  position: relative;
+  padding-top: 20px;
+}
+
+/* Base input */
+.marked-range {
+  width: 100%;
+  appearance: none;
+  background: transparent;
+  height: var(--thumb-size);
+  position: relative;
+
+  --thumb-border-color: #666;
+  --thumb-shadow: #666;
+}
+
+/* On focus, update CSS variables */
+.marked-range:focus-visible {
+  --thumb-border-color: #0066cc;
+  --thumb-shadow: 0 0 0 4px rgba(0, 102, 204, 0.3);
+}
+
+/* Track for WebKit */
+.marked-range::-webkit-slider-runnable-track {
+  height: var(--track-height);
+  background: repeating-linear-gradient(
+    to right,
+    transparent,
+    transparent calc(100% / (var(--tick-count) - 1) - 1px),
+    #666 calc(100% / (var(--tick-count) - 1) - 1px),
+    #666 calc(100% / (var(--tick-count) - 1))
+  );
+  background-color: #eee;
+  border-radius: 4px;
+}
+
+/* Track for Firefox */
+.marked-range::-moz-range-track {
+  height: var(--track-height);
+  background: repeating-linear-gradient(
+    to right,
+    transparent,
+    transparent calc(100% / (var(--tick-count) - 1) - 1px),
+    #666 calc(100% / (var(--tick-count) - 1) - 1px),
+    #666 calc(100% / (var(--tick-count) - 1))
+  );
+  background-color: #eee;
+  border-radius: 4px;
+}
+
+/* Thumb (WebKit) */
+.marked-range::-webkit-slider-thumb {
+  width: var(--thumb-size);
+  height: var(--thumb-size);
+  background: #fff;
+  border: 2px solid var(--thumb-border-color);
+  border-radius: 50%;
+  margin-top: calc((var(--track-height) - var(--thumb-size)) / 2);
+  appearance: none;
+  cursor: pointer;
+  box-shadow: var(--thumb-shadow);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Thumb (Firefox) */
+.marked-range::-moz-range-thumb {
+  width: var(--thumb-size);
+  height: var(--thumb-size);
+  background: #fff;
+  border: 2px solid var(--thumb-border-color);
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: var(--thumb-shadow);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Min and max labels */
+.range-container::before,
+.range-container::after {
+  position: absolute;
+  top: 100%;
+  transform: translateY(4px);
+  font-size: 0.8rem;
+  color: #333;
+}
+
+.range-container::before {
+  content: "0";
+  left: 0;
+}
+
+.range-container::after {
+  content: "100";
+  right: 0;
+}
