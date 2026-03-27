@@ -99,7 +99,7 @@
 /*
  * [data-invalid] on wrapper → programmatic error (error prop is set)
  *
- * Note: we intentionally skip the CSS-native :invalid approach for border
+ * Note: we skip the CSS-native :invalid approach for border
  * colour because it fires on empty required fields before the user has typed.
  * Validation feedback is driven by the React error prop instead.
  */
