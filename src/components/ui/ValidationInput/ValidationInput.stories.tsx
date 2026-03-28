@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { ValidationInput } from './ValidationInput'
 
 const meta: Meta<typeof ValidationInput> = {
-  title: 'Design System/ValidationInput',
+  title: 'Components/ValidationInput',
   component: ValidationInput,
   parameters: {
     docs: {
