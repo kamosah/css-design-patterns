@@ -1,0 +1,102 @@
+/*
+ * ValidationInput — CSS :has() + ::after icon + border-color feedback
+ *
+ * PATTERNS:
+ *   1. :has(input:valid:not(:placeholder-shown)) — detects a filled, valid email
+ *      on the wrapper without JS; :not(:placeholder-shown) prevents the red
+ *      state firing on an empty required field before the user types.
+ *   2. ::after on the wrapper — inputs cannot have pseudo-elements; the wrapper
+ *      owns the icon slot. pointer-events: none keeps it non-interactive.
+ *   3. Component tokens (--valid-color, --invalid-color) drive both the icon
+ *      colour and the border-color from a single declaration per state.
+ *   4. translateX(10px) → translateX(0) slide-in animation reveals the icon
+ *      smoothly alongside the opacity transition.
+ *   5. transition on border-color only — avoids layout jank from layout props.
+ */
+
+.wrapper {
+  /* Component tokens */
+  --valid-color:         #28a745;
+  --invalid-color:       #dc3545;
+  --transition-duration: 0.2s;
+  --input-border:        var(--border);
+  --input-height:        2rem;
+  --input-width:         300px;
+  --input-radius:        4px;
+
+  position: relative;
+  width: var(--input-width);
+}
+
+/* ── Input ── */
+.input {
+  width: 100%;
+  height: var(--input-height);
+  /* padding-right reserves space for the ::after icon */
+  padding-inline-end: 2rem;
+  padding-inline-start: 0.5rem;
+  border: 1px solid var(--input-border);
+  border-radius: var(--input-radius);
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color var(--transition-duration) ease;
+}
+
+.input:focus-visible {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 20%, transparent);
+}
+
+.input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ── Icon slot — initially hidden, slid offscreen to the right ── */
+.wrapper::after {
+  content: '';
+  position: absolute;
+  inset-inline-end: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%) translateX(10px);
+  font-size: 1rem;
+  line-height: 1;
+  opacity: 0;
+  transition:
+    opacity var(--transition-duration) ease,
+    transform var(--transition-duration) ease;
+  pointer-events: none;
+}
+
+/* ── Valid state ── */
+.wrapper:has(.input:valid:not(:placeholder-shown)) .input {
+  border-color: var(--valid-color);
+}
+
+.wrapper:has(.input:valid:not(:placeholder-shown))::after {
+  content: '✔';
+  color: var(--valid-color);
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+/* ── Invalid state ── */
+.wrapper:has(.input:invalid:not(:placeholder-shown)) .input {
+  border-color: var(--invalid-color);
+}
+
+.wrapper:has(.input:invalid:not(:placeholder-shown))::after {
+  content: '✖';
+  color: var(--invalid-color);
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+/* Suppress validation icons on a disabled input */
+.wrapper:has(.input:disabled)::after {
+  display: none;
+}
