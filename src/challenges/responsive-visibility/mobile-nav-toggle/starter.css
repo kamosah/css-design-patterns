@@ -1,0 +1,25 @@
+.mobile-nav {
+  /* Your code here: base mobile-nav styles */
+}
+
+.desktop-nav {
+  /* Your code here: base desktop-nav styles */
+}
+
+@media (max-width: 767px) {
+  .mobile-nav {
+    /* Your code here: show mobile-nav */
+  }
+  .desktop-nav {
+    /* Your code here: hide desktop-nav */
+  }
+}
+
+@media (min-width: 768px) {
+  .mobile-nav {
+    /* Your code here: hide mobile-nav */
+  }
+  .desktop-nav {
+    /* Your code here: show desktop-nav */
+  }
+}

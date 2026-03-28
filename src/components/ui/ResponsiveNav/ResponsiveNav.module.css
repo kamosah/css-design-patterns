@@ -1,0 +1,83 @@
+/*
+ * ResponsiveNav — media query visibility toggle
+ *
+ * PATTERNS:
+ *   1. Both navs start with display: none — only one breakpoint needs
+ *      to opt in with display: block, keeping each query minimal.
+ *   2. max-width: 767px / min-width: 768px — non-overlapping ranges
+ *      ensure exactly one nav is visible at the breakpoint boundary.
+ *   3. Desktop list uses display: flex on <ul> to produce a horizontal
+ *      row — no extra wrapper element needed.
+ *   4. Component tokens drive colors and spacing so consumers can
+ *      override via the style prop without touching CSS files.
+ */
+
+.root {
+  /* Component tokens */
+  --nav-bg-mobile:   var(--bg-surface);
+  --nav-bg-desktop:  var(--bg-base);
+  --nav-link-color:  var(--text-primary);
+  --nav-gap:         1.5rem;
+  --nav-padding:     1rem;
+}
+
+/* ── Both navs hidden by default ── */
+.mobileNav,
+.desktopNav {
+  display: none;
+  padding: var(--nav-padding);
+}
+
+/* ── Shared link styles ── */
+.link {
+  text-decoration: none;
+  color: var(--nav-link-color);
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.link:hover {
+  color: var(--accent);
+}
+
+.link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* ── Mobile nav ── */
+@media (max-width: 767px) {
+  .mobileNav {
+    display: block;
+    background: var(--nav-bg-mobile);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .mobileList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
+/* ── Desktop nav ── */
+@media (min-width: 768px) {
+  .desktopNav {
+    display: block;
+    background: var(--nav-bg-desktop);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .desktopList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    gap: var(--nav-gap);
+  }
+}
