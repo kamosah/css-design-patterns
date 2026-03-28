@@ -9,7 +9,7 @@ import solutionCss from './solution.css?raw'
 export const challenge: Challenge = {
   id: 'custom-email-input-validation',
   title: 'Custom Email Input with Inline Validation Icons',
-  difficulty: 'medium',
+  difficulty: 'hard',
   estimatedMinutes: 40,
   instructions,
   solutionExplanation,
