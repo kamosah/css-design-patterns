@@ -1,0 +1,34 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.content {
+  /* Your code here: base content styles */
+}
+
+.sidebar {
+  /* Your code here: base sidebar styles */
+}
+
+@media (max-width: 1199px) {
+  .sidebar {
+    /* Your code here: hide sidebar */
+  }
+  .content {
+    /* Your code here: full-width content when sidebar is hidden */
+  }
+}
+
+@media (min-width: 1200px) {
+  .layout {
+    /* Your code here: make layout flex with spacing between items */
+  }
+
+  .sidebar {
+    /* Your code here: show sidebar */
+  }
+  .content {
+    /* Your code here: adjust content width when sidebar is visible */
+  }
+}
