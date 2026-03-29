@@ -1,0 +1,41 @@
+/* Base styles */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.content {
+  width: 100%;
+  padding: 1rem;
+}
+
+.sidebar {
+  width: 25%;
+  padding: 1rem;
+  background-color: #f4f4f4;
+}
+
+/* Mobile/Tablet view: hide sidebar, content full width */
+@media (max-width: 1199px) {
+  .sidebar {
+    display: none;
+  }
+  .content {
+    width: 100%;
+  }
+}
+
+/* Desktop view: show sidebar, adjust content width */
+@media (min-width: 1200px) {
+  .layout {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .content {
+    flex: 1 1 0;
+  }
+  .sidebar {
+    flex: 0 0 300px;
+  }
+}
