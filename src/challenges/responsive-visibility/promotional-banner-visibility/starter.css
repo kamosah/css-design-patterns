@@ -1,0 +1,25 @@
+.desktop-banner {
+  /* Your code here: base desktop-banner styles */
+}
+
+.mobile-banner {
+  /* Your code here: base mobile-banner styles */
+}
+
+@media (max-width: 1023px) {
+  .desktop-banner {
+    /* Your code here: hide desktop-banner */
+  }
+  .mobile-banner {
+    /* Your code here: show mobile-banner */
+  }
+}
+
+@media (min-width: 1024px) {
+  .desktop-banner {
+    /* Your code here: show desktop-banner */
+  }
+  .mobile-banner {
+    /* Your code here: hide mobile-banner */
+  }
+}

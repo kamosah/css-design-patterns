@@ -1,0 +1,37 @@
+/* Base styles */
+.desktop-banner {
+  display: none;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.mobile-banner {
+  display: none;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+/* Mobile view: show mobile-banner, hide desktop-banner */
+@media (max-width: 1023px) {
+  .desktop-banner {
+    display: none;
+  }
+  .mobile-banner {
+    display: block;
+  }
+}
+
+/* Desktop view: show desktop-banner, hide mobile-banner */
+@media (min-width: 1024px) {
+  .desktop-banner {
+    display: block;
+  }
+  .mobile-banner {
+    display: none;
+  }
+  .desktop-banner img,
+  .mobile-banner img {
+    max-width: 100%;
+    height: auto;
+  }
+}
