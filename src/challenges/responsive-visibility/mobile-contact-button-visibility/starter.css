@@ -1,0 +1,25 @@
+.mobile-contact {
+  /* Your code here: base button styles */
+}
+
+.footer-contact {
+  /* Your code here: base footer link styles */
+}
+
+@media (max-width: 599px) {
+  .mobile-contact {
+    /* Your code here: show mobile button */
+  }
+  .footer-contact {
+    /* Your code here: hide footer link */
+  }
+}
+
+@media (min-width: 600px) {
+  .mobile-contact {
+    /* Your code here: hide mobile button */
+  }
+  .footer-contact {
+    /* Your code here: show footer link */
+  }
+}
