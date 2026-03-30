@@ -1,0 +1,25 @@
+.footer-social-icons {
+  /* Your code here: base styles for social icons */
+}
+
+.mobile-share-button {
+  /* Your code here: base styles for mobile share button */
+}
+
+@media (max-width: 799px) {
+  .footer-social-icons {
+    /* Your code here: hide social icons */
+  }
+  .mobile-share-button {
+    /* Your code here: show share button */
+  }
+}
+
+@media (min-width: 800px) {
+  .footer-social-icons {
+    /* Your code here: show social icons */
+  }
+  .mobile-share-button {
+    /* Your code here: hide share button */
+  }
+}
