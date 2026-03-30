@@ -1,0 +1,44 @@
+/* Base styles */
+.mobile-contact {
+  display: none;
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  background-color: #007BFF;
+  color: #FFF;
+  border: none;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.footer-contact {
+  display: none;
+  text-decoration: none;
+  color: #007BFF;
+  font-weight: 500;
+  padding: 1rem;
+}
+
+/* Mobile view: show button, hide footer link */
+@media (max-width: 599px) {
+  .mobile-contact {
+    display: block;
+  }
+  .footer-contact {
+    display: none;
+  }
+}
+
+/* Desktop view: hide button, show footer link */
+@media (min-width: 600px) {
+  .mobile-contact {
+    display: none;
+  }
+  .footer-contact {
+    display: block;
+  }
+}
