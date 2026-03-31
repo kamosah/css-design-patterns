@@ -1,0 +1,54 @@
+.container {
+  /* Your code here: setup container for grid or flex layout */
+}
+
+.article-grid {
+  /* Your code here: base grid styles */
+}
+
+.article-grid article {
+  /* Your code here: base article styling (padding, background) */
+}
+
+.sidebar {
+  /* Your code here: base sidebar styles */
+}
+
+/* Mobile: single column, hide sidebar */
+@media (max-width: 599px) {
+  .container {
+    /* Your code here: single-column layout for container */
+  }
+  .article-grid {
+    /* Your code here: grid with 1 column */
+  }
+  .sidebar {
+    /* Your code here: hide sidebar */
+  }
+}
+
+/* Tablet: two columns, hide sidebar */
+@media (min-width: 600px) and (max-width: 899px) {
+  .container {
+    /* Your code here: layout remains single-column for container, sidebar hidden */
+  }
+  .article-grid {
+    /* Your code here: grid with 2 columns and gap */
+  }
+  .sidebar {
+    /* Your code here: hide sidebar */
+  }
+}
+
+/* Desktop: three columns and show sidebar */
+@media (min-width: 900px) {
+  .container {
+    /* Your code here: grid/flex with two columns: 75% and 25% */
+  }
+  .article-grid {
+    /* Your code here: grid with 3 columns and larger gap */
+  }
+  .sidebar {
+    /* Your code here: show sidebar and positioning */
+  }
+}
