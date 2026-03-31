@@ -1,0 +1,60 @@
+.site-header {
+  /* Your code here: base header layout */
+}
+
+.logo-small,
+.logo-medium,
+.logo-full,
+.nav-links,
+.hamburger-menu {
+  /* Your code here: base visibility */
+}
+
+.nav-links a {
+  /* Your code here: base nav link styles */
+}
+
+/* Mobile: < 500px */
+@media (max-width: 499px) {
+  .logo-small {
+    /* Your code here: show small logo */
+  }
+  .hamburger-menu {
+    /* Your code here: show hamburger */
+  }
+  .logo-medium,
+  .logo-full,
+  .nav-links {
+    /* Your code here: hide medium/full logos and nav links */
+  }
+}
+
+/* Tablet: 500px–799px */
+@media (min-width: 500px) and (max-width: 799px) {
+  .logo-medium {
+    /* Your code here: show medium logo */
+  }
+  .nav-links {
+    /* Your code here: show only first 3 links */
+  }
+  .logo-small,
+  .logo-full,
+  .hamburger-menu {
+    /* Your code here: hide small/full logos and hamburger */
+  }
+}
+
+/* Desktop: ≥ 800px */
+@media (min-width: 800px) {
+  .logo-full {
+    /* Your code here: show full logo */
+  }
+  .nav-links {
+    /* Your code here: show all links */
+  }
+  .logo-small,
+  .logo-medium,
+  .hamburger-menu {
+    /* Your code here: hide small/medium logos and hamburger */
+  }
+}

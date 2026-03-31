@@ -1,0 +1,85 @@
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background-color: #fff;
+}
+
+.logo-small img,
+.logo-medium img,
+.logo-full img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.logo-small img {
+  max-width: 30px;
+}
+
+.logo-medium img {
+  max-width: 50px;
+}
+
+.logo-full img {
+  max-width: 200px;
+}
+
+.nav-links a {
+  margin: 0 8px;
+  text-decoration: none;
+  color: #333;
+}
+
+/* Mobile: < 500px */
+@media (max-width: 499px) {
+  .logo-small {
+    display: block;
+  }
+  .hamburger-menu {
+    display: block;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .logo-medium,
+  .logo-full,
+  .nav-links {
+    display: none;
+  }
+}
+
+/* Tablet: 500px–799px */
+@media (min-width: 500px) and (max-width: 799px) {
+  .logo-medium {
+    display: block;
+  }
+  .nav-links a:nth-child(-n+3) {
+    display: inline-block;
+  }
+  .nav-links a:nth-child(n+4) {
+    display: none;
+  }
+  .logo-small,
+  .logo-full,
+  .hamburger-menu {
+    display: none;
+  }
+}
+
+/* Desktop: ≥ 800px */
+@media (min-width: 800px) {
+  .logo-full {
+    display: block;
+  }
+  .nav-links a {
+    display: inline-block;
+  }
+  .logo-small,
+  .logo-medium,
+  .hamburger-menu {
+    display: none;
+  }
+}
