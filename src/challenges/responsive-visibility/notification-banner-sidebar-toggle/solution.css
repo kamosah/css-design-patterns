@@ -1,0 +1,70 @@
+.notification-banner {
+  display: none;
+  background-color: #ffdd57;
+  color: #333;
+  text-align: center;
+  padding: 12px;
+  font-weight: bold;
+}
+
+.sidebar {
+  display: none;
+  background-color: #f1f1f1;
+  width: 250px;
+  height: 100%;
+  padding: 16px;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+  padding: 16px;
+}
+
+/* Mobile: < 600px */
+@media (max-width: 599px) {
+  .notification-banner {
+    display: block;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  .sidebar {
+    display: none;
+  }
+  .content {
+    padding-top: 48px;
+  }
+}
+
+/* Tablet: 600px–1023px */
+@media (min-width: 600px) and (max-width: 1023px) {
+  .notification-banner {
+    display: block;
+    position: static;
+  }
+  .sidebar {
+    display: none;
+  }
+  .content {
+    padding-top: 16px;
+  }
+}
+
+/* Desktop: ≥ 1024px */
+@media (min-width: 1024px) {
+  .notification-banner {
+    display: none;
+  }
+  .sidebar {
+    display: block;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 250px;
+    height: 100%;
+  }
+  .content {
+    margin-right: 250px;
+  }
+}

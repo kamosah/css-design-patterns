@@ -6,9 +6,10 @@ import { challenge as mobileContactButtonVisibility } from './mobile-contact-but
 import { challenge as footerSocialIconsVisibility } from './footer-social-icons-visibility/meta'
 import { challenge as responsiveArticleGridSidebarToggle } from './responsive-article-grid-sidebar-toggle/meta'
 import { challenge as responsiveTestimonialCarouselGridVisibility } from './responsive-testimonial-carousel-grid-visibility/meta'
+import { challenge as notificationBannerSidebarToggle } from './notification-banner-sidebar-toggle/meta'
 
 export const topic: Topic = {
   id: 'responsive-visibility',
   title: 'Responsive Visibility',
-  challenges: [mobileNavToggle, promotionalBannerVisibility, blogSidebarVisibility, mobileContactButtonVisibility, footerSocialIconsVisibility, responsiveArticleGridSidebarToggle, responsiveTestimonialCarouselGridVisibility],
+  challenges: [mobileNavToggle, promotionalBannerVisibility, blogSidebarVisibility, mobileContactButtonVisibility, footerSocialIconsVisibility, responsiveArticleGridSidebarToggle, responsiveTestimonialCarouselGridVisibility, notificationBannerSidebarToggle],
 }
