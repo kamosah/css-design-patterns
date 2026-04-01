@@ -1,0 +1,44 @@
+.notification-banner,
+.sidebar,
+.content {
+  /* Your code here: base visibility and layout */
+}
+
+/* Mobile: < 600px */
+@media (max-width: 599px) {
+  .notification-banner {
+    /* Your code here: fixed at top, full-width */
+  }
+  .sidebar {
+    /* Your code here: hide sidebar */
+  }
+  .content {
+    /* Your code here: add top padding equal to banner height */
+  }
+}
+
+/* Tablet: 600px–1023px */
+@media (min-width: 600px) and (max-width: 1023px) {
+  .notification-banner {
+    /* Your code here: show banner inline (static) */
+  }
+  .sidebar {
+    /* Your code here: hide sidebar */
+  }
+  .content {
+    /* Your code here: remove extra padding */
+  }
+}
+
+/* Desktop: ≥ 1024px */
+@media (min-width: 1024px) {
+  .notification-banner {
+    /* Your code here: hide banner */
+  }
+  .sidebar {
+    /* Your code here: fixed to right, full-height, width 250px */
+  }
+  .content {
+    /* Your code here: margin/padding to avoid overlapping sidebar */
+  }
+}
