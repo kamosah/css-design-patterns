@@ -127,10 +127,11 @@ export function ChallengePage() {
                   challenge.starterCss
                 )
               }
+              isLastChallenge={!nextChallenge}
               onNext={
                 nextChallenge
                   ? () => navigate(`/challenge/${nextChallenge.topicId}/${nextChallenge.challengeId}`)
-                  : undefined
+                  : () => navigate('/')
               }
             />
           </Panel>
