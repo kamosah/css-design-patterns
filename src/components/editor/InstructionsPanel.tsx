@@ -10,7 +10,8 @@ interface InstructionsPanelProps {
   challenge: Challenge
   showingSolution: boolean
   onToggleSolution: () => void
-  onNext?: () => void
+  onNext: () => void
+  isLastChallenge: boolean
 }
 
 export function InstructionsPanel({
@@ -18,6 +19,7 @@ export function InstructionsPanel({
   showingSolution,
   onToggleSolution,
   onNext,
+  isLastChallenge,
 }: InstructionsPanelProps) {
   const [activeTab, setActiveTab] = useState<InstructionTab>('problem')
 
@@ -97,13 +99,12 @@ export function InstructionsPanel({
           </div>
         )}
 
-        {onNext && (
-          <div className={s.nextRow}>
-            <button className={s.nextBtn} onClick={onNext}>
-              Next →
-            </button>
-          </div>
-        )}
+      </div>
+
+      <div className={s.nextRow}>
+        <button className={s.nextBtn} onClick={onNext}>
+          {isLastChallenge ? 'Finish ✓' : 'Next →'}
+        </button>
       </div>
     </div>
   )
