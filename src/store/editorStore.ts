@@ -8,6 +8,9 @@ interface SavedEdit {
   // Used to detect when upstream challenge content has been updated.
   starterHtmlSnapshot: string
   starterCssSnapshot: string
+  // User's edits to the solution panel (independent from starter edits).
+  solutionHtml?: string
+  solutionCss?: string
 }
 
 interface EditorStore {
@@ -31,7 +34,7 @@ interface EditorStore {
     starterHtml: string,
     starterCss: string
   ) => void
-  reset: (key: string, starterHtml: string, starterCss: string) => void
+  reset: (key: string, starterHtml: string, starterCss: string, solutionHtml: string, solutionCss: string) => void
 }
 
 export const useEditorStore = create<EditorStore>()(
@@ -75,35 +78,43 @@ export const useEditorStore = create<EditorStore>()(
       },
 
       setHtml(html) {
-        const { currentKey, savedEdits, css } = get()
+        const { currentKey, savedEdits, css, showingSolution } = get()
         const prev = savedEdits[currentKey]
         set((state) => ({
           html,
           savedEdits: {
             ...state.savedEdits,
-            [currentKey]: {
-              html,
-              css,
-              starterHtmlSnapshot: prev?.starterHtmlSnapshot ?? html,
-              starterCssSnapshot: prev?.starterCssSnapshot ?? css,
-            },
+            [currentKey]: showingSolution
+              ? { ...prev, solutionHtml: html }
+              : {
+                  html,
+                  css,
+                  starterHtmlSnapshot: prev?.starterHtmlSnapshot ?? html,
+                  starterCssSnapshot: prev?.starterCssSnapshot ?? css,
+                  solutionHtml: prev?.solutionHtml,
+                  solutionCss: prev?.solutionCss,
+                },
           },
         }))
       },
 
       setCss(css) {
-        const { currentKey, savedEdits, html } = get()
+        const { currentKey, savedEdits, html, showingSolution } = get()
         const prev = savedEdits[currentKey]
         set((state) => ({
           css,
           savedEdits: {
             ...state.savedEdits,
-            [currentKey]: {
-              html,
-              css,
-              starterHtmlSnapshot: prev?.starterHtmlSnapshot ?? html,
-              starterCssSnapshot: prev?.starterCssSnapshot ?? css,
-            },
+            [currentKey]: showingSolution
+              ? { ...prev, solutionCss: css }
+              : {
+                  html,
+                  css,
+                  starterHtmlSnapshot: prev?.starterHtmlSnapshot ?? html,
+                  starterCssSnapshot: prev?.starterCssSnapshot ?? css,
+                  solutionHtml: prev?.solutionHtml,
+                  solutionCss: prev?.solutionCss,
+                },
           },
         }))
       },
@@ -118,26 +129,48 @@ export const useEditorStore = create<EditorStore>()(
             css: saved?.css ?? starterCss,
           })
         } else {
-          set({ showingSolution: true, html: solutionHtml, css: solutionCss })
+          const saved = savedEdits[currentKey]
+          set({
+            showingSolution: true,
+            html: saved?.solutionHtml ?? solutionHtml,
+            css: saved?.solutionCss ?? solutionCss,
+          })
         }
       },
 
-      reset(key, starterHtml, starterCss) {
-        set((state) => ({
-          html: starterHtml,
-          css: starterCss,
-          showingSolution: false,
-          starterChanged: false,
-          savedEdits: {
-            ...state.savedEdits,
-            [key]: {
-              html: starterHtml,
-              css: starterCss,
-              starterHtmlSnapshot: starterHtml,
-              starterCssSnapshot: starterCss,
+      reset(key, starterHtml, starterCss, solutionHtml, solutionCss) {
+        const { showingSolution } = get()
+        if (showingSolution) {
+          set((state) => ({
+            html: solutionHtml,
+            css: solutionCss,
+            savedEdits: {
+              ...state.savedEdits,
+              [key]: {
+                ...state.savedEdits[key],
+                solutionHtml,
+                solutionCss,
+              },
             },
-          },
-        }))
+          }))
+        } else {
+          set((state) => ({
+            html: starterHtml,
+            css: starterCss,
+            showingSolution: false,
+            starterChanged: false,
+            savedEdits: {
+              ...state.savedEdits,
+              [key]: {
+                ...state.savedEdits[key],
+                html: starterHtml,
+                css: starterCss,
+                starterHtmlSnapshot: starterHtml,
+                starterCssSnapshot: starterCss,
+              },
+            },
+          }))
+        }
       },
     }),
     {
