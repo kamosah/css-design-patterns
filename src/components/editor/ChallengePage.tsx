@@ -100,7 +100,7 @@ export function ChallengePage() {
 
         <button
           className={s.headerBtn}
-          onClick={() => reset(challengeKey, challenge.starterHtml, challenge.starterCss)}
+          onClick={() => reset(challengeKey, challenge.starterHtml, challenge.starterCss, challenge.solutionHtml, challenge.solutionCss)}
         >
           Reset
         </button>
@@ -151,7 +151,7 @@ export function ChallengePage() {
                   onHtmlChange={setHtml}
                   onCssChange={setCss}
                   starterChanged={starterChanged}
-                  onReset={() => reset(challengeKey, challenge.starterHtml, challenge.starterCss)}
+                  onReset={() => reset(challengeKey, challenge.starterHtml, challenge.starterCss, challenge.solutionHtml, challenge.solutionCss)}
                 />
               </Panel>
 
