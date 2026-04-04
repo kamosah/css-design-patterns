@@ -9,7 +9,7 @@ import solutionCss from './solution.css?raw'
 export const challenge: Challenge = {
   id: 'notification-banner-sidebar-toggle',
   title: 'Notification Banner and Sidebar Toggle',
-  difficulty: 'medium',
+  difficulty: 'hard',
   estimatedMinutes: 40,
   instructions,
   solutionExplanation,
