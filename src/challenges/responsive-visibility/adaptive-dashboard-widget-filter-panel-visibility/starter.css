@@ -1,0 +1,183 @@
+/* Container for the entire dashboard layout */
+.dashboard-container {
+  /* Use CSS Grid layout */
+  /* Define column structure (e.g., sidebar + main) */
+}
+
+/* Sidebar navigation panel */
+.sidebar {
+  /* Set display mode */
+  /* Background color and text color */
+  /* Add padding and box-sizing */
+}
+
+/* Label inside the sidebar (e.g., text next to icons) */
+.sidebar .label {
+  /* Set visibility */
+  /* Optional margin or spacing */
+}
+
+/* Main content area of the dashboard */
+.main-content {
+  /* Use Flexbox for vertical stacking */
+  /* Add internal padding */
+}
+
+/* Panel used for filtering content (collapsible on small screens) */
+.filter-panel {
+  /* Set initial height and overflow */
+  /* Background color and border */
+  /* Add smooth transition effect */
+}
+
+/* Show the filter panel when focused or hovered */
+.filter-panel:focus-within,
+.filter-panel:hover {
+  /* Expand height for visibility */
+}
+
+/* Floating button to toggle filter panel (visible on mobile only) */
+.filter-toggle {
+  /* Set visibility */
+  /* Positioning (fixed bottom-right) */
+  /* Button styling: color, size, shape, etc. */
+  /* Add z-index for layering */
+}
+
+/* Layout for widget grid (responsive card layout) */
+.widgets {
+  /* Use grid layout */
+  /* Define columns and spacing */
+  /* Add margin on top */
+}
+
+/* Widget summary card (overview content) */
+.widget-summary {
+  /* Background color, padding, border-radius */
+}
+
+/* Detailed widget card (hidden by default) */
+.widget-detail {
+  /* Control visibility */
+}
+
+/* Mobile: < 480px */
+@media (max-width: 479px) {
+  .sidebar {
+    /* Hide sidebar */
+  }
+  .filter-toggle {
+    /* Show floating filter toggle */
+  }
+  .filter-panel {
+    /* Reposition and style for mobile */
+  }
+  .filter-panel:focus-within,
+  .filter-panel:hover {
+    /* Expand height, enable scroll */
+  }
+  .widgets {
+    /* Single-column layout */
+  }
+  .widget-summary {
+    /* Ensure visible */
+  }
+  .widget-detail.detail-1,
+  .widget-detail.detail-2,
+  .widget-detail.detail-3 {
+    /* Hide details on small screens */
+  }
+}
+
+/* Small Tablet: 480px–767px */
+@media (min-width: 480px) and (max-width: 767px) {
+  .sidebar {
+    /* Keep sidebar hidden */
+  }
+  .filter-toggle {
+    /* Hide toggle button */
+  }
+  .filter-panel {
+    /* Enable panel display with height toggle */
+  }
+  .filter-panel:focus-within,
+  .filter-panel:hover {
+    /* Expand height */
+  }
+  .widgets {
+    /* Still one column layout */
+  }
+  .widget-summary,
+  .widget-detail.detail-1 {
+    /* Show summary and one detail card */
+  }
+  .widget-detail.detail-2,
+  .widget-detail.detail-3 {
+    /* Hide remaining detail cards */
+  }
+}
+
+/* Large Tablet: 768px–1023px */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .dashboard-container {
+    /* Adjust grid columns (e.g., compact sidebar) */
+  }
+  .sidebar {
+    /* Show compact sidebar */
+  }
+  .sidebar .label {
+    /* Hide labels for compact view */
+  }
+  .filter-toggle {
+    /* Hide floating button */
+  }
+  .filter-panel {
+    /* Show panel with collapsible height */
+  }
+  @media (min-width: 992px) {
+    .filter-panel {
+      /* Fully expand filter panel */
+    }
+  }
+  .widgets {
+    /* Two-column layout */
+  }
+  .widget-summary,
+  .widget-detail.detail-1,
+  .widget-detail.detail-2 {
+    /* Show summary and two details */
+  }
+  .widget-detail.detail-3 {
+    /* Hide one detail */
+  }
+}
+
+/* Desktop: ≥ 1024px */
+@media (min-width: 1024px) {
+  .dashboard-container {
+    /* Full-width sidebar layout */
+  }
+  .sidebar {
+    /* Show expanded sidebar */
+  }
+  .sidebar .label {
+    /* Show sidebar labels */
+  }
+  .filter-toggle {
+    /* Hide toggle button */
+  }
+  .filter-panel {
+    /* Fully visible panel */
+  }
+  .widgets {
+    /* Three-column layout with grid rows */
+  }
+  .widget-summary {
+    /* Span full height */
+  }
+  .widget-detail.detail-1,
+  .widget-detail.detail-2,
+  .widget-detail.detail-3 {
+    /* Show all detail cards */
+  }
+}

@@ -7,8 +7,8 @@ import solutionHtml from './solution.html?raw'
 import solutionCss from './solution.css?raw'
 
 export const challenge: Challenge = {
-  id: 'notification-banner-sidebar-toggle',
-  title: 'Notification Banner and Sidebar Toggle',
+  id: 'adaptive-dashboard-widget-filter-panel-visibility',
+  title: 'Adaptive Dashboard Widget and Filter Panel Visibility',
   difficulty: 'hard',
   estimatedMinutes: 40,
   instructions,
