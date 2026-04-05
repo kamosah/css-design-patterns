@@ -1,0 +1,14 @@
+.accessible-input {
+  padding: 0.5rem 1rem;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #222;
+  outline: none;
+  transition: box-shadow 0.2s;
+}
+
+.accessible-input:focus {
+  box-shadow: 0 0 0 3px rgba(38, 132, 255, 0.5);
+  outline: none;
+}
