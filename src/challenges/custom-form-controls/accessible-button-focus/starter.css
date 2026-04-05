@@ -1,0 +1,7 @@
+.accessible-btn {
+  /* Your code here: add padding, background, border, etc. */
+}
+
+.accessible-btn:focus-visible {
+  /* Your code here: custom outline and offset */
+}
