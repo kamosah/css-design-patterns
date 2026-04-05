@@ -1,6 +1,6 @@
 ## Problem: Accessible Button Focus Indicator
 
-easy · 15 min · Try to add a custom visible focus outline to a button for better accessibility.
+Try to add a custom visible focus outline to a button for better accessibility.
 
 ## Problem description
 

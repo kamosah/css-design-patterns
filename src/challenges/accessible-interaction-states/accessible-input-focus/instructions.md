@@ -1,6 +1,6 @@
 ## Problem: Accessible Input Focus Highlight
 
-easy · 15 min · Try to add a custom focus highlight to a text input for clear accessibility feedback.
+Try to add a custom focus highlight to a text input for clear accessibility feedback.
 
 ## Problem description
 
