@@ -2,8 +2,9 @@ import type { Topic, Challenge } from '../types/challenge'
 import { topic as centeringAlignment } from '../challenges/centering-alignment'
 import { topic as customFormControls } from '../challenges/custom-form-controls'
 import { topic as responsiveVisibility } from '../challenges/responsive-visibility'
+import { topic as accessibleInteractionStates } from '../challenges/accessible-interaction-states'
 
-export const curriculum: Topic[] = [centeringAlignment, customFormControls, responsiveVisibility]
+export const curriculum: Topic[] = [centeringAlignment, customFormControls, responsiveVisibility, accessibleInteractionStates]
 
 // Pre-built lookup maps — O(1) access instead of iterating on every navigation
 const topicById = new Map<string, Topic>()
