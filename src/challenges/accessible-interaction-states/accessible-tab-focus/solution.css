@@ -1,0 +1,25 @@
+.tab-list {
+  display: flex;
+  border-bottom: 2px solid #dde1e7;
+  gap: 0.25rem;
+  background: #f9fafd;
+  padding: 0.25rem 0.5rem;
+}
+
+.tab {
+  background: none;
+  border: none;
+  outline: none;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  color: #1c365f;
+  border-radius: 8px 8px 0 0;
+  margin-bottom: -2px;
+  cursor: pointer;
+  transition: border-bottom 0.2s;
+}
+
+.tab:focus {
+  border-bottom: 4px solid #2684FF;
+  outline: none;
+}
