@@ -1,0 +1,13 @@
+.accessible-link {
+  color: #1557a0;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 2px 0;
+  outline: none;
+  transition: border-bottom 0.2s;
+}
+
+.accessible-link:focus {
+  border-bottom: 4px solid #2684FF;
+  outline: none;
+}
