@@ -49,21 +49,6 @@ export function InstructionsPanel({
   return (
     <div className={s.panel}>
       <div className={s.header}>
-        <div className={s.titleRow}>
-          <h2 className={s.title}>{challenge.title}</h2>
-          <span className={s.badge} data-difficulty={challenge.difficulty}>
-            {challenge.difficulty}
-          </span>
-          {challenge.estimatedMinutes != null && (
-            <span className={s.timeBadge}>
-              <svg className={s.clockIcon} viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                <circle cx="8" cy="8" r="6.5" stroke="currentColor" strokeWidth="1.5" />
-                <path d="M8 4.5V8l2 2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-              {challenge.estimatedMinutes} min
-            </span>
-          )}
-        </div>
         <div className={s.tabRow}>
           {(['problem', 'solution'] as InstructionTab[]).map((tab) => (
             <button
@@ -79,6 +64,20 @@ export function InstructionsPanel({
 
       {/* CSS module scoped to .content handles all markdown element styles */}
       <div className={s.content}>
+        <div className={s.meta}>
+          <span className={s.badge} data-difficulty={challenge.difficulty}>
+            {challenge.difficulty}
+          </span>
+          {challenge.estimatedMinutes != null && (
+            <span className={s.timeBadge}>
+              <svg className={s.clockIcon} viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <circle cx="8" cy="8" r="6.5" stroke="currentColor" strokeWidth="1.5" />
+                <path d="M8 4.5V8l2 2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              {challenge.estimatedMinutes} min
+            </span>
+          )}
+        </div>
         <ReactMarkdown remarkPlugins={[remarkGfm]}>
           {activeTab === 'solution' ? challenge.solutionExplanation : challenge.instructions}
         </ReactMarkdown>
