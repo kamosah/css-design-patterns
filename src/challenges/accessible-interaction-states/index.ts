@@ -7,5 +7,5 @@ import { challenge as accessibleLinkFocus } from './accessible-link-focus/meta'
 export const topic: Topic = {
   id: 'accessible-interaction-states',
   title: 'Accessible Interaction States',
-  challenges: [accessibleButtonFocus, accessibleCheckboxFocus, accessibleInputFocus, accessibleLinkFocus],
+  challenges: [accessibleButtonFocus, accessibleInputFocus, accessibleLinkFocus, accessibleCheckboxFocus],
 }
