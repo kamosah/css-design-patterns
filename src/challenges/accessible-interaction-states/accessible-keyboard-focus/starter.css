@@ -1,0 +1,7 @@
+.keyboard-focus {
+  /* Your code here: button styling and outline removal */
+}
+
+.keyboard-focus:focus-visible {
+  /* Your code here: custom outline and offset for focus-visible */
+}
