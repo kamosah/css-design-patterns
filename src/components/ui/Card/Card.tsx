@@ -1,15 +1,24 @@
 /* eslint-disable react-refresh/only-export-components */
-import type { CSSProperties, ReactNode } from 'react'
+import type { CSSProperties, ElementType, ComponentPropsWithoutRef, ReactNode } from 'react'
 import s from './Card.module.css'
 
 type CardVariant = 'outlined' | 'elevated' | 'flat' | 'ghost'
 
-interface CardProps {
+/*
+ * PATTERN: Polymorphic `as` prop
+ * Renders as any element type while keeping correct prop types.
+ * Default is <div>; pass as="a" for link cards, as="button" for action cards.
+ */
+type CardOwnProps<E extends ElementType> = {
+  as?: E
   variant?: CardVariant
   children: ReactNode
   className?: string
-  style?: CSSProperties
+  style?: CSSProperties & Record<string, string | number>
 }
+
+type CardProps<E extends ElementType = 'div'> = CardOwnProps<E> &
+  Omit<ComponentPropsWithoutRef<E>, keyof CardOwnProps<E>>
 
 interface CardHeaderProps {
   title: ReactNode
@@ -32,15 +41,24 @@ interface CardFooterProps {
  * No React Context needed — sub-components are purely presentational.
  * Consumers compose them: <Card><Card.Header title="…"/><Card.Body>…</Card.Body></Card>
  */
-function CardRoot({ variant = 'outlined', children, className, style }: CardProps) {
+function CardRoot<E extends ElementType = 'div'>({
+  as,
+  variant = 'outlined',
+  children,
+  className,
+  style,
+  ...props
+}: CardProps<E>) {
+  const Tag = (as ?? 'div') as ElementType
   return (
-    <div
+    <Tag
       className={`${s.card} ${className ?? ''}`.trim()}
       data-variant={variant}
       style={style}
+      {...props}
     >
       {children}
-    </div>
+    </Tag>
   )
 }
 
