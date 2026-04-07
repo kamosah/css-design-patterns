@@ -1,0 +1,7 @@
+.accessible-card {
+  /* Your code here: basic card styling, padding, background, shadow, etc. */
+}
+
+.accessible-card:focus {
+  /* Your code here: custom box-shadow and remove outline */
+}
