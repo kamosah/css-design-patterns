@@ -1,0 +1,7 @@
+img {
+  vertical-align: baseline; /* Align image to the text baseline */
+}
+
+p {
+  display: inline-block; /* Keeps it inline so baseline alignment is respected */
+}
