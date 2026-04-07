@@ -4,7 +4,7 @@ Learn to align an image and a paragraph so their baselines match.
 
 ## Problem description
 
-You are given a page with an avatar `<img>` and a `<p>User Name</p>` placed next to each other. By default, the paragraph drops below the image because it is a block-level element and leaves the inline formatting context.
+You are given a page with an `<img>` and a `<p>Aligned with the image baseline.</p>` placed next to each other. By default, the paragraph drops below the image because it is a block-level element and leaves the inline formatting context.
 
 Write CSS to meet the following requirements:
 
