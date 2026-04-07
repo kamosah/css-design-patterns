@@ -76,6 +76,29 @@ export const BodyOnly: Story = {
   ),
 }
 
+export const ClickableCards: Story = {
+  name: 'Clickable Cards (as="a" / as="button")',
+  render: () => (
+    <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
+      <Card as="a" href="#" variant="elevated" style={{ width: 240, textDecoration: 'none' }}>
+        <Card.Header title="Link card" subtitle="Navigates on click or Enter" />
+        <Card.Body>Rendered as an &lt;a&gt; — natively focusable and keyboard-activatable.</Card.Body>
+      </Card>
+      <Card as="button" variant="outlined" style={{ width: 240, textAlign: 'left', cursor: 'pointer' }}>
+        <Card.Header title="Button card" subtitle="Triggers an action" />
+        <Card.Body>Rendered as a &lt;button&gt; — no tabIndex or JS click handler needed.</Card.Body>
+      </Card>
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'Pass `as="a"` or `as="button"` to make the card interactive. The `:focus-visible` ring fires automatically — no extra props required. Tab into each card to see the focus ring.',
+      },
+    },
+  },
+}
+
 export const ContainerQuery: Story = {
   name: 'Container Query (narrow card)',
   render: () => (

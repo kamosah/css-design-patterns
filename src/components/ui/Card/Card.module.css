@@ -21,20 +21,31 @@
   /* Establish container context for @container queries */
   container-type: inline-size;
 
+  /* Component tokens */
+  --card-focus-ring: var(--accent);
+  --card-shadow: none;
+
   border-radius: 10px;
   overflow: hidden;   /* clips child content to rounded corners */
   display: flex;
   flex-direction: column;
+  box-shadow: var(--card-shadow);
 
   /* Default: outlined */
   background: var(--bg-surface);
   border: 1px solid var(--border);
 }
 
+/* ── Focus ring (interactive cards: as="a" or as="button") ── */
+.card:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--card-focus-ring), var(--card-shadow);
+}
+
 /* ── Variants ── */
 .card[data-variant='elevated'] {
   border: 1px solid var(--border-subtle);
-  box-shadow:
+  --card-shadow:
     0 1px 2px color-mix(in srgb, black 10%, transparent),
     0 4px 12px color-mix(in srgb, black 12%, transparent);
 }
