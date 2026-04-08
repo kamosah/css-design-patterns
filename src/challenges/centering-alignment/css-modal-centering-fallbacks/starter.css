@@ -1,0 +1,14 @@
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.modal {
+  width: 300px;
+  height: 200px;
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  /* Add your CSS here */
+}
