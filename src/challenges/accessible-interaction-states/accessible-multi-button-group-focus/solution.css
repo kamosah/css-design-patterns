@@ -1,0 +1,41 @@
+.toolbar-group {
+  display: flex;
+  gap: 1rem;
+  background: #f2f5fa;
+  padding: 1rem 1.5rem;
+  border-radius: 16px;
+  justify-content: center;
+  align-items: center;
+}
+
+.toolbar-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: none;
+  transition: background 0.15s, box-shadow 0.15s;
+  box-shadow: none;
+}
+
+.toolbar-btn:focus {
+  box-shadow: 0 0 0 3px #2684FF;
+  z-index: 1;
+}
+
+.toolbar-btn:hover {
+  background: #e9eefd;
+}
+
+.toolbar-btn svg {
+  display: block;
+}
+
+.toolbar-group[dir="rtl"] {
+  flex-direction: row-reverse;
+}
