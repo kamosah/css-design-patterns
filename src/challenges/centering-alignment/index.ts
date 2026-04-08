@@ -8,9 +8,10 @@ import { challenge as baselineAlignmentImageText } from './baseline-alignment-im
 import { challenge as mediaObjectAlignment } from './media-object-alignment/meta'
 import { challenge as toolbarSpaceBetween } from './toolbar-space-between/meta'
 import { challenge as flexboxCenteringMixedHeight } from './flexbox-centering-mixed-height/meta'
+import { challenge as absolutePositionCenteringPadded } from './absolute-position-centering-padded/meta'
 
 export const topic: Topic = {
   id: 'centering-alignment',
   title: 'Centering & Alignment',
-  challenges: [horizontalCentering, inlineBlockGroupCentering, verticalCentering, fullCentering, fullCenteringGrid, baselineAlignmentImageText, mediaObjectAlignment, toolbarSpaceBetween, flexboxCenteringMixedHeight],
+  challenges: [horizontalCentering, inlineBlockGroupCentering, verticalCentering, fullCentering, fullCenteringGrid, baselineAlignmentImageText, mediaObjectAlignment, toolbarSpaceBetween, flexboxCenteringMixedHeight, absolutePositionCenteringPadded],
 }
