@@ -1,0 +1,23 @@
+.toggle-input {
+  /* Visually hide the checkbox but keep it accessible */
+}
+
+.toggle-label {
+  /* Slider background and base styles */
+}
+
+.toggle-label::after {
+  /* Knob styles */
+}
+
+.toggle-input:checked + .toggle-label {
+  /* On state background */
+}
+
+.toggle-input:checked + .toggle-label::after {
+  /* Move knob to the right */
+}
+
+.toggle-input:focus + .toggle-label {
+  /* Custom focus ring */
+}
