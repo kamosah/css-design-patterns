@@ -7,9 +7,10 @@ import { challenge as fullCenteringGrid } from './full-centering-grid/meta'
 import { challenge as baselineAlignmentImageText } from './baseline-alignment-image-text/meta'
 import { challenge as mediaObjectAlignment } from './media-object-alignment/meta'
 import { challenge as toolbarSpaceBetween } from './toolbar-space-between/meta'
+import { challenge as flexboxCenteringMixedHeight } from './flexbox-centering-mixed-height/meta'
 
 export const topic: Topic = {
   id: 'centering-alignment',
   title: 'Centering & Alignment',
-  challenges: [horizontalCentering, inlineBlockGroupCentering, verticalCentering, fullCentering, fullCenteringGrid, baselineAlignmentImageText, mediaObjectAlignment, toolbarSpaceBetween],
+  challenges: [horizontalCentering, inlineBlockGroupCentering, verticalCentering, fullCentering, fullCenteringGrid, baselineAlignmentImageText, mediaObjectAlignment, toolbarSpaceBetween, flexboxCenteringMixedHeight],
 }
