@@ -1,0 +1,16 @@
+.toolbar {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  height: 56px;
+  padding-inline: 1rem;
+  background: #1e2130;
+  border-radius: 8px;
+}
+
+.item {
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
