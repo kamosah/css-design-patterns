@@ -1,0 +1,13 @@
+.wrapper {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background-color: #EF476F;
+}
+
+.rotated {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
