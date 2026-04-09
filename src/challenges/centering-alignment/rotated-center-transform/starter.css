@@ -1,0 +1,13 @@
+.wrapper {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background-color: #EF476F;
+}
+
+.rotated {
+  position: absolute;
+  /* Update the transform value if needed */
+  /* and add any extra CSS rules for rotated elements below */
+  transform: rotate(45deg);
+}
