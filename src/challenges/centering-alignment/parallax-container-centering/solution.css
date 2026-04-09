@@ -1,0 +1,16 @@
+.parallax {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  transform: translateY(-50%);
+  background-color: #EF476F;
+}
+
+.child {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: calc(50% + 50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
