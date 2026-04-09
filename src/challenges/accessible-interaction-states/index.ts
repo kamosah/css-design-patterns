@@ -9,9 +9,10 @@ import { challenge as accessibleLinkFocus } from './accessible-link-focus/meta'
 import { challenge as accessibleRadioFocus } from './accessible-radio-focus/meta'
 import { challenge as accessibleTabFocus } from './accessible-tab-focus/meta'
 import { challenge as accessibleToggleFocus } from './accessible-toggle-focus/meta'
+import { challenge as accessibleMultiButtonGroupFocus } from './accessible-multi-button-group-focus/meta'
 
 export const topic: Topic = {
   id: 'accessible-interaction-states',
   title: 'Accessible Interaction States',
-  challenges: [accessibleButtonFocus, accessibleInputFocus, accessibleLinkFocus, accessibleCheckboxFocus, accessibleRadioFocus, accessibleKeyboardFocus, accessibleTabFocus, accessibleIconButtonFocus, accessibleCardFocusShadow, accessibleToggleFocus],
+  challenges: [accessibleButtonFocus, accessibleInputFocus, accessibleLinkFocus, accessibleCheckboxFocus, accessibleRadioFocus, accessibleKeyboardFocus, accessibleTabFocus, accessibleIconButtonFocus, accessibleCardFocusShadow, accessibleToggleFocus, accessibleMultiButtonGroupFocus],
 }
