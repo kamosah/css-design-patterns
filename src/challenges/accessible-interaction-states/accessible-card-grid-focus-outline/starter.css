@@ -1,0 +1,11 @@
+.card-grid {
+  /* Your code here: grid layout, spacing, responsive styles */
+}
+
+.card {
+  /* Your code here: card shape, background, border, and base styles */
+}
+
+.card:focus {
+  /* Your code here: custom focus ring styles */
+}
