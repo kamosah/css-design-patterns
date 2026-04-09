@@ -12,9 +12,10 @@ import { challenge as absolutePositionCenteringPadded } from './absolute-positio
 import { challenge as cssModalCenteringFallbacks } from './css-modal-centering-fallbacks/meta'
 import { challenge as rotatedCenterTransform } from './rotated-center-transform/meta'
 import { challenge as parallaxContainerCentering } from './parallax-container-centering/meta'
+import { challenge as flexboxEvenSpacingCentering } from './flexbox-even-spacing-centering/meta'
 
 export const topic: Topic = {
   id: 'centering-alignment',
   title: 'Centering & Alignment',
-  challenges: [horizontalCentering, inlineBlockGroupCentering, verticalCentering, fullCentering, fullCenteringGrid, baselineAlignmentImageText, mediaObjectAlignment, toolbarSpaceBetween, flexboxCenteringMixedHeight, absolutePositionCenteringPadded, cssModalCenteringFallbacks, rotatedCenterTransform, parallaxContainerCentering],
+  challenges: [horizontalCentering, inlineBlockGroupCentering, verticalCentering, fullCentering, fullCenteringGrid, baselineAlignmentImageText, mediaObjectAlignment, toolbarSpaceBetween, flexboxCenteringMixedHeight, absolutePositionCenteringPadded, cssModalCenteringFallbacks, rotatedCenterTransform, parallaxContainerCentering, flexboxEvenSpacingCentering],
 }
