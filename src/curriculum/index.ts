@@ -3,8 +3,9 @@ import { topic as centeringAlignment } from '../challenges/centering-alignment'
 import { topic as customFormControls } from '../challenges/custom-form-controls'
 import { topic as responsiveVisibility } from '../challenges/responsive-visibility'
 import { topic as accessibleInteractionStates } from '../challenges/accessible-interaction-states'
+import { topic as equalHeightFluidColumns } from '../challenges/equal-height-fluid-columns'
 
-export const curriculum: Topic[] = [centeringAlignment, customFormControls, responsiveVisibility, accessibleInteractionStates]
+export const curriculum: Topic[] = [centeringAlignment, equalHeightFluidColumns, customFormControls, responsiveVisibility, accessibleInteractionStates]
 
 // Pre-built lookup maps — O(1) access instead of iterating on every navigation
 const topicById = new Map<string, Topic>()
