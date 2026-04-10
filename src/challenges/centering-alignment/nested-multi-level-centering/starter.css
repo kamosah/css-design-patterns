@@ -1,0 +1,10 @@
+.level1 {
+  display: grid;
+  height: 100vh;
+  /* Add your CSS rules for level1 here */
+}
+
+.level2 {
+  display: flex;
+  /* Add your CSS rules for level2 here */
+}
