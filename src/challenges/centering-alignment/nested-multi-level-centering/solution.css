@@ -1,0 +1,11 @@
+.level1 {
+  display: grid;
+  height: 100vh;
+  place-items: center;
+}
+
+.level2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
