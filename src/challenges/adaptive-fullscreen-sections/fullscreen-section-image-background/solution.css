@@ -1,0 +1,9 @@
+.fullscreen-section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('https://raw.githubusercontent.com/Educative-Content/css-design-patterns/26c68d4d2c4a7833aabb68f4e9c2994c11642b80/Banner.svg');
+  background-size: cover;
+  background-position: center;
+}
