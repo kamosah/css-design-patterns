@@ -1,0 +1,10 @@
+.container {
+  /* Add Flexbox wrapping properties */
+}
+.column {
+  /* Add column-specific styling */
+}
+
+@media () {
+  /* Cater cases where screen is smaller */
+}
