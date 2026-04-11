@@ -1,0 +1,23 @@
+.menu-btn {
+  /* Your code here: menu trigger button styles and outline removal */
+}
+
+.menu-btn:focus-visible {
+  /* Your code here: custom focus outline for keyboard users */
+}
+
+.menu-list {
+  /* Your code here: dropdown styling, spacing, visual clarity */
+}
+
+.menu-item {
+  /* Your code here: menu item button styles and outline removal */
+}
+
+.menu-item:focus-visible {
+  /* Your code here: custom focus outline for menu items */
+}
+
+.menu-item:hover {
+  /* Your code here: hover background for mouse users */
+}
