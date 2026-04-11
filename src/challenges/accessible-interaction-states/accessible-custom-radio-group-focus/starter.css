@@ -1,0 +1,23 @@
+.radio-group {
+  /* Your code here: layout and spacing */
+}
+
+.custom-radio {
+  /* Your code here: visually hide native radio but keep it accessible */
+}
+
+.custom-radio-label {
+  /* Your code here: custom indicator and label styles */
+}
+
+.custom-radio-label::before {
+  /* Your code here: indicator shape, border, and alignment */
+}
+
+.custom-radio:checked + .custom-radio-label::before {
+  /* Your code here: checked indicator styling */
+}
+
+.custom-radio:focus + .custom-radio-label::before {
+  /* Your code here: custom focus ring */
+}
