@@ -1,0 +1,15 @@
+.listbox {
+  /* Your code here: listbox layout, background, spacing */
+}
+
+.listbox-option {
+  /* Your code here: base option styling, spacing, pointer, no outline */
+}
+
+.listbox-option[aria-selected="true"] {
+  /* Your code here: selected option (active) state */
+}
+
+.listbox-option:focus {
+  /* Your code here: visible focus ring for keyboard users */
+}

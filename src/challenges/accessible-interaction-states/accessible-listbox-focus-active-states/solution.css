@@ -1,0 +1,41 @@
+.listbox {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: fit-content;
+  min-width: 200px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+}
+
+.listbox-option {
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+  color: inherit;
+  background-color: transparent;
+  transition: background-color 0.2s ease;
+}
+
+.listbox-option:hover {
+  background-color: #f0f0f0;
+}
+
+.listbox-option[aria-selected="true"] {
+  background-color: #2684FF;
+  color: white;
+}
+
+.listbox-option:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #2684FF, 0 0 0 5px white;
+  position: relative;
+  z-index: 1;
+}
+
+.listbox-option[aria-selected="true"]:focus {
+  box-shadow: 0 0 0 3px #2684FF, 0 0 0 5px white;
+}
