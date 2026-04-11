@@ -10,7 +10,7 @@ export const challenge: Challenge = {
   id: 'accessible-menu-button-keyboard-focus',
   title: 'Accessible Menu Button with Keyboard Focus Highlight',
   difficulty: 'hard',
-  estimatedMinutes: 15,
+  estimatedMinutes: 40,
   instructions,
   solutionExplanation,
   starterHtml,
