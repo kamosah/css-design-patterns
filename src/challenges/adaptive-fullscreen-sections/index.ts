@@ -3,9 +3,10 @@ import { challenge as simpleAdaptiveFullscreenHero } from './simple-adaptive-ful
 import { challenge as fullscreenSectionBackgroundColor } from './fullscreen-section-background-color/meta'
 import { challenge as fullscreenSectionImageBackground } from './fullscreen-section-image-background/meta'
 import { challenge as adaptiveFullscreenMobileSafeHeight } from './adaptive-fullscreen-mobile-safe-height/meta'
+import { challenge as fullscreenSectionResponsivePadding } from './fullscreen-section-responsive-padding/meta'
 
 export const topic: Topic = {
   id: 'adaptive-fullscreen-sections',
   title: 'Adaptive Fullscreen Sections',
-  challenges: [simpleAdaptiveFullscreenHero, fullscreenSectionBackgroundColor, fullscreenSectionImageBackground, adaptiveFullscreenMobileSafeHeight],
+  challenges: [simpleAdaptiveFullscreenHero, fullscreenSectionBackgroundColor, fullscreenSectionImageBackground, adaptiveFullscreenMobileSafeHeight, fullscreenSectionResponsivePadding],
 }
