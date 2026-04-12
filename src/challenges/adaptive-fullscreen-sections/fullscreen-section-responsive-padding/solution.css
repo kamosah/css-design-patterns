@@ -1,0 +1,14 @@
+.fullscreen-section {
+  background-color: #5054f4;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+
+@media (min-width: 768px) {
+  .fullscreen-section {
+    padding: 64px;
+  }
+}
