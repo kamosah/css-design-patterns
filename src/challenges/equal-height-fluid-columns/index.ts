@@ -5,9 +5,10 @@ import { challenge as gridAlignItemsStretch } from './grid-align-items-stretch/m
 import { challenge as columnsFluidLayout } from './columns-fluid-layout/meta'
 import { challenge as flexWrapFluidColumns } from './flex-wrap-fluid-columns/meta'
 import { challenge as fluidGridColumnsAutoFit } from './fluid-grid-columns-auto-fit/meta'
+import { challenge as containerQueryFluidColumns } from './container-query-fluid-columns/meta'
 
 export const topic: Topic = {
   id: 'equal-height-fluid-columns',
   title: 'Equal Height & Fluid Columns',
-  challenges: [flexEqualHeightColumns, tableDisplayEqualHeight, gridAlignItemsStretch, columnsFluidLayout, flexWrapFluidColumns, fluidGridColumnsAutoFit],
+  challenges: [flexEqualHeightColumns, tableDisplayEqualHeight, gridAlignItemsStretch, columnsFluidLayout, flexWrapFluidColumns, fluidGridColumnsAutoFit, containerQueryFluidColumns],
 }
