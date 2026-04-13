@@ -1,0 +1,10 @@
+.container p {
+  margin: 0;
+  text-align: justify;
+}
+
+.container {
+  column-count: 3;
+  column-gap: 1rem;
+  column-fill: balance;
+}
