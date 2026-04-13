@@ -1,0 +1,41 @@
+.card-container {
+  container-type: inline-size;
+  container-name: cards;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.card-list {
+  display: grid;
+  gap: 1rem;
+}
+
+/* Default: 1 column */
+@container cards (max-width: 400px) {
+  .card-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Between 400px and 800px: 2 columns */
+@container cards (min-width: 400px) and (max-width: 800px) {
+  .card-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Above 800px: 3 columns */
+@container cards (min-width: 800px) {
+  .card-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  background: #eee;
+  padding: 2rem;
+  text-align: center;
+  font-weight: bold;
+}

@@ -1,0 +1,27 @@
+.card-container {
+  /* Your code here */
+}
+
+.card-list {
+  /* Your code here */
+}
+
+/* Default: 1 column */
+@container cards (max-width: 400px) {
+  /* Your code here */
+}
+
+/* Between 400px and 800px: 2 columns */
+@container cards (min-width: 400px) and (max-width: 800px) {
+  /* Your code here */
+}
+
+/* Above 800px: 3 columns */
+@container cards (min-width: 800px) {
+  /* Your code here */
+}
+
+/* Optional: Card styling to visualize */
+.card {
+  /* Your code here */
+}
