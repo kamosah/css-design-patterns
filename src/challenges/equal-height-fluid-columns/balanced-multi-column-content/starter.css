@@ -1,0 +1,8 @@
+.container p {
+  margin: 0;
+  text-align: justify;
+}
+
+.container {
+  /* Add CSS for column-count, column-gap, column-fill scaffolds */
+}
