@@ -18,7 +18,7 @@ In the `styles.css` file, you'll find the following:
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url('https://raw.githubusercontent.com/Educative-Content/css-design-patterns/26c68d4d2c4a7833aabb68f4e9c2994c11642b80/Banner.svg');
+  background-image: url('https://ui-avatars.com/api/?name=Banner&size=512&background=random');
   background-size: cover;
   background-position: center;
 }
