@@ -217,6 +217,13 @@ Use `raw.githubusercontent.com` URLs pointing at the **PR branch** so images ren
 
 Challenges live in `src/challenges/<topic>/`. Each challenge is a directory with a `meta.ts` file conforming to the `Challenge` interface in `src/types/challenge.ts`. Register in the topic's `index.ts` and the curriculum registry in `src/curriculum/index.ts`.
 
+### Image URLs in challenges
+
+Always use `https://ui-avatars.com/api/` for any images in challenge HTML or CSS files. Do **not** use `raw.githubusercontent.com` URLs.
+
+- `<img>` elements: `https://ui-avatars.com/api/?name=Cat&background=random&size=120`
+- CSS `background-image`: `url('https://ui-avatars.com/api/?name=Banner&size=512&background=random')`
+
 ## TypeScript
 
 Strict mode is on: `noUnusedLocals`, `noUnusedParameters`, `erasableSyntaxOnly`. No `any`. Keep all imports at the top of files.
