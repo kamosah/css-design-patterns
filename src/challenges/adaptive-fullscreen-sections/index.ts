@@ -7,9 +7,10 @@ import { challenge as fullscreenSectionResponsivePadding } from './fullscreen-se
 import { challenge as fullscreenSectionScrollIndicator } from './fullscreen-section-scroll-indicator/meta'
 import { challenge as fullscreenSectionCenteredLogo } from './fullscreen-section-centered-logo/meta'
 import { challenge as fullscreenSectionMaxWidthContent } from './fullscreen-section-max-width-content/meta'
+import { challenge as fullscreenSectionGradientOverlay } from './fullscreen-section-gradient-overlay/meta'
 
 export const topic: Topic = {
   id: 'adaptive-fullscreen-sections',
   title: 'Adaptive Fullscreen Sections',
-  challenges: [simpleAdaptiveFullscreenHero, fullscreenSectionBackgroundColor, fullscreenSectionImageBackground, adaptiveFullscreenMobileSafeHeight, fullscreenSectionResponsivePadding, fullscreenSectionScrollIndicator, fullscreenSectionCenteredLogo, fullscreenSectionMaxWidthContent],
+  challenges: [simpleAdaptiveFullscreenHero, fullscreenSectionBackgroundColor, fullscreenSectionImageBackground, adaptiveFullscreenMobileSafeHeight, fullscreenSectionResponsivePadding, fullscreenSectionScrollIndicator, fullscreenSectionCenteredLogo, fullscreenSectionMaxWidthContent, fullscreenSectionGradientOverlay],
 }
