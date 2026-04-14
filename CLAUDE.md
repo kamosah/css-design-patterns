@@ -217,6 +217,8 @@ Use `raw.githubusercontent.com` URLs pointing at the **PR branch** so images ren
 
 Challenges live in `src/challenges/<topic>/`. Each challenge is a directory with a `meta.ts` file conforming to the `Challenge` interface in `src/types/challenge.ts`. Register in the topic's `index.ts` and the curriculum registry in `src/curriculum/index.ts`.
 
+Branch names for new challenges should be based on the challenge title (e.g. `content/fullscreen-section-split-layout` for "Fullscreen Section with Split Layout").
+
 ### Image URLs in challenges
 
 Always use `https://ui-avatars.com/api/` for any images in challenge HTML or CSS files. Do **not** use `raw.githubusercontent.com` URLs.
