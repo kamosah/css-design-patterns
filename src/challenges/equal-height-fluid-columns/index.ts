@@ -8,9 +8,10 @@ import { challenge as fluidGridColumnsAutoFit } from './fluid-grid-columns-auto-
 import { challenge as containerQueryFluidColumns } from './container-query-fluid-columns/meta'
 import { challenge as responsiveFlexboxVariableColumns } from './responsive-flexbox-variable-columns/meta'
 import { challenge as balancedMultiColumnContent } from './balanced-multi-column-content/meta'
+import { challenge as customPropertyControlledColumnLayout } from './custom-property-controlled-column-layout/meta'
 
 export const topic: Topic = {
   id: 'equal-height-fluid-columns',
   title: 'Equal Height & Fluid Columns',
-  challenges: [flexEqualHeightColumns, tableDisplayEqualHeight, gridAlignItemsStretch, columnsFluidLayout, flexWrapFluidColumns, fluidGridColumnsAutoFit, containerQueryFluidColumns, responsiveFlexboxVariableColumns, balancedMultiColumnContent],
+  challenges: [flexEqualHeightColumns, tableDisplayEqualHeight, gridAlignItemsStretch, columnsFluidLayout, flexWrapFluidColumns, fluidGridColumnsAutoFit, containerQueryFluidColumns, responsiveFlexboxVariableColumns, balancedMultiColumnContent, customPropertyControlledColumnLayout],
 }

@@ -1,0 +1,11 @@
+.container {
+  --cols: 3;
+  --gutter: 1rem;
+  display: grid;
+  grid-template-columns: repeat(var(--cols), 1fr);
+  gap: var(--gutter);
+}
+.box {
+  background: #fafafa;
+  padding: 1rem;
+}
