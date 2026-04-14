@@ -9,9 +9,10 @@ import { challenge as fullscreenSectionCenteredLogo } from './fullscreen-section
 import { challenge as fullscreenSectionMaxWidthContent } from './fullscreen-section-max-width-content/meta'
 import { challenge as fullscreenSectionGradientOverlay } from './fullscreen-section-gradient-overlay/meta'
 import { challenge as fullscreenSectionSplitLayout } from './fullscreen-section-split-layout/meta'
+import { challenge as fullscreenSectionClampedSubheading } from './fullscreen-section-clamped-subheading/meta'
 
 export const topic: Topic = {
   id: 'adaptive-fullscreen-sections',
   title: 'Adaptive Fullscreen Sections',
-  challenges: [simpleAdaptiveFullscreenHero, fullscreenSectionBackgroundColor, fullscreenSectionImageBackground, adaptiveFullscreenMobileSafeHeight, fullscreenSectionResponsivePadding, fullscreenSectionScrollIndicator, fullscreenSectionCenteredLogo, fullscreenSectionMaxWidthContent, fullscreenSectionGradientOverlay, fullscreenSectionSplitLayout],
+  challenges: [simpleAdaptiveFullscreenHero, fullscreenSectionBackgroundColor, fullscreenSectionImageBackground, adaptiveFullscreenMobileSafeHeight, fullscreenSectionResponsivePadding, fullscreenSectionScrollIndicator, fullscreenSectionCenteredLogo, fullscreenSectionMaxWidthContent, fullscreenSectionGradientOverlay, fullscreenSectionClampedSubheading, fullscreenSectionSplitLayout],
 }
