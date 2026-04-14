@@ -1,0 +1,20 @@
+.fullscreen-section {
+  min-height: 100vh;
+  display: flex;
+  width: 100vw;
+}
+.left, .right {
+  flex: 1 1 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 0;
+}
+.left {
+  background: #1557a0;
+  color: #fff;
+}
+.right {
+  background: #fff;
+  color: #333;
+}
