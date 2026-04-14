@@ -1,0 +1,15 @@
+.parent-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: minmax(100px, auto);
+}
+.child-grid {
+  display: grid;
+  grid-row: span 3;
+  grid-template-columns: subgrid;
+  grid-template-rows: subgrid;
+}
+.cell {
+  background: #eee;
+  padding: 1rem;
+}

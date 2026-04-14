@@ -1,0 +1,9 @@
+.parent-grid {
+  /* Add the code to define the outer grid's columns and rows */
+}
+.child-grid {
+  /* Add the code to use subgrid to inherit row track sizing from .parent-grid */
+}
+.cell {
+  /* Add the code to style each cell (padding, borders, background, etc.) */
+}
