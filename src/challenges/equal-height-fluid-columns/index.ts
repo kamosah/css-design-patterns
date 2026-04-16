@@ -12,9 +12,10 @@ import { challenge as customPropertyControlledColumnLayout } from './custom-prop
 import { challenge as masonryStyleGridEqualColumnWidths } from './masonry-style-grid-equal-column-widths/meta'
 import { challenge as equalHeightSubgridLayout } from './equal-height-subgrid-layout/meta'
 import { challenge as horizontallyScrollableEqualHeightCards } from './horizontally-scrollable-equal-height-cards/meta'
+import { challenge as legacyFallbackEqualHeightColumnsIe11 } from './legacy-fallback-equal-height-columns-ie11/meta'
 
 export const topic: Topic = {
   id: 'equal-height-fluid-columns',
   title: 'Equal Height & Fluid Columns',
-  challenges: [flexEqualHeightColumns, tableDisplayEqualHeight, gridAlignItemsStretch, columnsFluidLayout, flexWrapFluidColumns, fluidGridColumnsAutoFit, containerQueryFluidColumns, responsiveFlexboxVariableColumns, balancedMultiColumnContent, customPropertyControlledColumnLayout, masonryStyleGridEqualColumnWidths, equalHeightSubgridLayout, horizontallyScrollableEqualHeightCards],
+  challenges: [flexEqualHeightColumns, tableDisplayEqualHeight, gridAlignItemsStretch, columnsFluidLayout, flexWrapFluidColumns, fluidGridColumnsAutoFit, containerQueryFluidColumns, responsiveFlexboxVariableColumns, balancedMultiColumnContent, customPropertyControlledColumnLayout, masonryStyleGridEqualColumnWidths, equalHeightSubgridLayout, horizontallyScrollableEqualHeightCards, legacyFallbackEqualHeightColumnsIe11],
 }
