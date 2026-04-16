@@ -1,0 +1,8 @@
+.scroller {
+  /* Add the code to enable horizontal scrolling with equal-height items */
+}
+
+.card {
+  background: lightgray;
+  /* Add the code to ensure each card fills the container height */
+}

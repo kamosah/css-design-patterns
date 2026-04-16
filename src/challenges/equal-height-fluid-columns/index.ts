@@ -11,9 +11,10 @@ import { challenge as balancedMultiColumnContent } from './balanced-multi-column
 import { challenge as customPropertyControlledColumnLayout } from './custom-property-controlled-column-layout/meta'
 import { challenge as masonryStyleGridEqualColumnWidths } from './masonry-style-grid-equal-column-widths/meta'
 import { challenge as equalHeightSubgridLayout } from './equal-height-subgrid-layout/meta'
+import { challenge as horizontallyScrollableEqualHeightCards } from './horizontally-scrollable-equal-height-cards/meta'
 
 export const topic: Topic = {
   id: 'equal-height-fluid-columns',
   title: 'Equal Height & Fluid Columns',
-  challenges: [flexEqualHeightColumns, tableDisplayEqualHeight, gridAlignItemsStretch, columnsFluidLayout, flexWrapFluidColumns, fluidGridColumnsAutoFit, containerQueryFluidColumns, responsiveFlexboxVariableColumns, balancedMultiColumnContent, customPropertyControlledColumnLayout, masonryStyleGridEqualColumnWidths, equalHeightSubgridLayout],
+  challenges: [flexEqualHeightColumns, tableDisplayEqualHeight, gridAlignItemsStretch, columnsFluidLayout, flexWrapFluidColumns, fluidGridColumnsAutoFit, containerQueryFluidColumns, responsiveFlexboxVariableColumns, balancedMultiColumnContent, customPropertyControlledColumnLayout, masonryStyleGridEqualColumnWidths, equalHeightSubgridLayout, horizontallyScrollableEqualHeightCards],
 }
