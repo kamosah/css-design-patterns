@@ -1,0 +1,24 @@
+.layout {
+  --gap: 1rem;
+  gap: var(--gap);
+}
+
+@supports (display: grid) {
+  .layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@supports not (display: grid) {
+  .layout {
+    display: table;
+    width: 100%;
+    border-spacing: var(--gap);
+  }
+
+  .panel {
+    display: table-cell;
+    vertical-align: top;
+  }
+}
