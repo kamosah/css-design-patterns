@@ -1,0 +1,16 @@
+.scroller {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 0.5rem;
+}
+
+.card {
+  background: lightgray;
+  flex: 0 0 200px;
+  scroll-snap-align: start;
+  align-self: stretch;
+  padding: 1rem;
+  box-sizing: border-box;
+}
