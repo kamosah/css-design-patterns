@@ -1,0 +1,13 @@
+.magazine {
+  --cols: 3;
+  --gap: 1rem;
+  column-count: var(--cols);
+  column-gap: var(--gap);
+}
+
+.card {
+  display: inline-block;
+  width: 100%;
+  break-inside: avoid;
+  margin-bottom: var(--gap);
+}
