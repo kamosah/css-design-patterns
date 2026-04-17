@@ -1,0 +1,29 @@
+.fullscreen-section {
+  /* Your code here: carousel layout and viewport sizing */
+}
+
+input[type="radio"] {
+  /* Your code here: hide radio inputs */
+}
+
+.slides {
+  /* Your code here: horizontal slide container */
+}
+
+.slide {
+  /* Your code here: each slide styling */
+}
+
+#slide1:checked ~ .slides #s1,
+#slide2:checked ~ .slides #s2,
+#slide3:checked ~ .slides #s3 {
+  /* Your code here: show only selected slide */
+}
+
+.nav {
+  /* Your code here: carousel navigation styling */
+}
+
+.nav label {
+  /* Your code here */
+}
