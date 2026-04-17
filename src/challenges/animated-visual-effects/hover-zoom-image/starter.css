@@ -1,0 +1,11 @@
+.image-container {
+  /* Your code here: hide overflow and optionally set container size */
+}
+
+.zoom-img {
+  /* Your code here: set transition and transform-origin */
+}
+
+.zoom-img:hover {
+  /* Your code here: scale image on hover */
+}
