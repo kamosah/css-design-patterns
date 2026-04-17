@@ -12,9 +12,10 @@ import { challenge as fullscreenSectionSplitLayout } from './fullscreen-section-
 import { challenge as fullscreenSectionClampedSubheading } from './fullscreen-section-clamped-subheading/meta'
 import { challenge as fullscreenSectionImageContentOverlay } from './fullscreen-section-image-content-overlay/meta'
 import { challenge as fullscreenSectionContentAlignment } from './fullscreen-section-content-alignment/meta'
+import { challenge as fullscreenSectionCssOnlyCarousel } from './fullscreen-section-css-only-carousel/meta'
 
 export const topic: Topic = {
   id: 'adaptive-fullscreen-sections',
   title: 'Adaptive Fullscreen Sections',
-  challenges: [simpleAdaptiveFullscreenHero, fullscreenSectionBackgroundColor, fullscreenSectionImageBackground, adaptiveFullscreenMobileSafeHeight, fullscreenSectionResponsivePadding, fullscreenSectionScrollIndicator, fullscreenSectionCenteredLogo, fullscreenSectionMaxWidthContent, fullscreenSectionGradientOverlay, fullscreenSectionClampedSubheading, fullscreenSectionSplitLayout, fullscreenSectionImageContentOverlay, fullscreenSectionContentAlignment],
+  challenges: [simpleAdaptiveFullscreenHero, fullscreenSectionBackgroundColor, fullscreenSectionImageBackground, adaptiveFullscreenMobileSafeHeight, fullscreenSectionResponsivePadding, fullscreenSectionScrollIndicator, fullscreenSectionCenteredLogo, fullscreenSectionMaxWidthContent, fullscreenSectionGradientOverlay, fullscreenSectionClampedSubheading, fullscreenSectionSplitLayout, fullscreenSectionImageContentOverlay, fullscreenSectionContentAlignment, fullscreenSectionCssOnlyCarousel],
 }
