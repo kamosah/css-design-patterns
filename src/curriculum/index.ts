@@ -4,9 +4,18 @@ import { topic as customFormControls } from '../challenges/custom-form-controls'
 import { topic as responsiveVisibility } from '../challenges/responsive-visibility'
 import { topic as accessibleInteractionStates } from '../challenges/accessible-interaction-states'
 import { topic as equalHeightFluidColumns } from '../challenges/equal-height-fluid-columns'
+import { topic as animatedVisualEffects } from '../challenges/animated-visual-effects'
 import { topic as adaptiveFullscreenSections } from '../challenges/adaptive-fullscreen-sections'
 
-export const curriculum: Topic[] = [centeringAlignment, equalHeightFluidColumns, customFormControls, responsiveVisibility, accessibleInteractionStates, adaptiveFullscreenSections]
+export const curriculum: Topic[] = [
+  centeringAlignment,
+  equalHeightFluidColumns,
+  animatedVisualEffects,
+  customFormControls,
+  responsiveVisibility,
+  accessibleInteractionStates,
+  adaptiveFullscreenSections,
+]
 
 // Pre-built lookup maps — O(1) access instead of iterating on every navigation
 const topicById = new Map<string, Topic>()
