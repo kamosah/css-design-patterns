@@ -23,7 +23,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2px;
+  padding: 4px;
   background: none;
   border: none;
   color: var(--text-secondary);
@@ -32,9 +32,22 @@
   line-height: 0;
 }
 
+.refreshBtn svg {
+  transition: color 0.15s;
+}
+
 .refreshBtn:hover {
   color: var(--text-primary);
   background: var(--bg-surface);
+}
+
+.refreshBtn[data-spinning] svg {
+  animation: previewRefresh 0.4s ease-out forwards;
+}
+
+@keyframes previewRefresh {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
 }
 
 .refreshBtn:focus-visible {

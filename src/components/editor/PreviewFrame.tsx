@@ -8,6 +8,7 @@ interface PreviewFrameProps {
 
 export function PreviewFrame({ html, css }: PreviewFrameProps) {
   const [refreshKey, setRefreshKey] = useState(0)
+  const [spinning, setSpinning] = useState(false)
 
   const srcdoc = useMemo(() => {
     const isFullDocument = /^\s*<!doctype|^\s*<html/i.test(html)
@@ -36,7 +37,9 @@ ${html}
         <span>Preview</span>
         <button
           className={s.refreshBtn}
-          onClick={() => setRefreshKey(k => k + 1)}
+          data-spinning={spinning || undefined}
+          onClick={() => { setRefreshKey(k => k + 1); setSpinning(true) }}
+          onAnimationEnd={() => setSpinning(false)}
           aria-label="Refresh preview"
           title="Refresh preview"
         >
