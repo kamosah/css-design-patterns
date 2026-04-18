@@ -1,0 +1,25 @@
+.table-container {
+  height: 300px;
+  overflow-y: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead th {
+  background: #fff;
+  padding: 8px;
+  border-bottom: 2px solid #ccc;
+  /* Add positioning here */
+}
+
+tbody td {
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+}
+
+tbody tr:hover {
+  background: #f9f9f9;
+}
