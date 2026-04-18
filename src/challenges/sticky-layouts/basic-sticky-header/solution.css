@@ -1,0 +1,14 @@
+.site-header {
+  position: sticky; /* makes header stick */
+  top: 0;           /* stick at top of viewport */
+  background: #333;
+  color: white;
+  padding: 1rem;
+  width: 100%;      /* full viewport width */
+}
+
+.content {
+  height: 2000px;
+  padding: 1rem;
+  text-align: justify;
+}
