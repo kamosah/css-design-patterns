@@ -1,0 +1,9 @@
+.site-header {
+  /* add sticky styling here */
+}
+
+.content {
+  height: 2000px; /* simulate long content */
+  padding: 1rem;
+  text-align: justify;
+}
