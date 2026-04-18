@@ -6,6 +6,7 @@ import { topic as accessibleInteractionStates } from '../challenges/accessible-i
 import { topic as equalHeightFluidColumns } from '../challenges/equal-height-fluid-columns'
 import { topic as animatedVisualEffects } from '../challenges/animated-visual-effects'
 import { topic as adaptiveFullscreenSections } from '../challenges/adaptive-fullscreen-sections'
+import { topic as stickyLayouts } from '../challenges/sticky-layouts'
 
 export const curriculum: Topic[] = [
   centeringAlignment,
@@ -15,6 +16,7 @@ export const curriculum: Topic[] = [
   responsiveVisibility,
   accessibleInteractionStates,
   adaptiveFullscreenSections,
+  stickyLayouts,
 ]
 
 // Pre-built lookup maps — O(1) access instead of iterating on every navigation
