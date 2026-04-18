@@ -14,6 +14,32 @@
   text-transform: uppercase;
   font-weight: 600;
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.refreshBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  border-radius: 3px;
+  line-height: 0;
+}
+
+.refreshBtn:hover {
+  color: var(--text-primary);
+  background: var(--bg-surface);
+}
+
+.refreshBtn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
 }
 
 .iframe {
