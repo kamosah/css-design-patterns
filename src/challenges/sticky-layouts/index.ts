@@ -3,9 +3,10 @@ import { challenge as basicStickyHeader } from './basic-sticky-header/meta'
 import { challenge as stickySidebarNavigation } from './sticky-sidebar-navigation/meta'
 import { challenge as persistentStickyFooter } from './persistent-sticky-footer/meta'
 import { challenge as stickyElementWithOffset } from './sticky-element-with-offset/meta'
+import { challenge as stickyTableHeader } from './sticky-table-header/meta'
 
 export const topic: Topic = {
   id: 'sticky-layouts',
   title: 'Sticky Layouts',
-  challenges: [basicStickyHeader, stickySidebarNavigation, persistentStickyFooter, stickyElementWithOffset],
+  challenges: [basicStickyHeader, stickySidebarNavigation, persistentStickyFooter, stickyElementWithOffset, stickyTableHeader],
 }
