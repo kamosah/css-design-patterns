@@ -1,0 +1,13 @@
+.layout {
+  display: flex;
+}
+
+.sidebar {
+  /* add sticky styling here */
+  width: 200px;
+}
+
+.content {
+  flex: 1;
+  padding: 1rem;
+}

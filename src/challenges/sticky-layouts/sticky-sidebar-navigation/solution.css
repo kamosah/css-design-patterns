@@ -1,0 +1,14 @@
+.layout {
+  display: flex;
+}
+
+.sidebar {
+  position: sticky; /* pins sidebar during scroll */
+  top: 0;           /* stick at top of viewport */
+  width: 200px;
+}
+
+.content {
+  flex: 1;
+  padding: 1rem;
+}
