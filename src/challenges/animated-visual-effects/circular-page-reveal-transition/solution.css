@@ -1,0 +1,22 @@
+.page-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #111;
+  clip-path: circle(150% at 50% 50%);
+  animation: reveal 1s ease-out 0.3s forwards;
+}
+
+.page-content {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+  color: #333;
+}
+
+@keyframes reveal {
+  0%   { clip-path: circle(150% at 50% 50%); }
+  100% { clip-path: circle(0% at 50% 50%); }
+}
