@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.hero {
+  height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #0f3460 70%, #533483 100%);
+}
+
+.glass-nav {
+  /* Your code here: fixed top, full width, glass effect, flex layout */
+}
+
+.nav-links {
+  /* Your code here: horizontal list, spacing */
+}
+
+.nav-links li a {
+  /* Your code here: link styling */
+}
