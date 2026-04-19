@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #0f3460 70%, #533483 100%);
+}
+
+.switch {
+  /* Your code here: define size variables, positioning, and display */
+}
+
+.toggle-checkbox {
+  /* Your code here: hide the native checkbox */
+}
+
+.switch-track {
+  /* Your code here: glassmorphic track styling and transition */
+}
+
+.switch-thumb {
+  /* Your code here: glassmorphic thumb styling and transition */
+}
+
+.toggle-checkbox:checked + .switch-track {
+  /* Your code here: track styling on checked state */
+}
+
+.toggle-checkbox:checked + .switch-track + .switch-thumb {
+  /* Your code here: thumb position and styling on checked state */
+}
