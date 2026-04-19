@@ -1,0 +1,9 @@
+.shimmer-card {
+  /* Your code here: size, background, and relative positioning */
+}
+
+.shimmer-card::before {
+  /* Your code here: absolute cover, gradient background, and apply shimmer animation */
+}
+
+/* Your code here: define @keyframes shimmer animating background-position */
