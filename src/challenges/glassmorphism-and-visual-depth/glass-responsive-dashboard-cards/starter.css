@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  padding: 2rem;
+  background: #fff;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+:root {
+  --gap: 1rem;
+}
+
+.dashboard {
+  /* Your code here: enable inline-size container queries, set up grid with gap */
+}
+
+/* Your code here: two columns when dashboard ≥ 400px */
+
+/* Your code here: three columns when dashboard ≥ 800px */
+
+.card {
+  /* Your code here: glass styling, padding, border-radius, shadow, and enable container queries */
+}
+
+.card-header {
+  /* Your code here: fluid font size with clamp() */
+}
+
+.card-details {
+  /* Your code here: hidden by default */
+}
+
+/* Your code here: reveal .card-details when card container ≥ 300px */
