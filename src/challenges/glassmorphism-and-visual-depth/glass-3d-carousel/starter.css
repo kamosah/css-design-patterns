@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+
+.carousel {
+  /* Your code here: set width, height, perspective, and centering */
+}
+
+.carousel-inner {
+  /* Your code here: fill parent, preserve-3d, and spin animation */
+}
+
+@keyframes spin {
+  /* Your code here: rotate from 0deg to -360deg */
+}
+
+.carousel-item {
+  /* Your code here: absolute position centered in 3D space, size, and glass styling */
+}
+
+.carousel-item:nth-child(1) { /* Your code here: rotateY(0deg) translateZ(300px) */ }
+.carousel-item:nth-child(2) { /* Your code here: rotateY(60deg) translateZ(300px) */ }
+.carousel-item:nth-child(3) { /* Your code here: rotateY(120deg) translateZ(300px) */ }
+.carousel-item:nth-child(4) { /* Your code here: rotateY(180deg) translateZ(300px) */ }
+.carousel-item:nth-child(5) { /* Your code here: rotateY(240deg) translateZ(300px) */ }
+.carousel-item:nth-child(6) { /* Your code here: rotateY(300deg) translateZ(300px) */ }
+
+.carousel:hover .carousel-inner {
+  /* Your code here: pause the spin animation */
+}
