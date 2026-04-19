@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+}
+
+.gallery {
+  /* Your code here: responsive grid layout */
+}
+
+.gallery-item {
+  /* Your code here: positioned container with overflow hidden */
+}
+
+.gallery-item img {
+  /* Your code here: responsive image */
+}
+
+.overlay {
+  /* Your code here: glass effect, hidden by default, flex layout */
+}
+
+.gallery-item:hover .overlay {
+  /* Your code here: reveal overlay on hover */
+}
