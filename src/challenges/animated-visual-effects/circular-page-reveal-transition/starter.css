@@ -1,0 +1,9 @@
+.page-mask {
+  /* Your code here: full-screen positioning, background, initial clip-path, and apply reveal animation */
+}
+
+.page-content {
+  /* Your code here: ensure content appears beneath mask */
+}
+
+/* Your code here: define @keyframes reveal to animate clip-path */
