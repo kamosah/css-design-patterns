@@ -5,9 +5,10 @@ import { challenge as persistentStickyFooter } from './persistent-sticky-footer/
 import { challenge as stickyElementWithOffset } from './sticky-element-with-offset/meta'
 import { challenge as stickyTableHeader } from './sticky-table-header/meta'
 import { challenge as scrollableContainerSectionStickiness } from './scrollable-container-section-stickiness/meta'
+import { challenge as overlappingStickyBanner } from './overlapping-sticky-banner/meta'
 
 export const topic: Topic = {
   id: 'sticky-layouts',
   title: 'Sticky Layouts',
-  challenges: [basicStickyHeader, stickySidebarNavigation, persistentStickyFooter, stickyElementWithOffset, stickyTableHeader, scrollableContainerSectionStickiness],
+  challenges: [basicStickyHeader, stickySidebarNavigation, persistentStickyFooter, stickyElementWithOffset, stickyTableHeader, scrollableContainerSectionStickiness, overlappingStickyBanner],
 }
