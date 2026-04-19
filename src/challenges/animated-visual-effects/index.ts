@@ -5,9 +5,10 @@ import { challenge as rotatingLoadingSpinner } from './rotating-loading-spinner/
 import { challenge as pulsatingCtaButton } from './pulsating-cta-button/meta'
 import { challenge as animatedGradientBackground } from './animated-gradient-background/meta'
 import { challenge as slideInSidebarPanel } from './slide-in-sidebar-panel/meta'
+import { challenge as staggeredFadeInListItems } from './staggered-fade-in-list-items/meta'
 
 export const topic: Topic = {
   id: 'animated-visual-effects',
   title: 'Animated Visual Effects',
-  challenges: [hoverZoomImage, fadeInNotificationBanner, rotatingLoadingSpinner, pulsatingCtaButton, animatedGradientBackground, slideInSidebarPanel],
+  challenges: [hoverZoomImage, fadeInNotificationBanner, rotatingLoadingSpinner, pulsatingCtaButton, animatedGradientBackground, slideInSidebarPanel, staggeredFadeInListItems],
 }
