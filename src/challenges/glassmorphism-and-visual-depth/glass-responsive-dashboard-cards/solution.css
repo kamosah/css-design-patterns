@@ -1,0 +1,58 @@
+body {
+  margin: 0;
+  padding: 2rem;
+  background: #fff;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+:root {
+  --gap: 1rem;
+}
+
+.dashboard {
+  container-type: inline-size;
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: 1fr;
+}
+
+/* Two columns when dashboard ≥ 400px */
+@media (min-width: 400px) {
+  .dashboard {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Three columns when dashboard ≥ 800px */
+@media (min-width: 800px) {
+  .dashboard {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  container-type: inline-size;
+}
+
+.card-header {
+  font-size: clamp(1rem, 2vw, 2rem);
+  margin-bottom: 0.5rem;
+}
+
+.card-details {
+  display: none;
+}
+
+/* Show details when card ≥ 300px */
+@container (min-width: 300px) {
+  .card .card-details {
+    display: block;
+    margin-top: 0.5rem;
+  }
+}
