@@ -1,0 +1,15 @@
+.content {
+  margin-top: 20px;
+}
+
+.banner {
+  height: 60px;
+  position: sticky;
+  top: 0;
+  background: #333;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
