@@ -1,0 +1,11 @@
+.stagger-list li {
+  /* Your code here: initial opacity, transform, and apply fadeInUp animation */
+}
+
+/* Your code here: define keyframes for fadeInUp */
+
+.stagger-list li:nth-child(1) { /* delay 0s */ }
+.stagger-list li:nth-child(2) { /* delay 0.2s */ }
+.stagger-list li:nth-child(3) { /* delay 0.4s */ }
+.stagger-list li:nth-child(4) { /* delay 0.6s */ }
+.stagger-list li:nth-child(5) { /* delay 0.8s */ }
