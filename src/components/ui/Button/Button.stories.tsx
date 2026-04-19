@@ -25,6 +25,7 @@ via \`style={{ '--btn-radius': '0' }}\` without touching the stylesheet.
     size: { control: 'select', options: ['sm', 'md', 'lg'] },
     loading: { control: 'boolean' },
     disabled: { control: 'boolean' },
+    shimmer: { control: 'boolean' },
   },
 }
 
@@ -79,6 +80,25 @@ export const PolymorphicLink: Story = {
     docs: {
       description: {
         story: 'Pass `as="a"` to render an `<a>` element with full button styling. The `href` prop becomes type-safe.',
+      },
+    },
+  },
+}
+
+export const Shimmer: Story = {
+  name: 'Shimmer Effect',
+  render: () => (
+    <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', alignItems: 'center' }}>
+      <Button shimmer>Primary</Button>
+      <Button shimmer variant="danger">Danger</Button>
+      <Button shimmer variant="warning">Warning</Button>
+      <Button shimmer variant="secondary" style={{ '--btn-shimmer-color': 'rgba(0,0,0,0.08)' }}>Secondary</Button>
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'Add `shimmer` to any button for the liquid overlay effect. Override `--btn-shimmer-color` for light-background variants like `secondary` or `ghost`.',
       },
     },
   },

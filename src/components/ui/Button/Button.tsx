@@ -14,6 +14,7 @@ type PolymorphicProps<E extends ElementType> = {
   variant?: Variant
   size?: Size
   loading?: boolean
+  shimmer?: boolean
   style?: CSSProperties & Record<string, string | number>
 } & Omit<ComponentPropsWithoutRef<E>, 'as'>
 
@@ -22,6 +23,7 @@ export function Button<E extends ElementType = 'button'>({
   variant = 'primary',
   size = 'md',
   loading = false,
+  shimmer = false,
   disabled,
   children,
   className,
@@ -39,6 +41,7 @@ export function Button<E extends ElementType = 'button'>({
       data-variant={variant}
       data-size={size}
       data-loading={loading || undefined}
+      data-shimmer={shimmer || undefined}
       data-disabled={!isButton && isDisabledLike ? '' : undefined}
       disabled={isButton ? (disabled ?? loading) : undefined}
       aria-disabled={isDisabledLike || undefined}
