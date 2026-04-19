@@ -4,7 +4,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+  background: #fff;
   font-family: Arial, sans-serif;
   padding: 2rem;
   box-sizing: border-box;
@@ -34,7 +34,7 @@ body {
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  color: #fff;
+  color: #333;
   font-weight: 600;
   margin-bottom: 0.25rem;
 }
@@ -48,7 +48,7 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   transition: max-height 0.4s ease;
   padding: 0 1rem;
-  color: #fff;
+  color: #333;
 }
 
 .accordion-item input:checked + .accordion-header + .accordion-content {
