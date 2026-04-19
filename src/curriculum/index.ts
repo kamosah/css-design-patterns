@@ -13,12 +13,12 @@ export const curriculum: Topic[] = [
   centeringAlignment,
   equalHeightFluidColumns,
   animatedVisualEffects,
+  glassmorphismAndVisualDepth,
   customFormControls,
   responsiveVisibility,
   accessibleInteractionStates,
   adaptiveFullscreenSections,
   stickyLayouts,
-  glassmorphismAndVisualDepth,
 ]
 
 // Pre-built lookup maps — O(1) access instead of iterating on every navigation

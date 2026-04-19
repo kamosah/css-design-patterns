@@ -14,4 +14,4 @@ Style `.glass-nav` as a fixed, full-width header with a semi-transparent backgro
 - `z-index: 1000` to ensure the nav overlays page content
 - `.nav-links`: horizontal flex row, `gap: 1.5rem`, no bullets, no default margin or padding
 - Links: `color: #fff`, `text-decoration: none`, `font-weight: 500`
-- `body`: `padding-block-start: 60px` to prevent content from hiding beneath the fixed bar
+- The `.hero` section fills the viewport (`height: 100vh`) and scrolls beneath the fixed nav — this is what `backdrop-filter` blurs

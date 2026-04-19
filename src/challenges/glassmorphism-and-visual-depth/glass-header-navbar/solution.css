@@ -1,5 +1,10 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
 .hero {
-  height: 1000px;
+  height: 100vh;
   background: linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #0f3460 70%, #533483 100%);
 }
 
@@ -33,10 +38,4 @@
   font-weight: 500;
   padding-block: 0.5rem;
   padding-inline: 0.25rem;
-}
-
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  padding-block-start: 60px;
 }
