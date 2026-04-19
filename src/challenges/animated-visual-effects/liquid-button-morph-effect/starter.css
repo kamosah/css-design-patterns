@@ -1,0 +1,9 @@
+.liquid-button {
+  /* Your code here: position, padding, background, color, border, border-radius, cursor, overflow */
+}
+
+.liquid-button::before {
+  /* Your code here: content, absolute cover (200% × 200%, top/left -50%), gradient background, background-size, blur filter, pointer-events, and apply liquid animation */
+}
+
+/* Your code here: define @keyframes liquid with translate + rotate stops */
