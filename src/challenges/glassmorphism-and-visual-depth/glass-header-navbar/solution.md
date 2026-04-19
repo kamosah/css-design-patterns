@@ -12,7 +12,7 @@ body {
 
 .hero {
   height: 100vh;
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #0f3460 70%, #533483 100%);
+  background: #f3f4f6;
 }
 
 .glass-nav {

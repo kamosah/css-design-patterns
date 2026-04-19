@@ -1,0 +1,45 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  background: #fff;
+}
+
+.slider-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 80%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.glass-slider {
+  /* Your code here: remove default appearance, set width */
+}
+
+.glass-slider::-webkit-slider-runnable-track {
+  /* Your code here: glass track — webkit */
+}
+
+.glass-slider::-webkit-slider-thumb {
+  /* Your code here: glass thumb — webkit */
+}
+
+.glass-slider::-webkit-slider-thumb:hover,
+.glass-slider::-webkit-slider-thumb:focus {
+  /* Your code here: thumb hover/focus state */
+}
+
+.glass-slider::-moz-range-track {
+  /* Your code here: glass track — Firefox */
+}
+
+.glass-slider::-moz-range-thumb {
+  /* Your code here: glass thumb — Firefox */
+}
+
+.glass-slider::-moz-range-thumb:hover,
+.glass-slider::-moz-range-thumb:focus {
+  /* Your code here: thumb hover/focus state — Firefox */
+}

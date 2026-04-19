@@ -5,7 +5,7 @@ body {
 
 .hero {
   height: 100vh;
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #0f3460 70%, #533483 100%);
+  background: #f3f4f6;
 }
 
 .glass-nav {
@@ -34,7 +34,7 @@ body {
 
 .nav-links li a {
   text-decoration: none;
-  color: #fff;
+  color: #333;
   font-weight: 500;
   padding-block: 0.5rem;
   padding-inline: 0.25rem;

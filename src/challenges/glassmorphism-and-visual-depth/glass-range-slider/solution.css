@@ -1,0 +1,70 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  background: #fff;
+}
+
+.slider-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 80%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.glass-slider {
+  -webkit-appearance: none;
+  width: 100%;
+  background: transparent;
+}
+
+.glass-slider::-webkit-slider-runnable-track {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(6px);
+  border-radius: 4px;
+}
+
+.glass-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  margin-top: -6px;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(4px);
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.glass-slider::-webkit-slider-thumb:hover,
+.glass-slider::-webkit-slider-thumb:focus {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.glass-slider::-moz-range-track {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(6px);
+  border-radius: 4px;
+}
+
+.glass-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(4px);
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background 0.3s ease;
+  border: none;
+}
+
+.glass-slider::-moz-range-thumb:hover,
+.glass-slider::-moz-range-thumb:focus {
+  background: rgba(255, 255, 255, 0.6);
+}
