@@ -1,0 +1,12 @@
+.glitch {
+  /* Your code here: position, font styling, and overflow hidden */
+}
+
+.glitch::before,
+.glitch::after {
+  /* Your code here: content, position, text-shadow, and blend mode */
+}
+
+/* Your code here: define @keyframes glitchShift with multiple stops */
+
+/* Your code here: apply glitchShift animations and delays to ::before and ::after */
