@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.flip-card {
+  /* Your code here: set up perspective and sizing */
+}
+
+.flip-card-inner {
+  /* Your code here: preserve 3D children, transition, and hover rotation */
+}
+
+.flip-card:hover .flip-card-inner {
+  /* Your code here: rotate on hover */
+}
+
+.flip-card-front,
+.flip-card-back {
+  /* Your code here: position faces, glass style, dimensions, backface-visibility */
+}
+
+.flip-card-back {
+  /* Your code here: rotate back face by 180deg around Y-axis */
+}
