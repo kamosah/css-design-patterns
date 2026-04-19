@@ -1,0 +1,22 @@
+:root {
+  --clip1: polygon(40% 0%, 60% 0%, 100% 20%, 100% 40%, 80% 60%, 60% 80%, 30% 100%, 10% 80%, 0% 40%, 20% 20%);
+  --clip2: polygon(50% 0%, 70% 10%, 100% 40%, 90% 70%, 60% 90%, 30% 80%, 10% 60%, 0% 30%, 20% 10%, 35% 0%);
+  --clip3: polygon(40% 0%, 80% 20%, 90% 50%, 70% 80%, 40% 90%, 15% 75%, 0% 50%, 10% 20%, 25% 5%, 35% 0%);
+  --clip4: polygon(50% 0%, 70% 20%, 100% 30%, 90% 60%, 60% 90%, 30% 80%, 10% 50%, 0% 20%, 20% 10%, 35% 0%);
+}
+
+.blob {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  clip-path: var(--clip1);
+  animation: blobMorph 8s ease-in-out infinite;
+}
+
+@keyframes blobMorph {
+  0%   { clip-path: var(--clip1); }
+  25%  { clip-path: var(--clip2); }
+  50%  { clip-path: var(--clip3); }
+  75%  { clip-path: var(--clip4); }
+  100% { clip-path: var(--clip1); }
+}
