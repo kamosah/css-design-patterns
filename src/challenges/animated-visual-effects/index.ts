@@ -7,9 +7,10 @@ import { challenge as animatedGradientBackground } from './animated-gradient-bac
 import { challenge as slideInSidebarPanel } from './slide-in-sidebar-panel/meta'
 import { challenge as staggeredFadeInListItems } from './staggered-fade-in-list-items/meta'
 import { challenge as circularPageRevealTransition } from './circular-page-reveal-transition/meta'
+import { challenge as shimmerLoadingPlaceholder } from './shimmer-loading-placeholder/meta'
 
 export const topic: Topic = {
   id: 'animated-visual-effects',
   title: 'Animated Visual Effects',
-  challenges: [hoverZoomImage, fadeInNotificationBanner, rotatingLoadingSpinner, pulsatingCtaButton, animatedGradientBackground, slideInSidebarPanel, staggeredFadeInListItems, circularPageRevealTransition],
+  challenges: [hoverZoomImage, fadeInNotificationBanner, rotatingLoadingSpinner, pulsatingCtaButton, animatedGradientBackground, slideInSidebarPanel, staggeredFadeInListItems, circularPageRevealTransition, shimmerLoadingPlaceholder],
 }
