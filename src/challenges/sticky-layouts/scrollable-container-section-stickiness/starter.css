@@ -1,0 +1,12 @@
+.scroll-container {
+  height: 300px;
+  overflow-y: scroll;
+}
+
+section {
+  padding: 16px;
+}
+
+section h2 {
+  /* Add sticky styling */
+}
