@@ -7,6 +7,7 @@ import { topic as equalHeightFluidColumns } from '../challenges/equal-height-flu
 import { topic as animatedVisualEffects } from '../challenges/animated-visual-effects'
 import { topic as adaptiveFullscreenSections } from '../challenges/adaptive-fullscreen-sections'
 import { topic as stickyLayouts } from '../challenges/sticky-layouts'
+import { topic as glassmorphismAndVisualDepth } from '../challenges/glassmorphism-and-visual-depth'
 
 export const curriculum: Topic[] = [
   centeringAlignment,
@@ -17,6 +18,7 @@ export const curriculum: Topic[] = [
   accessibleInteractionStates,
   adaptiveFullscreenSections,
   stickyLayouts,
+  glassmorphismAndVisualDepth,
 ]
 
 // Pre-built lookup maps — O(1) access instead of iterating on every navigation
