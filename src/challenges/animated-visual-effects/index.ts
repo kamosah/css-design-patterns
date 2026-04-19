@@ -8,10 +8,11 @@ import { challenge as slideInSidebarPanel } from './slide-in-sidebar-panel/meta'
 import { challenge as staggeredFadeInListItems } from './staggered-fade-in-list-items/meta'
 import { challenge as circularPageRevealTransition } from './circular-page-reveal-transition/meta'
 import { challenge as shimmerLoadingPlaceholder } from './shimmer-loading-placeholder/meta'
+import { challenge as bouncingBallAnimation } from './bouncing-ball-animation/meta'
 import { challenge as flipCardEffect } from './3d-flip-card-effect/meta'
 
 export const topic: Topic = {
   id: 'animated-visual-effects',
   title: 'Animated Visual Effects',
-  challenges: [hoverZoomImage, fadeInNotificationBanner, rotatingLoadingSpinner, pulsatingCtaButton, animatedGradientBackground, slideInSidebarPanel, staggeredFadeInListItems, circularPageRevealTransition, shimmerLoadingPlaceholder, flipCardEffect],
+  challenges: [hoverZoomImage, fadeInNotificationBanner, rotatingLoadingSpinner, pulsatingCtaButton, animatedGradientBackground, slideInSidebarPanel, staggeredFadeInListItems, circularPageRevealTransition, shimmerLoadingPlaceholder, bouncingBallAnimation, flipCardEffect],
 }
