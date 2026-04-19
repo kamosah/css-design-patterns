@@ -1,0 +1,9 @@
+:root {
+  /* Your code here: define --clip1 through --clip4 with polygon() shapes */
+}
+
+.blob {
+  /* Your code here: fill viewport, set background gradient, initial clip-path, and apply blobMorph animation */
+}
+
+/* Your code here: define @keyframes blobMorph animating clip-path through the four variables */
