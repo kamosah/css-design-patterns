@@ -111,35 +111,6 @@
   --btn-font-size: 15px;
 }
 
-/* ── Shimmer effect — opt-in via data-shimmer ── */
-.btn[data-shimmer] {
-  --btn-shimmer-color: rgba(255, 255, 255, 0.4);
-  position: relative;
-  overflow: hidden;
-}
-
-.btn[data-shimmer]::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background:
-    radial-gradient(circle at 25% 25%, var(--btn-shimmer-color) 10%, transparent 50%),
-    radial-gradient(circle at 75% 75%, var(--btn-shimmer-color) 15%, transparent 60%);
-  background-size: 50% 50%;
-  filter: blur(20px);
-  pointer-events: none;
-  animation: shimmer 3s ease-in-out infinite;
-}
-
-@keyframes shimmer {
-  0%   { transform: translate(0, 0) rotate(0deg); }
-  50%  { transform: translate(25%, 25%) rotate(180deg); }
-  100% { transform: translate(0, 0) rotate(360deg); }
-}
-
 /* ── Loading spinner ── */
 .spinner {
   width: 12px;
