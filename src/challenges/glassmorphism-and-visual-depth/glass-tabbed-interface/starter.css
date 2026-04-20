@@ -1,0 +1,21 @@
+.tabs input {
+  /* Hide native radio inputs */
+}
+
+.tab-labels {
+  /* Your code here: flex layout, gap, wrapping */
+}
+
+.tab-labels label {
+  /* Your code here: glass styling, padding, border-radius, transition */
+}
+
+/* Active tab underline */
+/* Your code here: input:checked ~ .tab-labels label[for="..."] */
+
+.tab-content > div {
+  /* Your code here: hidden state */
+}
+
+/* Show active panel */
+/* Your code here: input:checked ~ .tab-content #contentX */
