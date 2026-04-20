@@ -1,0 +1,32 @@
+.glass-nav {
+  /* Navbar: fixed, full width, height 60px, flex, glass background */
+}
+
+.menu {
+  /* Your code here: horizontal list styling */
+}
+
+.menu li {
+  /* Your code here: position relative for dropdown */
+}
+
+.menu a {
+  text-decoration: none;
+  color: #aaa;
+  font-weight: 500;
+}
+
+.dropdown {
+  /* Your code here: hidden panel, absolute positioning, glass style, grid layout */
+}
+
+.menu li:hover > .dropdown,
+.menu li:focus-within > .dropdown {
+  /* Your code here: reveal dropdown */
+}
+
+@media (max-width: 768px) {
+  .dropdown {
+    /* Your code here: adjust grid to 2 columns */
+  }
+}
