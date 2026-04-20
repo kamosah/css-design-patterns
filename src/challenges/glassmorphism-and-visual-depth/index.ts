@@ -8,9 +8,10 @@ import { challenge as glassAccordionPanel } from './glass-accordion-panel/meta'
 import { challenge as glass3dCarousel } from './glass-3d-carousel/meta'
 import { challenge as glassResponsiveDashboardCards } from './glass-responsive-dashboard-cards/meta'
 import { challenge as glassTabbedInterface } from './glass-tabbed-interface/meta'
+import { challenge as glassMegaDropdownMenu } from './glass-mega-dropdown-menu/meta'
 
 export const topic: Topic = {
   id: 'glassmorphism-and-visual-depth',
   title: 'Glassmorphism and Visual Depth',
-  challenges: [glassCardComponent, glassHeaderNavbar, glassToggleSwitch, glassImageGallery, glassFlipCard, glassAccordionPanel, glass3dCarousel, glassResponsiveDashboardCards, glassTabbedInterface],
+  challenges: [glassCardComponent, glassHeaderNavbar, glassToggleSwitch, glassImageGallery, glassFlipCard, glassAccordionPanel, glass3dCarousel, glassResponsiveDashboardCards, glassTabbedInterface, glassMegaDropdownMenu],
 }
