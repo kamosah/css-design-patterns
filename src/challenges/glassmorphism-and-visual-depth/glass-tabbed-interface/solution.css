@@ -1,0 +1,42 @@
+.tabs input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.tab-labels {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.tab-labels label {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+
+#tab1:checked ~ .tab-labels label[for="tab1"],
+#tab2:checked ~ .tab-labels label[for="tab2"],
+#tab3:checked ~ .tab-labels label[for="tab3"] {
+  color: #bbb;
+  border-bottom-color: #bbb;
+}
+
+.tab-content > div {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+#tab1:checked ~ .tab-content #content1,
+#tab2:checked ~ .tab-content #content2,
+#tab3:checked ~ .tab-content #content3 {
+  display: block;
+  opacity: 1;
+}

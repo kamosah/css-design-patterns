@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      box-sizing: border-box;
+    }
+
+    .tabs {
+      width: 100%;
+      max-width: 600px;
+    }
+  </style>
+</head>
+<body>
+  <div class="tabs">
+    <input type="radio" id="tab1" name="tab" checked>
+    <input type="radio" id="tab2" name="tab">
+    <input type="radio" id="tab3" name="tab">
+
+    <div class="tab-labels">
+      <label for="tab1">Tab 1</label>
+      <label for="tab2">Tab 2</label>
+      <label for="tab3">Tab 3</label>
+    </div>
+
+    <div class="tab-content">
+      <div id="content1">Content for Tab 1</div>
+      <div id="content2">Content for Tab 2</div>
+      <div id="content3">Content for Tab 3</div>
+    </div>
+  </div>
+</body>
+</html>
