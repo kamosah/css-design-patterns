@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+}
+
+.sidebar {
+  flex: 0 0 200px;
+  padding: 1rem;
+  background: #f5f5f5;
+}
+
+.content {
+  flex: 1;
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .sidebar {
+    position: sticky; /* pins sidebar during scroll on desktop */
+    top: 0;           /* stick at the top of the viewport */
+    align-self: flex-start; /* prevents flex stretch from disabling sticky */
+  }
+}
