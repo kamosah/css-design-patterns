@@ -1,7 +1,10 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, Children, isValidElement } from 'react'
 import ReactMarkdown from 'react-markdown'
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
+import { vscDarkPlus, vs } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import remarkGfm from 'remark-gfm'
 import type { Challenge } from '../../types/challenge'
+import { useThemeStore } from '../../store/themeStore'
 import s from './InstructionsPanel.module.css'
 
 type InstructionTab = 'problem' | 'solution'
@@ -22,6 +25,43 @@ export function InstructionsPanel({
   isLastChallenge,
 }: InstructionsPanelProps) {
   const [activeTab, setActiveTab] = useState<InstructionTab>('problem')
+  const { theme } = useThemeStore()
+  const isDark = theme === 'dark'
+
+  const markdownComponents = useMemo(() => ({
+    pre({ children }: { children?: React.ReactNode }) {
+      const child = Children.toArray(children)[0]
+      if (!isValidElement<{ className?: string; children: string }>(child)) {
+        return <pre>{children}</pre>
+      }
+      const lang = /language-(\w+)/.exec(child.props.className ?? '')?.[1]
+      if (!lang) return <pre>{children}</pre>
+      return (
+        <SyntaxHighlighter
+          language={lang}
+          style={isDark ? vscDarkPlus : vs}
+          customStyle={{
+            background: 'var(--bg-code)',
+            border: '1px solid var(--border)',
+            borderRadius: '6px',
+            padding: '12px',
+            fontSize: '12px',
+            margin: '0 0 12px',
+            lineHeight: '1.5',
+            overflowX: 'auto',
+          }}
+          codeTagProps={{
+            style: { fontFamily: "ui-monospace, 'Cascadia Code', Consolas, monospace" },
+          }}
+        >
+          {String(child.props.children).replace(/\n$/, '')}
+        </SyntaxHighlighter>
+      )
+    },
+    table({ children }: { children?: React.ReactNode }) {
+      return <div className={s.tableWrapper}><table>{children}</table></div>
+    },
+  }), [isDark])
 
   const { solutionHtml, solutionCss } = challenge
   const solutionSrcdoc = useMemo(() => {
@@ -78,7 +118,7 @@ export function InstructionsPanel({
             </span>
           )}
         </div>
-        <ReactMarkdown remarkPlugins={[remarkGfm]}>
+        <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>
           {activeTab === 'solution' ? challenge.solutionExplanation : challenge.instructions}
         </ReactMarkdown>
 

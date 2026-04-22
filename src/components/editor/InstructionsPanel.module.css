@@ -129,11 +129,18 @@
   font-family: ui-monospace, 'Cascadia Code', Consolas, monospace;
 }
 
+.tableWrapper {
+  overflow-x: auto;
+  margin-bottom: 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
 .content table {
   width: 100%;
   border-collapse: collapse;
   font-size: 12px;
-  margin-bottom: 12px;
 }
 
 .content th {
@@ -145,10 +152,22 @@
   font-weight: 600;
 }
 
+.content th:not(:last-child) {
+  border-right: 1px solid var(--border-subtle);
+}
+
 .content td {
   padding: 6px 10px;
   border-bottom: 1px solid var(--border-subtle);
   color: var(--text-body);
+}
+
+.content td:not(:last-child) {
+  border-right: 1px solid var(--border-subtle);
+}
+
+.content tr:last-child td {
+  border-bottom: none;
 }
 
 .content ul,
