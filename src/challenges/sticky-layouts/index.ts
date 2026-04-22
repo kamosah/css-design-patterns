@@ -8,9 +8,10 @@ import { challenge as scrollableContainerSectionStickiness } from './scrollable-
 import { challenge as overlappingStickyBanner } from './overlapping-sticky-banner/meta'
 import { challenge as nestedStickyElements } from './nested-sticky-elements/meta'
 import { challenge as responsiveStickySidebar } from './responsive-sticky-sidebar/meta'
+import { challenge as cssGridStickySidebarAndHeader } from './css-grid-sticky-sidebar-and-header/meta'
 
 export const topic: Topic = {
   id: 'sticky-layouts',
   title: 'Sticky Layouts',
-  challenges: [basicStickyHeader, stickySidebarNavigation, persistentStickyFooter, stickyElementWithOffset, stickyTableHeader, scrollableContainerSectionStickiness, overlappingStickyBanner, nestedStickyElements, responsiveStickySidebar],
+  challenges: [basicStickyHeader, stickySidebarNavigation, persistentStickyFooter, stickyElementWithOffset, stickyTableHeader, scrollableContainerSectionStickiness, overlappingStickyBanner, nestedStickyElements, responsiveStickySidebar, cssGridStickySidebarAndHeader],
 }

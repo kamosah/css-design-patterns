@@ -1,0 +1,16 @@
+.grid-container {
+  display: grid;
+  /* define grid-template-rows and columns */
+}
+
+.site-header {
+  /* sticky header styles */
+}
+
+.sidebar {
+  /* sticky sidebar styles */
+}
+
+.content {
+  /* main content styles */
+}
