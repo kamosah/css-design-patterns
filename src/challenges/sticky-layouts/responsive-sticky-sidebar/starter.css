@@ -3,15 +3,16 @@
 }
 
 .sidebar {
-  flex: 0 0 200px;
-  padding: 1rem;
-  background: #f5f5f5;
-  /* add responsive sticky positioning here */
+  /* Base styles for sidebar */
 }
 
 .content {
-  flex: 1;
-  padding: 1rem;
+  /* Styles for main content */
 }
 
-/* add a media query for desktop sticky behavior here */
+/* Media query for desktop */
+@media (min-width: 768px) {
+  .sidebar {
+    /* Add sticky positioning here */
+  }
+}
