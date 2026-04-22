@@ -29,7 +29,7 @@ export function InstructionsPanel({
   const isDark = theme === 'dark'
 
   const markdownComponents = useMemo(() => ({
-    pre({ children }: { children: React.ReactNode }) {
+    pre({ children }: { children?: React.ReactNode }) {
       const child = Children.toArray(children)[0]
       if (!isValidElement<{ className?: string; children: string }>(child)) {
         return <pre>{children}</pre>
@@ -58,7 +58,7 @@ export function InstructionsPanel({
         </SyntaxHighlighter>
       )
     },
-    table({ children }: { children: React.ReactNode }) {
+    table({ children }: { children?: React.ReactNode }) {
       return <div className={s.tableWrapper}><table>{children}</table></div>
     },
   }), [isDark])
