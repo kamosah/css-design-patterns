@@ -1,0 +1,29 @@
+.table-container {
+  width: 400px;
+  height: 200px;
+  overflow: auto;
+}
+
+.freeze-table {
+  border-collapse: collapse;
+  width: max-content;
+}
+
+th,
+td {
+  padding: 8px;
+  border: 1px solid #000;
+  background: #fff;
+}
+
+.sticky-header {
+  /* Add your CSS rules for first row here */
+}
+
+.sticky-column {
+  /* Add your CSS rules for first column here */
+}
+
+.top-left {
+  /* Add your CSS rules for top left cell here */
+}
