@@ -1,0 +1,12 @@
+.timeline-container {
+  height: 500px;
+  overflow-y: auto;
+}
+
+.sticky-year {
+  /* Add your sticky styles here */
+}
+
+.event {
+  /* Add your styling for events here */
+}
