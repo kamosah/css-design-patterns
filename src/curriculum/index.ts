@@ -8,6 +8,7 @@ import { topic as animatedVisualEffects } from '../challenges/animated-visual-ef
 import { topic as adaptiveFullscreenSections } from '../challenges/adaptive-fullscreen-sections'
 import { topic as stickyLayouts } from '../challenges/sticky-layouts'
 import { topic as glassmorphismAndVisualDepth } from '../challenges/glassmorphism-and-visual-depth'
+import { topic as gridLayouts } from '../challenges/responsive-grids-and-layouts'
 
 export const curriculum: Topic[] = [
   centeringAlignment,
@@ -19,6 +20,7 @@ export const curriculum: Topic[] = [
   accessibleInteractionStates,
   adaptiveFullscreenSections,
   stickyLayouts,
+  gridLayouts,
 ]
 
 // Pre-built lookup maps — O(1) access instead of iterating on every navigation
