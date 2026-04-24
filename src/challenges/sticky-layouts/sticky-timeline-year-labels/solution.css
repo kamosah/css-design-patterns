@@ -1,0 +1,18 @@
+.timeline-container {
+  height: 500px;
+  overflow-y: auto;
+}
+
+.sticky-year {
+  position: sticky;
+  top: 0;
+  background: white;
+  padding: 8px;
+  margin: 0;
+  z-index: 1;
+}
+
+.event {
+  padding: 8px;
+  border-bottom: 1px solid #ccc;
+}

@@ -9,9 +9,10 @@ import { challenge as overlappingStickyBanner } from './overlapping-sticky-banne
 import { challenge as nestedStickyElements } from './nested-sticky-elements/meta'
 import { challenge as responsiveStickySidebar } from './responsive-sticky-sidebar/meta'
 import { challenge as freezeTableHeaderAndColumn } from './freeze-table-header-and-column/meta'
+import { challenge as stickyTimelineYearLabels } from './sticky-timeline-year-labels/meta'
 
 export const topic: Topic = {
   id: 'sticky-layouts',
   title: 'Sticky Layouts',
-  challenges: [basicStickyHeader, stickySidebarNavigation, persistentStickyFooter, stickyElementWithOffset, stickyTableHeader, scrollableContainerSectionStickiness, overlappingStickyBanner, nestedStickyElements, responsiveStickySidebar, freezeTableHeaderAndColumn],
+  challenges: [basicStickyHeader, stickySidebarNavigation, persistentStickyFooter, stickyElementWithOffset, stickyTableHeader, scrollableContainerSectionStickiness, overlappingStickyBanner, nestedStickyElements, responsiveStickySidebar, freezeTableHeaderAndColumn, stickyTimelineYearLabels],
 }
