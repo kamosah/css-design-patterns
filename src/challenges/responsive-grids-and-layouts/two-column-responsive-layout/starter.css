@@ -1,0 +1,11 @@
+.container {
+  /* Your grid setup here */
+}
+
+@media (max-width: 600px) {
+  /* Your media properties here */
+}
+
+.item {
+  /* Basic styling */
+}
