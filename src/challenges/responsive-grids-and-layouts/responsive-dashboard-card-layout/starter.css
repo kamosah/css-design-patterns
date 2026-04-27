@@ -1,0 +1,17 @@
+.dashboard {
+  /* Your grid and gap setup here */
+}
+
+/* Mobile view */
+@media (min-width: 600px) {
+  /* Add your code here */
+}
+
+/* Tablet view */
+@media (min-width: 900px) {
+  /* Add your code here */
+}
+
+.card {
+  /* Basic styling if needed */
+}
