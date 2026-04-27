@@ -1,0 +1,45 @@
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  gap: 10px;
+}
+
+.header { grid-area: header; background: #2196f3; color: white; padding: 1rem; }
+.main { grid-area: main; background: #e3f2fd; padding: 1rem; }
+.footer { grid-area: footer; background: #bbdefb; padding: 1rem; }
+
+/* Tablet view */
+@media (min-width: 768px) {
+  .grid-container {
+    grid-template-areas:
+      "header"
+      "sidebar"
+      "main"
+      "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr auto;
+  }
+  .sidebar { grid-area: sidebar; background: #90caf9; padding: 1rem; }
+}
+
+/* Desktop view */
+@media (min-width: 1024px) {
+  .grid-container {
+    grid-template-areas:
+      "header header"
+      "sidebar main"
+      "footer footer";
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto 1fr auto;
+  }
+}
+
+/* Mobile view */
+@media (max-width: 767px) {
+  .sidebar { display: none; }
+}

@@ -1,0 +1,24 @@
+.grid-container {
+  display: grid;
+  /* Base grid area definitions here */
+  gap: 10px;
+}
+
+.header, .main, .footer {
+  /* Basic styling here */
+}
+
+/* Tablet view */
+@media (min-width: 768px) {
+  /* Add your code here */
+}
+
+/* Desktop view */
+@media (min-width: 1024px) {
+  /* Add your code here */
+}
+
+/* Mobile view */
+@media (max-width: 767px) {
+  /* Add your code here */
+}
