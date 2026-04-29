@@ -1,0 +1,7 @@
+.grid {
+  display: grid;
+  /* Base grid setup */
+  gap: 20px;
+}
+
+/* Add your code here */
