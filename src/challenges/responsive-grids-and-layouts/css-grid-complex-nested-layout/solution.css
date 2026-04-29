@@ -1,0 +1,72 @@
+.parent-grid {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "sidebar"
+    "content"
+    "footer";
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: 20px;
+}
+
+.header { grid-area: header; background: #ffc107; padding: 1rem; }
+.sidebar { grid-area: sidebar; background: #ffeb3b; padding: 1rem; }
+.footer { grid-area: footer; background: #ffeb3b; padding: 1rem; }
+
+.content {
+  grid-area: content;
+  display: grid;
+  grid-template-areas:
+    "hero"
+    "features"
+    "panel1"
+    "panel2";
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.hero { grid-area: hero; background: #8bc34a; padding: 1rem; }
+.features { grid-area: features; background: #cddc39; padding: 1rem; }
+.panel1 { grid-area: panel1; background: #aed581; padding: 1rem; }
+.panel2 { grid-area: panel2; background: #9ccc65; padding: 1rem; }
+.data-panels { display: contents; }
+
+/* Tablet (600px – 900px) */
+@media (min-width: 600px) and (max-width: 900px) {
+  .parent-grid {
+    grid-template-areas:
+      "header header"
+      "sidebar content"
+      "footer footer";
+    grid-template-columns: 1fr 3fr;
+  }
+
+  .content {
+    grid-template-areas:
+      "hero"
+      "features"
+      "panel1"
+      "panel2";
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Desktop (≥900px) */
+@media (min-width: 900px) {
+  .parent-grid {
+    grid-template-areas:
+      "header header"
+      "sidebar content"
+      "footer footer";
+    grid-template-columns: 1fr 4fr;
+  }
+
+  .content {
+    grid-template-areas:
+      "hero     hero"
+      "features panel1"
+      "features panel2";
+    grid-template-columns: 2fr 1fr;
+  }
+}

@@ -9,9 +9,10 @@ import { challenge as responsiveDashboardCardLayout } from './responsive-dashboa
 import { challenge as masonryStyleResponsiveGrid } from './masonry-style-responsive-grid/meta'
 import { challenge as contentFirstResponsiveGrid } from './content-first-responsive-grid/meta'
 import { challenge as fluidAspectRatioGrid } from './fluid-aspect-ratio-grid/meta'
+import { challenge as cssGridComplexNestedLayout } from './css-grid-complex-nested-layout/meta'
 
 export const topic: Topic = {
   id: 'responsive-grids-and-layouts',
   title: 'Responsive Grids and Layouts',
-  challenges: [basicResponsiveGridLayout, twoColumnResponsiveLayout, responsiveImageGalleryGrid, fixedThreeColumnResponsiveGrid, mobileFirstResponsiveGrid, dynamicGridWithNamedAreas, responsiveDashboardCardLayout, masonryStyleResponsiveGrid, contentFirstResponsiveGrid, fluidAspectRatioGrid],
+  challenges: [basicResponsiveGridLayout, twoColumnResponsiveLayout, responsiveImageGalleryGrid, fixedThreeColumnResponsiveGrid, mobileFirstResponsiveGrid, dynamicGridWithNamedAreas, responsiveDashboardCardLayout, masonryStyleResponsiveGrid, contentFirstResponsiveGrid, fluidAspectRatioGrid, cssGridComplexNestedLayout],
 }
