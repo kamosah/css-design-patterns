@@ -3,20 +3,7 @@
   gap: 20px;
   /* Define template-areas and structure */
 }
-
 .content {
   /* Child grid setup here */
-  gap: 10px;
 }
-
-/* Additional styles for .header, .sidebar, .hero, .features, .panel1, .panel2 */
-
-/* Tablet (600px – 900px) */
-@media (min-width: 600px) and (max-width: 900px) {
-  /* Add your code here */
-}
-
-/* Desktop (≥900px) */
-@media (min-width: 900px) {
-  /* Add your code here */
-}
+/* Additional styles for .header, .sidebar, .hero, etc. */
