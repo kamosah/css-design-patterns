@@ -1,0 +1,9 @@
+.fluid-grid {
+  display: grid;
+  /* Your fluid grid setup here */
+  gap: 1rem;
+}
+
+.grid-item {
+  /* Your aspect-ratio enforcement here */
+}
