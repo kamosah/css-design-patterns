@@ -1,22 +1,22 @@
 # Complex Subgrid Responsive Layout
 
-Given a `.parent-grid` containing a `header`, `content`, `aside`, and `footer`, implement a responsive layout where the `.content` area uses `display: subgrid` to inherit parent column tracks and house a `.title` and a `.card-list` of three cards.
+Create a layout with parent grid areas: `header`, `content`, `aside`, and `footer`. Inside `.content`, a subgrid splits into two columns — a title section and a list of cards.
 
 ## Goal
 
-Write CSS in `styles.css` to define a parent grid and a nested subgrid with responsive behavior across three breakpoints.
+Write CSS rules employing `display: subgrid` for the child layout, defining responsive behavior at three breakpoints, and ensuring alignment of titles and cards across nested grid lines.
 
 ## Layout requirements
 
-**Mobile (< 640px):** Single-column parent grid; `.content` uses `subgrid` inheriting one column; `.title` and `.card-list` stack vertically.
+**Mobile (< 640px):** Single-column parent grid; subgrid also in single column.
 
-**Tablet (640px – 1023px):** Parent switches to two columns (`2fr 1fr`) with header and footer spanning both. Aside sits in the right column. `.card-list` shows two cards per row.
+**Tablet (640px – 1023px):** Parent grid in two columns (`content 2fr`, `aside 1fr`); subgrid in two columns.
 
-**Desktop (≥ 1024px):** Parent has three columns (`1fr 3fr 1fr`). Aside moves to the left column; `.content` spans the middle two columns. `.card-list` shows three cards per row.
+**Desktop (≥ 1024px):** Parent grid in three columns (`aside 1fr`, `content 3fr`, and extra column reserved); subgrid displaying three columns for cards.
 
 ## Constraints
 
-- Use CSS Grid and `display: subgrid` only — no Flexbox
-- Two breakpoints: `min-width: 640px` and `min-width: 1024px`
-- Parent `gap`: `16px`; subgrid `gap`: `8px`
+- Use CSS Grid and `subgrid` only — no Flexbox
+- Define two breakpoints: `640px` and `1024px`
+- Parent grid `gap`: `16px`; subgrid `gap`: `8px`
 - Do not use JavaScript
