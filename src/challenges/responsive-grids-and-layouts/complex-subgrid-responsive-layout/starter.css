@@ -1,0 +1,14 @@
+.parent-grid {
+  display: grid;
+  gap: 16px;
+  /* Define grid-template-areas and grid-template-columns */
+}
+
+.content {
+  grid-area: content;
+  display: grid;
+  gap: 8px;
+  /* Set up subgrid here */
+}
+
+/* Additional styles for .header, .aside, .footer, .title, .card-list, .card */
