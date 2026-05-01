@@ -1,0 +1,10 @@
+.calendar {
+  display: grid;
+  /* Your grid setup here */
+  gap: 5px;
+}
+
+.weekday,
+.date {
+  /* Basic styling here */
+}
