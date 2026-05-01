@@ -182,19 +182,28 @@ Every PR that adds or changes a visible component or challenge should include a 
 
 ```bash
 # 1. Copy and fill the template
-cp docs/screenshot-template.html docs/_tmp_before.html
-cp docs/screenshot-template.html docs/_tmp_after.html
+cp docs/screenshot-template.html docs/_tmp_starter.html
+cp docs/screenshot-template.html docs/_tmp_solution.html
 # Edit each: paste starter/solution HTML+CSS into the marked sections
 
 # 2. Serve docs/
-python3 -m http.server 8765
+python3 -m http.server 8765 --directory docs &
 
-# 3. Screenshot via Playwright MCP
+# 3a. Screenshot via Playwright MCP (preferred when connected)
 #    browser_resize  → target viewport dimensions
 #    browser_navigate → http://localhost:8765/_tmp_starter.html
 #    browser_take_screenshot → docs/<challenge>-starter.png
 #    browser_navigate → http://localhost:8765/_tmp_solution.html
 #    browser_take_screenshot → docs/<challenge>-solution.png
+
+# 3b. Screenshot via local Chrome (fallback when Playwright MCP is unavailable)
+CHROME="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+"$CHROME" --headless=new --disable-gpu --window-size=1280,720 \
+  --screenshot="$(pwd)/docs/<challenge>-starter.png" \
+  "http://localhost:8765/_tmp_starter.html"
+"$CHROME" --headless=new --disable-gpu --window-size=1280,720 \
+  --screenshot="$(pwd)/docs/<challenge>-solution.png" \
+  "http://localhost:8765/_tmp_solution.html"
 
 # 4. Clean up
 kill $(lsof -ti:8765)
