@@ -11,9 +11,10 @@ import { challenge as contentFirstResponsiveGrid } from './content-first-respons
 import { challenge as fluidAspectRatioGrid } from './fluid-aspect-ratio-grid/meta'
 import { challenge as cssGridComplexNestedLayout } from './css-grid-complex-nested-layout/meta'
 import { challenge as complexSubgridResponsiveLayout } from './complex-subgrid-responsive-layout/meta'
+import { challenge as responsiveMonthlyCalendarGrid } from './responsive-monthly-calendar-grid/meta'
 
 export const topic: Topic = {
   id: 'responsive-grids-and-layouts',
   title: 'Responsive Grids and Layouts',
-  challenges: [basicResponsiveGridLayout, twoColumnResponsiveLayout, responsiveImageGalleryGrid, fixedThreeColumnResponsiveGrid, mobileFirstResponsiveGrid, dynamicGridWithNamedAreas, responsiveDashboardCardLayout, masonryStyleResponsiveGrid, contentFirstResponsiveGrid, fluidAspectRatioGrid, cssGridComplexNestedLayout, complexSubgridResponsiveLayout],
+  challenges: [basicResponsiveGridLayout, twoColumnResponsiveLayout, responsiveImageGalleryGrid, fixedThreeColumnResponsiveGrid, mobileFirstResponsiveGrid, dynamicGridWithNamedAreas, responsiveDashboardCardLayout, masonryStyleResponsiveGrid, contentFirstResponsiveGrid, fluidAspectRatioGrid, cssGridComplexNestedLayout, complexSubgridResponsiveLayout, responsiveMonthlyCalendarGrid],
 }
