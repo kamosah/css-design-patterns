@@ -13,9 +13,10 @@ import { challenge as cssGridComplexNestedLayout } from './css-grid-complex-nest
 import { challenge as complexSubgridResponsiveLayout } from './complex-subgrid-responsive-layout/meta'
 import { challenge as responsiveMonthlyCalendarGrid } from './responsive-monthly-calendar-grid/meta'
 import { challenge as asymmetricalMagazineStyleGrid } from './asymmetrical-magazine-style-grid/meta'
+import { challenge as overlappingHeroFeatureCards } from './overlapping-hero-feature-cards/meta'
 
 export const topic: Topic = {
   id: 'responsive-grids-and-layouts',
   title: 'Responsive Grids and Layouts',
-  challenges: [basicResponsiveGridLayout, twoColumnResponsiveLayout, responsiveImageGalleryGrid, fixedThreeColumnResponsiveGrid, mobileFirstResponsiveGrid, dynamicGridWithNamedAreas, responsiveDashboardCardLayout, masonryStyleResponsiveGrid, contentFirstResponsiveGrid, fluidAspectRatioGrid, cssGridComplexNestedLayout, complexSubgridResponsiveLayout, responsiveMonthlyCalendarGrid, asymmetricalMagazineStyleGrid],
+  challenges: [basicResponsiveGridLayout, twoColumnResponsiveLayout, responsiveImageGalleryGrid, fixedThreeColumnResponsiveGrid, mobileFirstResponsiveGrid, dynamicGridWithNamedAreas, responsiveDashboardCardLayout, masonryStyleResponsiveGrid, contentFirstResponsiveGrid, fluidAspectRatioGrid, cssGridComplexNestedLayout, complexSubgridResponsiveLayout, responsiveMonthlyCalendarGrid, asymmetricalMagazineStyleGrid, overlappingHeroFeatureCards],
 }
