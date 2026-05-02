@@ -9,6 +9,7 @@ import { topic as adaptiveFullscreenSections } from '../challenges/adaptive-full
 import { topic as stickyLayouts } from '../challenges/sticky-layouts'
 import { topic as glassmorphismAndVisualDepth } from '../challenges/glassmorphism-and-visual-depth'
 import { topic as gridLayouts } from '../challenges/responsive-grids-and-layouts'
+import { topic as intrinsicAndContainerBasedSizing } from '../challenges/intrinsic-and-container-based-sizing'
 
 export const curriculum: Topic[] = [
   centeringAlignment,
@@ -21,6 +22,7 @@ export const curriculum: Topic[] = [
   adaptiveFullscreenSections,
   stickyLayouts,
   gridLayouts,
+  intrinsicAndContainerBasedSizing,
 ]
 
 // Pre-built lookup maps — O(1) access instead of iterating on every navigation
