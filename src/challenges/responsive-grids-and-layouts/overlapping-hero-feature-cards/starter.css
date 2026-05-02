@@ -1,0 +1,11 @@
+.layout {
+  display: grid;
+  gap: 16px;
+  /* Define base grid-template here */
+}
+
+.hero,
+.features,
+.card {
+  /* Basic styling */
+}
