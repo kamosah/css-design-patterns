@@ -1,0 +1,54 @@
+.layout {
+  display: grid;
+  grid-template-areas:
+    "hero"
+    "features";
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.hero {
+  grid-area: hero;
+  background: #8e44ad;
+  color: white;
+  padding: 2rem;
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.features {
+  grid-area: features;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.card {
+  background: #ecf0f1;
+  padding: 1rem;
+  border-radius: 4px;
+  text-align: center;
+}
+
+/* Tablet */
+@media (min-width: 600px) {
+  .features {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: -20px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 900px) {
+  .features {
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: -40px;
+  }
+}
