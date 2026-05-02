@@ -1,0 +1,9 @@
+.magazine {
+  display: grid;
+  gap: 16px;
+  /* Base grid setup */
+}
+
+.feature, .primary1, .primary2, .secondary1, .secondary2 {
+  /* Common card styling */
+}
