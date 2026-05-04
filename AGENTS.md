@@ -17,3 +17,5 @@ Use React Router v7 data loaders for route data and the existing Zustand stores:
 
 ## Commit & Pull Request Guidelines
 Recent history uses short Conventional Commit-style subjects such as `feat: add fullscreen section with content alignment challenge`. Prefer prefixes like `feat:`, `fix:`, and `merge:` with an imperative summary. Pull requests should include a clear description, linked issue when applicable, and screenshots or Storybook references for visual changes. For visible component or challenge updates, include starter and solution screenshots using `docs/screenshot-template.html`. Call out any new challenge paths, token changes, or routing/store updates explicitly.
+
+Agent-created git artifacts must not be self-identifying. Do not use agent labels in branch names, PR titles, PR bodies, commit messages, trailers, or co-author lines. Avoid patterns such as `codex/...`, `[codex] ...`, or `Co-authored-by: Codex ...`; use neutral, human-style names instead.
