@@ -1,0 +1,7 @@
+.hero {
+  width: 100%;
+  height: 300px;
+  background-image: url('https://ui-avatars.com/api/?name=Hero+Image&size=1200&background=64748b&color=ffffff&format=png');
+  background-size: cover;
+  background-position: center;
+}
