@@ -1,0 +1,11 @@
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.item {
+  background-color: lightblue;
+  padding: 1rem;
+  text-align: center;
+}
