@@ -1,5 +1,6 @@
 import type { Topic } from '../../types/challenge'
 import { challenge as adaptiveCard } from './adaptive-card/meta'
+import { challenge as featureGridContainerQueries } from './feature-grid-container-queries/meta'
 import { challenge as fluidButtonWidth } from './fluid-button-width/meta'
 import { challenge as fluidImageResizer } from './fluid-image-resizer/meta'
 import { challenge as minMaxResponsiveGridGallery } from './min-max-responsive-grid-gallery/meta'
@@ -16,5 +17,6 @@ export const topic: Topic = {
     fluidButtonWidth,
     minMaxResponsiveGridGallery,
     adaptiveCard,
+    featureGridContainerQueries,
   ],
 }
