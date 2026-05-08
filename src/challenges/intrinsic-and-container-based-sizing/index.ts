@@ -6,6 +6,7 @@ import { challenge as fluidImageResizer } from './fluid-image-resizer/meta'
 import { challenge as minMaxResponsiveGridGallery } from './min-max-responsive-grid-gallery/meta'
 import { challenge as responsiveVideoEmbed } from './responsive-video-embed/meta'
 import { challenge as squareBoxFiller } from './square-box-filler/meta'
+import { challenge as threePanelResponsiveLayout } from './three-panel-responsive-layout/meta'
 
 export const topic: Topic = {
   id: 'intrinsic-and-container-based-sizing',
@@ -16,6 +17,7 @@ export const topic: Topic = {
     responsiveVideoEmbed,
     fluidButtonWidth,
     minMaxResponsiveGridGallery,
+    threePanelResponsiveLayout,
     adaptiveCard,
     featureGridContainerQueries,
   ],
