@@ -1,0 +1,20 @@
+.layout {
+  display: grid;
+  grid-template-columns: minmax(200px, max-content) 1fr fit-content(300px);
+  gap: 16px;
+}
+
+.layout nav {
+  background-color: #f4f4f4;
+  padding: 1rem;
+}
+
+.layout main {
+  background-color: #fff;
+  padding: 1rem;
+}
+
+.layout aside {
+  background-color: #ffeeba;
+  padding: 1rem;
+}
