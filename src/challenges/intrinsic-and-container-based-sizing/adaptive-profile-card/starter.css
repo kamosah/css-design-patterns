@@ -1,0 +1,27 @@
+.profile-wrapper {
+  /* Add your code here */
+}
+
+.profile-card {
+  /* Add your code here */
+}
+
+.profile-card .avatar {
+  /* Add your code here */
+}
+
+.profile-card .info h3 {
+  /* Add your code here */
+}
+
+.profile-card .info p {
+  /* Add your code here */
+}
+
+@container profile (min-width: 250px) and (max-width: 499px) {
+  /* Add your code here */
+}
+
+@container profile (min-width: 500px) {
+  /* Add your code here */
+}
