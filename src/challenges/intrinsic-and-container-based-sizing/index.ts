@@ -1,6 +1,7 @@
 import type { Topic } from '../../types/challenge'
 import { challenge as adaptiveCard } from './adaptive-card/meta'
 import { challenge as adaptiveProfileCard } from './adaptive-profile-card/meta'
+import { challenge as adaptiveTestimonialGrid } from './adaptive-testimonial-grid/meta'
 import { challenge as dashboardWidgetLayout } from './dashboard-widget-layout/meta'
 import { challenge as featureGridContainerQueries } from './feature-grid-container-queries/meta'
 import { challenge as fluidButtonWidth } from './fluid-button-width/meta'
@@ -24,5 +25,6 @@ export const topic: Topic = {
     featureGridContainerQueries,
     adaptiveProfileCard,
     dashboardWidgetLayout,
+    adaptiveTestimonialGrid,
   ],
 }
