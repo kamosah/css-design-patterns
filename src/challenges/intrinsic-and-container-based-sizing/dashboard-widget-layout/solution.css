@@ -1,0 +1,64 @@
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 1.5rem;
+  overflow-x: hidden;
+}
+
+.widget {
+  container-type: size;
+  box-sizing: border-box;
+  background: #f8fafd;
+  border-radius: 1rem;
+  box-shadow: 0 1px 8px #0001;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-width: 0;
+  padding: 1.5rem;
+  transition: padding 0.2s ease, font-size 0.2s ease;
+}
+
+.widget h2 {
+  font-size: 1rem;
+  margin: 0 0 0.5rem;
+  transition: font-size 0.2s ease;
+}
+
+@container (min-width: 400px) {
+  .widget h2 {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+  }
+  .widget {
+    padding: clamp(1.5rem, 1vw, 2rem);
+  }
+}
+
+@container (min-width: 600px) {
+  .widget h2 {
+    font-size: 1.75rem;
+  }
+  .widget {
+    padding: 2.25rem;
+  }
+}
+
+.content-block {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #d1e7fa;
+  border-radius: 0.75rem;
+  margin-bottom: 0.5rem;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  display: block;
+}
+
+.widget .content-block {
+  min-width: 0;
+  max-width: 100%;
+}
