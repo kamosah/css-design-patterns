@@ -1,0 +1,124 @@
+body {
+  font-family: system-ui, sans-serif;
+  padding: 1rem;
+  margin: 0;
+}
+
+.table-wrapper {
+  container-type: inline-size;
+  overflow-x: auto;
+}
+
+.table-wrapper table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-wrapper th,
+.table-wrapper td {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+.table-wrapper th {
+  background: #f5f5f5;
+  font-weight: 600;
+}
+
+@container (min-width: 800px) {
+  .table-wrapper table {
+    table-layout: fixed;
+    display: table;
+  }
+
+  .table-wrapper th:nth-child(1),
+  .table-wrapper td:nth-child(1) {
+    width: minmax(150px, max-content);
+  }
+
+  .table-wrapper th:nth-child(2),
+  .table-wrapper td:nth-child(2) {
+    width: 2fr;
+  }
+
+  .table-wrapper th:nth-child(3),
+  .table-wrapper td:nth-child(3) {
+    width: fit-content(200px);
+  }
+
+  .table-wrapper th:nth-child(4),
+  .table-wrapper td:nth-child(4) {
+    width: 1fr;
+  }
+}
+
+@container (min-width: 400px) and (max-width: 799px) {
+  .table-wrapper thead {
+    display: none;
+  }
+
+  .table-wrapper tbody tr {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ddd;
+    padding: 0.5rem;
+  }
+
+  .table-wrapper td {
+    display: block;
+    border: none;
+  }
+
+  .table-wrapper td::before {
+    content: attr(data-label);
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #888;
+    margin-bottom: 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+}
+
+@container (max-width: 399px) {
+  .table-wrapper thead,
+  .table-wrapper table,
+  .table-wrapper tbody tr {
+    display: block;
+    width: 100%;
+  }
+
+  .table-wrapper thead {
+    display: none;
+  }
+
+  .table-wrapper tbody tr {
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+  }
+
+  .table-wrapper td {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid #eee;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+  }
+
+  .table-wrapper td:last-child {
+    border-bottom: none;
+  }
+
+  .table-wrapper td::before {
+    content: attr(data-label) ": ";
+    font-weight: bold;
+    flex-shrink: 0;
+    margin-right: 1rem;
+  }
+}
