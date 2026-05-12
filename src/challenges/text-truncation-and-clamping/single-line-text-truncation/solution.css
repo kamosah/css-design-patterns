@@ -1,0 +1,11 @@
+.card {
+  width: 250px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

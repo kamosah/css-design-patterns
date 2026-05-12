@@ -10,6 +10,7 @@ import { topic as stickyLayouts } from '../challenges/sticky-layouts'
 import { topic as glassmorphismAndVisualDepth } from '../challenges/glassmorphism-and-visual-depth'
 import { topic as gridLayouts } from '../challenges/responsive-grids-and-layouts'
 import { topic as intrinsicAndContainerBasedSizing } from '../challenges/intrinsic-and-container-based-sizing'
+import { topic as textTruncationAndClamping } from '../challenges/text-truncation-and-clamping'
 
 export const curriculum: Topic[] = [
   centeringAlignment,
@@ -23,6 +24,7 @@ export const curriculum: Topic[] = [
   stickyLayouts,
   gridLayouts,
   intrinsicAndContainerBasedSizing,
+  textTruncationAndClamping,
 ]
 
 // Pre-built lookup maps — O(1) access instead of iterating on every navigation
