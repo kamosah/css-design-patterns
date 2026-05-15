@@ -8,9 +8,10 @@ import { challenge as multiLineEllipsisResponsiveBlogLayout } from './multi-line
 import { challenge as textTruncationFlexboxLayout } from './text-truncation-flexbox-layout/meta'
 import { challenge as truncateTextDropdownOptionList } from './truncate-text-dropdown-option-list/meta'
 import { challenge as clampTextReadMoreButton } from './clamp-text-read-more-button/meta'
+import { challenge as tableCellTextTruncation } from './table-cell-text-truncation/meta'
 
 export const topic: Topic = {
   id: 'text-truncation-and-clamping',
   title: 'Text Truncation and Clamping',
-  challenges: [singleLineTextTruncation, multiLineTextClamping, responsiveTextTruncationGrid, accessibleTextTruncationTooltip, textClampingCardPreviews, multiLineEllipsisResponsiveBlogLayout, textTruncationFlexboxLayout, truncateTextDropdownOptionList, clampTextReadMoreButton],
+  challenges: [singleLineTextTruncation, multiLineTextClamping, responsiveTextTruncationGrid, accessibleTextTruncationTooltip, textClampingCardPreviews, multiLineEllipsisResponsiveBlogLayout, textTruncationFlexboxLayout, truncateTextDropdownOptionList, clampTextReadMoreButton, tableCellTextTruncation],
 }
