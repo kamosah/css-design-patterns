@@ -1,0 +1,15 @@
+.card-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.card {
+  padding: 16px;
+  border: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+}
+
+.description {
+  /* your CSS here */
+}
