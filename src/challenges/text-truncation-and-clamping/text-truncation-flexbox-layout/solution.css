@@ -1,0 +1,19 @@
+.flex-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 300px;
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+
+.title {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.icon {
+  flex-shrink: 0;
+}
