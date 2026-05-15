@@ -1,0 +1,15 @@
+.expandable {
+  width: 300px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  transition: all 0.3s ease;
+}
+
+.expandable:hover {
+  -webkit-line-clamp: unset;
+  white-space: normal;
+  overflow: visible;
+  display: block;
+}
