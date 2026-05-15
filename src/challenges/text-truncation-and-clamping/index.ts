@@ -3,9 +3,10 @@ import { challenge as singleLineTextTruncation } from './single-line-text-trunca
 import { challenge as multiLineTextClamping } from './multi-line-text-clamping/meta'
 import { challenge as responsiveTextTruncationGrid } from './responsive-text-truncation-grid/meta'
 import { challenge as accessibleTextTruncationTooltip } from './accessible-text-truncation-tooltip/meta'
+import { challenge as textClampingCardPreviews } from './text-clamping-card-previews/meta'
 
 export const topic: Topic = {
   id: 'text-truncation-and-clamping',
   title: 'Text Truncation and Clamping',
-  challenges: [singleLineTextTruncation, multiLineTextClamping, responsiveTextTruncationGrid, accessibleTextTruncationTooltip],
+  challenges: [singleLineTextTruncation, multiLineTextClamping, responsiveTextTruncationGrid, accessibleTextTruncationTooltip, textClampingCardPreviews],
 }
