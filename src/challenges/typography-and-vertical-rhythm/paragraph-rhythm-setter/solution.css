@@ -1,0 +1,12 @@
+:root {
+  --rhythm: 1.5rem;
+}
+
+body {
+  font-size: 1rem;
+}
+
+p {
+  line-height: var(--rhythm);
+  margin-bottom: var(--rhythm);
+}
