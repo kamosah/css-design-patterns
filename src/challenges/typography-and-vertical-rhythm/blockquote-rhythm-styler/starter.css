@@ -1,5 +1,5 @@
 :root {
-  /* Add rhythm variable here */
+  --rhythm: 1.25rem;
 }
 
 body {
@@ -8,4 +8,8 @@ body {
 
 p {
   /* Apply your rhythm-based styles here */
+}
+
+blockquote {
+  /* Apply indentation and border here */
 }
