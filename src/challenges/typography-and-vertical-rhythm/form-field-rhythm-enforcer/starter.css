@@ -1,0 +1,15 @@
+:root {
+  --rhythm: 2rem;
+}
+
+body {
+  font-size: 1rem;
+}
+
+label {
+  /* Apply your rhythm-based styles here */
+}
+
+input {
+  /* Apply your rhythm-based styles here */
+}
