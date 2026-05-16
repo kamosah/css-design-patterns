@@ -1,0 +1,19 @@
+:root {
+  --rhythm: 2rem;
+}
+
+body {
+  font-size: 1rem;
+  line-height: var(--rhythm);
+}
+
+label {
+  display: block;
+  line-height: var(--rhythm);
+  margin-bottom: var(--rhythm);
+}
+
+input {
+  display: block;
+  margin-bottom: var(--rhythm);
+}
