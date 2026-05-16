@@ -1,0 +1,24 @@
+:root {
+  --rhythm: 1rem;
+  --base-size: 1rem;
+  --scale-factor: 1.25;
+  --min-vw: 320px;
+  --max-vw: 1024px;
+}
+
+body {
+  font-size: var(--base-size);
+  line-height: var(--rhythm);
+}
+
+h1 {
+  /* Apply CSS for h1 here */
+}
+
+h2 {
+  /* Apply CSS for h2 here */
+}
+
+p {
+  /* Apply CSS for p here */
+}
