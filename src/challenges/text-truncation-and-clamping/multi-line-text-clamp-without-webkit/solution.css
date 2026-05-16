@@ -1,0 +1,18 @@
+.card {
+  width: 300px;
+  border: 2px solid #aaa;
+  padding: 12px;
+  position: relative;
+  line-height: 1.4em;
+  max-height: 4.6em;
+  overflow: hidden;
+}
+
+.fallback-truncate::after {
+  content: '...';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: white;
+  padding-left: 5px;
+}
