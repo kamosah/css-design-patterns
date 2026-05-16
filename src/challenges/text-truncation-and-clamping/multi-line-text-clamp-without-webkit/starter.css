@@ -1,0 +1,13 @@
+.card {
+  width: 300px;
+  border: 2px solid #aaa;
+  padding: 12px;
+  position: relative;
+  line-height: 1.4em;
+  max-height: 4.6em;
+  /* your CSS here */
+}
+
+.fallback-truncate::after {
+  /* your CSS here */
+}
