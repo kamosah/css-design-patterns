@@ -1,0 +1,12 @@
+:root {
+  --rhythm: 1rem;
+}
+
+body {
+  font-size: 1rem;
+  line-height: var(--rhythm);
+}
+
+h1, h2, p {
+  /* Apply your rhythm-based styles here */
+}

@@ -11,6 +11,7 @@ import { topic as glassmorphismAndVisualDepth } from '../challenges/glassmorphis
 import { topic as gridLayouts } from '../challenges/responsive-grids-and-layouts'
 import { topic as intrinsicAndContainerBasedSizing } from '../challenges/intrinsic-and-container-based-sizing'
 import { topic as textTruncationAndClamping } from '../challenges/text-truncation-and-clamping'
+import { topic as typographyAndVerticalRhythm } from '../challenges/typography-and-vertical-rhythm'
 
 export const curriculum: Topic[] = [
   centeringAlignment,
@@ -25,6 +26,7 @@ export const curriculum: Topic[] = [
   gridLayouts,
   intrinsicAndContainerBasedSizing,
   textTruncationAndClamping,
+  typographyAndVerticalRhythm,
 ]
 
 // Pre-built lookup maps — O(1) access instead of iterating on every navigation
