@@ -1,0 +1,23 @@
+.card {
+  width: 280px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 16px;
+}
+
+.ltr {
+  direction: ltr;
+  text-align: left;
+}
+
+.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+.desc {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
