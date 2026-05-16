@@ -1,0 +1,18 @@
+.card {
+  width: 280px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 16px;
+}
+
+.ltr {
+  /* your CSS here */
+}
+
+.rtl {
+  /* your CSS here */
+}
+
+.desc {
+  /* your CSS here */
+}
