@@ -1,6 +1,6 @@
-## Problem: Establish Vertical Rhythm with a CSS Custom Property
+## Problem: Baseline Grid Builder
 
-Use a single CSS custom property to enforce consistent spacing and line height across headings and paragraphs.
+Use CSS custom properties to align text elements to a 1rem baseline grid by syncing line height and margins for a consistent vertical rhythm.
 
 ## Problem description
 

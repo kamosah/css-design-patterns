@@ -8,7 +8,7 @@ import solutionCss from './solution.css?raw'
 
 export const challenge: Challenge = {
   id: 'establish-vertical-rhythm',
-  title: 'Establish Vertical Rhythm with a CSS Custom Property',
+  title: 'Baseline Grid Builder',
   difficulty: 'easy',
   estimatedMinutes: 20,
   instructions,
