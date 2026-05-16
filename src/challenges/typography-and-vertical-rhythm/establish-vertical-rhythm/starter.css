@@ -1,0 +1,12 @@
+:root {
+  --rhythm: 1rem;
+}
+
+body {
+  font-size: 1rem;
+  /* your CSS here */
+}
+
+h1, h2, p {
+  /* your CSS here */
+}
