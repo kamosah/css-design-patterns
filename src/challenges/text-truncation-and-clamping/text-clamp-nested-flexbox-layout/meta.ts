@@ -9,8 +9,8 @@ import solutionCss from './solution.css?raw'
 export const challenge: Challenge = {
   id: 'text-clamp-nested-flexbox-layout',
   title: 'Text Clamp Inside Nested Flexbox Layout',
-  difficulty: 'medium',
-  estimatedMinutes: 20,
+  difficulty: 'hard',
+  estimatedMinutes: 40,
   instructions,
   solutionExplanation,
   starterHtml,
