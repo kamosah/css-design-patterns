@@ -1,0 +1,22 @@
+.card {
+  max-width: 400px;
+  border: 1px solid #ccc;
+  padding: 12px;
+}
+
+.header {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.username {
+  /* your CSS here */
+}
