@@ -1,0 +1,20 @@
+:root {
+  --min-rhythm: 1rem;
+  --max-rhythm: 2rem;
+  --min-vw: 320px;
+  --max-vw: 1024px;
+}
+
+body {
+  font-size: 1.2rem;
+}
+
+h1, h2, p {
+  --fluid-rhythm: clamp(
+    var(--min-rhythm),
+    calc((100vw - var(--min-vw)) / (var(--max-vw) - var(--min-vw)) * (var(--max-rhythm) - var(--min-rhythm)) + var(--min-rhythm)),
+    var(--max-rhythm)
+  );
+  line-height: var(--fluid-rhythm);
+  margin-bottom: var(--fluid-rhythm);
+}
