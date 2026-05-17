@@ -1,0 +1,29 @@
+:root {
+  --rhythm: 1rem;
+  --scale-factor: 1.5;
+}
+
+body {
+  font-size: var(--rhythm);
+  line-height: var(--rhythm);
+}
+
+h1 {
+  font-size: calc(var(--rhythm) * var(--scale-factor) * var(--scale-factor));
+  margin-bottom: var(--rhythm);
+}
+
+h2 {
+  font-size: calc(var(--rhythm) * var(--scale-factor));
+  margin-bottom: var(--rhythm);
+}
+
+h3 {
+  font-size: var(--rhythm);
+  margin-bottom: var(--rhythm);
+}
+
+p {
+  font-size: var(--rhythm);
+  margin-bottom: var(--rhythm);
+}
