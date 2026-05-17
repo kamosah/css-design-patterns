@@ -1,0 +1,19 @@
+:root {
+  --rhythm: 1rem;
+}
+
+.container {
+  /* Define container type and local rhythm variables here */
+}
+
+.container h1 {
+  /* Apply fluid font-size, line-height, and margin-bottom here */
+}
+
+.container p {
+  /* Apply fluid font-size, line-height, and margin-bottom here */
+}
+
+/* Container query for min-width: 400px */
+
+/* Container query for min-width: 800px */

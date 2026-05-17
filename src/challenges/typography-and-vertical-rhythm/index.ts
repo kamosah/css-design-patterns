@@ -9,9 +9,10 @@ import { challenge as variableBasedTypographicScale } from './variable-based-typ
 import { challenge as fluidVerticalRhythm } from './fluid-vertical-rhythm/meta'
 import { challenge as sectionMarginCollapseFixer } from './section-margin-collapse-fixer/meta'
 import { challenge as gridGapRhythmLayout } from './grid-gap-rhythm-layout/meta'
+import { challenge as contextAwareRhythmContainerQueries } from './context-aware-rhythm-container-queries/meta'
 
 export const topic: Topic = {
   id: 'typography-and-vertical-rhythm',
   title: 'Typography and Vertical Rhythm',
-  challenges: [establishVerticalRhythm, paragraphRhythmSetter, blockquoteRhythmStyler, universalRhythmApplier, formFieldRhythmEnforcer, modularScaleFluidTypography, variableBasedTypographicScale, fluidVerticalRhythm, sectionMarginCollapseFixer, gridGapRhythmLayout],
+  challenges: [establishVerticalRhythm, paragraphRhythmSetter, blockquoteRhythmStyler, universalRhythmApplier, formFieldRhythmEnforcer, modularScaleFluidTypography, variableBasedTypographicScale, fluidVerticalRhythm, sectionMarginCollapseFixer, gridGapRhythmLayout, contextAwareRhythmContainerQueries],
 }
