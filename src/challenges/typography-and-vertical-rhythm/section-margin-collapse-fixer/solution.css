@@ -1,0 +1,22 @@
+:root {
+  --rhythm: 1.5rem;
+}
+
+body {
+  font-size: 1rem;
+}
+
+h2, p {
+  line-height: var(--rhythm);
+  margin-bottom: var(--rhythm);
+}
+
+section {
+  padding-top: var(--rhythm);
+  border-top: 1px solid transparent;
+}
+
+section:first-of-type {
+  padding-top: 0;
+  border-top: none;
+}

@@ -7,9 +7,10 @@ import { challenge as formFieldRhythmEnforcer } from './form-field-rhythm-enforc
 import { challenge as modularScaleFluidTypography } from './modular-scale-fluid-typography/meta'
 import { challenge as variableBasedTypographicScale } from './variable-based-typographic-scale/meta'
 import { challenge as fluidVerticalRhythm } from './fluid-vertical-rhythm/meta'
+import { challenge as sectionMarginCollapseFixer } from './section-margin-collapse-fixer/meta'
 
 export const topic: Topic = {
   id: 'typography-and-vertical-rhythm',
   title: 'Typography and Vertical Rhythm',
-  challenges: [establishVerticalRhythm, paragraphRhythmSetter, blockquoteRhythmStyler, universalRhythmApplier, formFieldRhythmEnforcer, modularScaleFluidTypography, variableBasedTypographicScale, fluidVerticalRhythm],
+  challenges: [establishVerticalRhythm, paragraphRhythmSetter, blockquoteRhythmStyler, universalRhythmApplier, formFieldRhythmEnforcer, modularScaleFluidTypography, variableBasedTypographicScale, fluidVerticalRhythm, sectionMarginCollapseFixer],
 }
