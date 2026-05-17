@@ -1,0 +1,14 @@
+:root {
+  --min-rhythm: 1rem;
+  --max-rhythm: 2rem;
+  --min-vw: 320px;
+  --max-vw: 1024px;
+}
+
+body {
+  font-size: 1rem;
+}
+
+h1, h2, p {
+  /* Apply fluid rhythm with clamp() here */
+}
