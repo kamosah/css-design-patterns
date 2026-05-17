@@ -1,0 +1,12 @@
+:root {
+  --rhythm: 1.5rem;
+}
+
+.grid {
+  /* Define grid layout with two columns and row-gap here */
+}
+
+.grid h2,
+.grid p {
+  /* Apply rhythm-based text styles here */
+}

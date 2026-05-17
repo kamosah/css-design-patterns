@@ -1,0 +1,15 @@
+:root {
+  --rhythm: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: var(--rhythm);
+}
+
+.grid h2,
+.grid p {
+  line-height: var(--rhythm);
+  margin: 0;
+}
