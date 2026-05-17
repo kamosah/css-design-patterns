@@ -1,0 +1,15 @@
+:root {
+  --rhythm: 1.5rem;
+}
+
+body {
+  font-size: 1rem;
+}
+
+h2, p {
+  /* Apply baseline rhythm here */
+}
+
+section {
+  /* Prevent margin collapsing here */
+}
