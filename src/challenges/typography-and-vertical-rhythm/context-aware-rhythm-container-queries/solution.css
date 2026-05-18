@@ -1,0 +1,35 @@
+:root {
+  --rhythm: 1rem;
+}
+
+.container {
+  container-type: inline-size;
+  --rhythm: 1rem;
+  --scale: 1.5;
+}
+
+.container h1 {
+  font-size: clamp(calc(var(--rhythm) * var(--scale)), 5vw, calc(var(--rhythm) * var(--scale) * var(--scale)));
+  line-height: clamp(var(--rhythm), 3vw, calc(var(--rhythm) * var(--scale)));
+  margin-bottom: clamp(var(--rhythm), 4vw, calc(var(--rhythm) * var(--scale)));
+}
+
+.container p {
+  font-size: clamp(var(--rhythm), 3vw, calc(var(--rhythm) * var(--scale)));
+  line-height: clamp(var(--rhythm), 2.5vw, calc(var(--rhythm) * var(--scale)));
+  margin-bottom: clamp(var(--rhythm), 3vw, calc(var(--rhythm) * var(--scale)));
+}
+
+@container (min-width: 400px) {
+  .container {
+    --rhythm: 1.5rem;
+    --scale: 2;
+  }
+}
+
+@container (min-width: 800px) {
+  .container {
+    --rhythm: 2rem;
+    --scale: 2.5;
+  }
+}
