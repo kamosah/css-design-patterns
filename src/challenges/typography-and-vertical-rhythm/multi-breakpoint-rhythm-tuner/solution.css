@@ -1,0 +1,25 @@
+:root {
+  --rhythm-small: 1rem;
+  --rhythm-medium: 1.5rem;
+  --rhythm-large: 2rem;
+  --rhythm: var(--rhythm-small);
+}
+
+@media (min-width: 480px) {
+  :root {
+    --rhythm: var(--rhythm-medium);
+  }
+}
+
+@media (min-width: 768px) {
+  :root {
+    --rhythm: var(--rhythm-large);
+  }
+}
+
+h1, h2, h3,
+p, li,
+blockquote {
+  line-height: var(--rhythm);
+  margin-bottom: var(--rhythm);
+}
