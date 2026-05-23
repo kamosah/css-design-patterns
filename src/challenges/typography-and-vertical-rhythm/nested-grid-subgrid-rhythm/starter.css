@@ -1,0 +1,16 @@
+:root {
+  --rhythm: 1rem;
+}
+
+.layout {
+  /* Define parent grid and baseline rows here */
+}
+
+.module {
+  /* Enable subgrid to inherit parent rows here */
+}
+
+.module h3,
+.module p {
+  /* Ensure items fill their grid row without margins */
+}
