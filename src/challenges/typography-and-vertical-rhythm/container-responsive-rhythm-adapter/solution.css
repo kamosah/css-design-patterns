@@ -1,0 +1,23 @@
+:root {
+  --rhythm-min: 1rem;
+  --rhythm-max: 2rem;
+}
+
+.card {
+  container-type: inline-size;
+  container-name: rhythm-card;
+  --rhythm: var(--rhythm-min);
+}
+
+.card h1,
+.card p,
+.card li {
+  line-height: var(--rhythm);
+  margin-bottom: var(--rhythm);
+}
+
+@container rhythm-card (min-width: 600px) {
+  .card {
+    --rhythm: var(--rhythm-max);
+  }
+}

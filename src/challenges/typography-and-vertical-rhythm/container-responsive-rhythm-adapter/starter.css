@@ -1,0 +1,15 @@
+:root {
+  /* Define --rhythm-min and --rhythm-max here */
+}
+
+.card {
+  /* Enable container queries and set default --rhythm here */
+}
+
+.card h1,
+.card p,
+.card li {
+  /* Apply rhythm-based line-height and margin-bottom here */
+}
+
+/* @container query for min-width: 600px */
