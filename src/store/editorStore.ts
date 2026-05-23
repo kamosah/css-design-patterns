@@ -25,7 +25,7 @@ interface EditorStore {
   starterChanged: boolean // true when current starter differs from saved snapshot
 
   // Actions
-  loadChallenge: (key: string, starterHtml: string, starterCss: string) => void
+  loadChallenge: (key: string, starterHtml: string, starterCss: string, forceStarter?: boolean) => void
   setHtml: (html: string) => void
   setCss: (css: string) => void
   toggleSolution: (
@@ -47,8 +47,8 @@ export const useEditorStore = create<EditorStore>()(
       showingSolution: false,
       starterChanged: false,
 
-      loadChallenge(key, starterHtml, starterCss) {
-        const saved = get().savedEdits[key]
+      loadChallenge(key, starterHtml, starterCss, forceStarter = false) {
+        const saved = forceStarter ? null : get().savedEdits[key]
 
         // Detect if the challenge source files changed since the user last worked on it
         const starterChanged = saved != null && (
