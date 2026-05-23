@@ -11,9 +11,10 @@ import { challenge as sectionMarginCollapseFixer } from './section-margin-collap
 import { challenge as gridGapRhythmLayout } from './grid-gap-rhythm-layout/meta'
 import { challenge as contextAwareRhythmContainerQueries } from './context-aware-rhythm-container-queries/meta'
 import { challenge as containerResponsiveRhythmAdapter } from './container-responsive-rhythm-adapter/meta'
+import { challenge as multiBreakpointRhythmTuner } from './multi-breakpoint-rhythm-tuner/meta'
 
 export const topic: Topic = {
   id: 'typography-and-vertical-rhythm',
   title: 'Typography and Vertical Rhythm',
-  challenges: [establishVerticalRhythm, paragraphRhythmSetter, blockquoteRhythmStyler, universalRhythmApplier, formFieldRhythmEnforcer, modularScaleFluidTypography, variableBasedTypographicScale, fluidVerticalRhythm, sectionMarginCollapseFixer, gridGapRhythmLayout, contextAwareRhythmContainerQueries, containerResponsiveRhythmAdapter],
+  challenges: [establishVerticalRhythm, paragraphRhythmSetter, blockquoteRhythmStyler, universalRhythmApplier, formFieldRhythmEnforcer, modularScaleFluidTypography, variableBasedTypographicScale, fluidVerticalRhythm, sectionMarginCollapseFixer, gridGapRhythmLayout, contextAwareRhythmContainerQueries, containerResponsiveRhythmAdapter, multiBreakpointRhythmTuner],
 }
