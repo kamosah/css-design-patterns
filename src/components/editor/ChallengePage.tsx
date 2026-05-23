@@ -120,6 +120,7 @@ export function ChallengePage() {
         >
           <Panel id="instructions" defaultSize={H_DEFAULTS.instructions} minSize={15}>
             <InstructionsPanel
+              key={challengeKey}
               challenge={challenge}
               showingSolution={showingSolution}
               onToggleSolution={() =>
