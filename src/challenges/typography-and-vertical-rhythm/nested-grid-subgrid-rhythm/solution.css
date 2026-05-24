@@ -1,0 +1,28 @@
+:root {
+  --rhythm: 1rem;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: var(--rhythm);
+  gap: var(--rhythm);
+}
+
+.module {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: subgrid;
+  grid-row: span 10;
+}
+
+.module h3,
+.module p {
+  margin: 0;
+  line-height: var(--rhythm);
+}
+
+.module h3 {
+  font-size: calc(var(--rhythm) * 1.5);
+  line-height: calc(var(--rhythm) * 2);
+}
