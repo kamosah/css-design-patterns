@@ -12,6 +12,7 @@ import { topic as gridLayouts } from '../challenges/responsive-grids-and-layouts
 import { topic as intrinsicAndContainerBasedSizing } from '../challenges/intrinsic-and-container-based-sizing'
 import { topic as textTruncationAndClamping } from '../challenges/text-truncation-and-clamping'
 import { topic as typographyAndVerticalRhythm } from '../challenges/typography-and-vertical-rhythm'
+import { topic as fluidAndResponsiveTypography } from '../challenges/fluid-and-responsive-typography'
 
 export const curriculum: Topic[] = [
   centeringAlignment,
@@ -27,6 +28,7 @@ export const curriculum: Topic[] = [
   intrinsicAndContainerBasedSizing,
   textTruncationAndClamping,
   typographyAndVerticalRhythm,
+  fluidAndResponsiveTypography,
 ]
 
 // Pre-built lookup maps — O(1) access instead of iterating on every navigation
