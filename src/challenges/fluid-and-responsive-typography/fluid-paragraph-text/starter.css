@@ -1,0 +1,16 @@
+body {
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+p {
+  max-width: 60ch;
+  line-height: 1.6;
+  /* Add your CSS rules here */
+}
