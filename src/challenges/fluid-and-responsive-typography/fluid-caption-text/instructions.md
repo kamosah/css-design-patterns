@@ -13,7 +13,3 @@ Use CSS to ensure figure captions remain legible and appropriately sized across 
 - Support all modern browsers.
 - Caption font size must be between a minimum of **12px** and a maximum of **18px**.
 - Viewport widths in scope are **320px – 1200px**.
-
-## Hint
-
-Look into the CSS `clamp()` function — it lets you define a minimum, a preferred (viewport-relative) value, and a maximum. A `vw`-based preferred value scales the font size proportionally with the viewport width.
