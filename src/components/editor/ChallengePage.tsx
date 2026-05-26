@@ -113,9 +113,9 @@ export function ChallengePage() {
 
       <div className={s.panels}>
         <PanelGroup
+          key={challengeKey}
           orientation="horizontal"
-          defaultLayout={loadLayout('main', H_DEFAULTS)}
-          onLayoutChanged={(layout) => saveLayout('main', layout)}
+          defaultLayout={H_DEFAULTS}
           className={s.panelGroup}
         >
           <Panel id="instructions" defaultSize={H_DEFAULTS.instructions} minSize={15}>
