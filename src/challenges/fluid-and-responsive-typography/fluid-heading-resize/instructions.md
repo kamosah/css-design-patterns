@@ -12,7 +12,3 @@ Use CSS properties to ensure the heading text remains legible and aesthetically 
 - Support all modern browsers.
 - The font size must scale between a minimum of **24px** and a maximum of **48px**.
 - Viewport widths in scope are **320px – 1200px**.
-
-## Hint
-
-Look into the CSS `clamp()` function — it lets you set a value that scales between a floor and a ceiling based on a viewport-relative unit.

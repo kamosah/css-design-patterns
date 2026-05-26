@@ -13,7 +13,3 @@ Use CSS to maintain legible paragraph text by implementing a fluid font sizing a
 - Support all modern browsers.
 - The paragraph font size must be at least **14px** and at most **20px**.
 - Viewport widths in scope are **320px – 1600px**.
-
-## Hint
-
-Look into the CSS `clamp()` function — it lets you define a minimum, a preferred (viewport-relative) value, and a maximum. Combining `vw` and `rem` units in the preferred value gives smooth scaling that also respects the user's base font size.
