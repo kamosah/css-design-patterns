@@ -1,0 +1,33 @@
+:root {
+  /* Heading sizes */
+  --min-heading: 32;
+  --max-heading: 56;
+  --min-subheading: 24;
+  --max-subheading: 32;
+  /*
+    1440 - 360 = 1080 (full range)
+    Each variable uses px unit in calc().
+  */
+  --fluid-heading: clamp(
+    32px,
+    calc(
+      32px + (56 - 32) * ((100vw - 360px) / 1080)
+    ),
+    56px
+  );
+  --fluid-subheading: clamp(
+    24px,
+    calc(
+      24px + (32 - 24) * ((100vw - 360px) / 1080)
+    ),
+    32px
+  );
+}
+
+.hero h2 {
+  font-size: var(--fluid-heading);
+}
+
+.hero h3 {
+  font-size: var(--fluid-subheading);
+}
