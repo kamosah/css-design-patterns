@@ -243,3 +243,12 @@ Strict mode is on: `noUnusedLocals`, `noUnusedParameters`, `erasableSyntaxOnly`.
 
 - **ci.yml** — TypeScript check + ESLint on push/PR to `main`
 - **chromatic.yml** — Storybook published to Chromatic on push/PR to `main`
+
+Always run both checks locally before committing or opening a PR:
+
+```bash
+npm run build   # TypeScript check + Vite build
+npm run lint    # ESLint
+```
+
+Both must pass with no errors before pushing.
