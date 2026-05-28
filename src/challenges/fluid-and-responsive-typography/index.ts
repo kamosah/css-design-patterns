@@ -7,9 +7,10 @@ import { challenge as fluidNavigationLinkText } from './fluid-navigation-link-te
 import { challenge as fluidModularScale } from './fluid-modular-scale/meta'
 import { challenge as fluidHeroHeadingAndSubheading } from './fluid-hero-heading-and-subheading/meta'
 import { challenge as fluidTypographyWithScaleMultipliers } from './fluid-typography-with-scale-multipliers/meta'
+import { challenge as fluidHeadingLetterSpacing } from './fluid-heading-letter-spacing/meta'
 
 export const topic: Topic = {
   id: 'fluid-and-responsive-typography',
   title: 'Fluid and Responsive Typography',
-  challenges: [fluidHeadingResize, fluidParagraphText, fluidButtonLabel, fluidCaptionText, fluidNavigationLinkText, fluidModularScale, fluidHeroHeadingAndSubheading, fluidTypographyWithScaleMultipliers],
+  challenges: [fluidHeadingResize, fluidParagraphText, fluidButtonLabel, fluidCaptionText, fluidNavigationLinkText, fluidModularScale, fluidHeroHeadingAndSubheading, fluidTypographyWithScaleMultipliers, fluidHeadingLetterSpacing],
 }

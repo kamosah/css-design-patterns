@@ -1,0 +1,17 @@
+:root {
+  --min-letter-spacing: -0.5px;
+  --max-letter-spacing: 1px;
+
+  /* slope = (1 - (-0.5)) / (1440 - 320) = 1.5 / 1120 = 0.0013392857 */
+  --ls-slope: 0.0013392857; /* unitless */
+
+  --fluid-letter-spacing: clamp(
+    var(--min-letter-spacing),
+    calc(var(--min-letter-spacing) + var(--ls-slope) * (100vw - 320px)),
+    var(--max-letter-spacing)
+  );
+}
+
+h1 {
+  letter-spacing: var(--fluid-letter-spacing);
+}
