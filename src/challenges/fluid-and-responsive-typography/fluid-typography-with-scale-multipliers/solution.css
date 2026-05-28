@@ -1,0 +1,26 @@
+:root {
+  --min-root: 16px;
+  --max-root: 20px;
+
+  /* slope = (20 - 16) / (1440 - 320) = 4 / 1120 = 0.0035714286 */
+  --root-slope: 0.0035714286; /* unitless */
+
+  --fluid-root: clamp(
+    var(--min-root),
+    calc(
+      var(--min-root) +
+      var(--root-slope) * (clamp(320px, 100vw, 1440px) - 320px)
+    ),
+    var(--max-root)
+  );
+  --scale-2: 1.5;
+  --scale-1: 1.2;
+}
+
+.content h2 {
+  font-size: calc(var(--fluid-root) * var(--scale-2));
+}
+
+.content p {
+  font-size: calc(var(--fluid-root) * var(--scale-1));
+}
