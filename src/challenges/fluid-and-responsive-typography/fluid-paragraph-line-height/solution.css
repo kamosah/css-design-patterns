@@ -1,0 +1,20 @@
+:root {
+  --min-line-height: 2em;
+  --max-line-height: 3.2em;
+
+  /* slope = (3.2 - 2) / (1600 - 320) = 1.2 / 1280 = 0.0009375 (unitless) */
+  --lh-slope: 0.0009375;
+
+  --fluid-line-height: clamp(
+    var(--min-line-height),
+    calc(
+      var(--min-line-height) +
+      var(--lh-slope) * (clamp(320px, 100vw, 1600px) - 320px)
+    ),
+    var(--max-line-height)
+  );
+}
+
+p {
+  line-height: var(--fluid-line-height);
+}
