@@ -1,0 +1,32 @@
+:root {
+  --min-root: 16px;
+  --max-root: 24px;
+  --scale-h1: 2.5;
+  --scale-h2: 2;
+  --scale-h3: 1.5;
+  --scale-p: 1;
+
+  /* slope = (20 - 16) / (1440 - 320) = 4 / 1120 = 0.0035714286 */
+  --root-slope: 0.0035714286; /* unitless */
+
+  --fluid-root: clamp(
+    var(--min-root),
+    calc(
+      var(--min-root) +
+      var(--root-slope) * (clamp(320px, 100vw, 1440px) - 320px)
+    ),
+    var(--max-root)
+  );
+}
+
+h1 { font-size: calc(var(--fluid-root) * var(--scale-h1)); }
+h2 { font-size: calc(var(--fluid-root) * var(--scale-h2)); }
+h3 { font-size: calc(var(--fluid-root) * var(--scale-h3)); }
+p  { font-size: calc(var(--fluid-root) * var(--scale-p)); }
+
+@supports not (font-size: clamp(1rem, 1vw + 1rem, 2rem)) {
+  h1 { font-size: calc(16px * var(--scale-h1)); }
+  h2 { font-size: calc(16px * var(--scale-h2)); }
+  h3 { font-size: calc(16px * var(--scale-h3)); }
+  p  { font-size: calc(16px * var(--scale-p)); }
+}
