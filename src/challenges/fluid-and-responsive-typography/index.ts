@@ -10,9 +10,10 @@ import { challenge as fluidTypographyWithScaleMultipliers } from './fluid-typogr
 import { challenge as fluidHeadingLetterSpacing } from './fluid-heading-letter-spacing/meta'
 import { challenge as fluidParagraphLineHeight } from './fluid-paragraph-line-height/meta'
 import { challenge as advancedFluidTypeScaleWithLegacyFallback } from './advanced-fluid-type-scale-with-legacy-fallback/meta'
+import { challenge as fluidTypographyWithCssContainerQueries } from './fluid-typography-with-css-container-queries/meta'
 
 export const topic: Topic = {
   id: 'fluid-and-responsive-typography',
   title: 'Fluid and Responsive Typography',
-  challenges: [fluidHeadingResize, fluidParagraphText, fluidButtonLabel, fluidCaptionText, fluidNavigationLinkText, fluidModularScale, fluidHeroHeadingAndSubheading, fluidTypographyWithScaleMultipliers, fluidHeadingLetterSpacing, fluidParagraphLineHeight, advancedFluidTypeScaleWithLegacyFallback],
+  challenges: [fluidHeadingResize, fluidParagraphText, fluidButtonLabel, fluidCaptionText, fluidNavigationLinkText, fluidModularScale, fluidHeroHeadingAndSubheading, fluidTypographyWithScaleMultipliers, fluidHeadingLetterSpacing, fluidParagraphLineHeight, advancedFluidTypeScaleWithLegacyFallback, fluidTypographyWithCssContainerQueries],
 }
