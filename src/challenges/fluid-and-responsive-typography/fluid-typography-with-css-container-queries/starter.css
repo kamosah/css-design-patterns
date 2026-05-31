@@ -1,0 +1,16 @@
+.card {
+  /* Add your CSS rules here */
+}
+
+@container (min-width: 300px) and (max-width: 800px) {
+  .card h2 {
+    /* Add your CSS rules here */
+  }
+  .card p {
+    /* Add your CSS rules here */
+  }
+}
+
+@supports not (container-type: inline-size) {
+  /* Add your CSS rules here */
+}

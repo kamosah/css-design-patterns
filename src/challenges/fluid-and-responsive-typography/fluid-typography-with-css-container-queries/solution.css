@@ -1,0 +1,21 @@
+.card {
+  container-type: inline-size;
+}
+
+@container (min-width: 300px) and (max-width: 800px) {
+  .card h2 {
+    font-size: clamp(20px, calc(20px + (32 - 20) * ((100% - 300px) / (800 - 300))), 32px);
+  }
+  .card p {
+    font-size: clamp(14px, calc(14px + (18 - 14) * ((100% - 300px) / (800 - 300))), 18px);
+  }
+}
+
+@supports not (container-type: inline-size) {
+  .card h2 {
+    font-size: 20px;
+  }
+  .card p {
+    font-size: 14px;
+  }
+}
