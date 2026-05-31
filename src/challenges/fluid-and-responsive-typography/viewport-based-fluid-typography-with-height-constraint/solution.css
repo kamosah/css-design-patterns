@@ -1,0 +1,44 @@
+:root {
+  --min-font: 18px;
+  --max-font: 48px;
+
+  --min-vw: 320px;
+  --max-vw: 1920px;
+
+  --min-vh: 480px;
+  --max-vh: 1080px;
+
+  /* unitless slopes: (Δfont / Δviewport) */
+  /* (48 - 18) / (1920 - 320) = 30 / 1600 = 0.01875 */
+  --vw-slope: 0.01875;
+  /* (48 - 18) / (1080 - 480) = 30 / 600 = 0.05 */
+  --vh-slope: 0.05;
+
+  /* width-based fluid value */
+  --fluid-vw: clamp(
+    var(--min-font),
+    calc(
+      var(--min-font) +
+      var(--vw-slope) * (clamp(var(--min-vw), 100vw, var(--max-vw)) - var(--min-vw))
+    ),
+    var(--max-font)
+  );
+
+  /* height-based fluid value */
+  --fluid-vh: clamp(
+    var(--min-font),
+    calc(var(--min-font) + 0.05 * (clamp(var(--min-vh), 100vh, var(--max-vh)) - var(--min-vh))),
+    var(--max-font)
+  );
+
+  /* Choose the smaller of the two fluid values */
+  --fluid-size: min(var(--fluid-vw), var(--fluid-vh));
+}
+
+.intro h1 {
+  font-size: var(--fluid-size);
+}
+
+.intro p {
+  font-size: calc(var(--fluid-size) * 0.6);
+}
