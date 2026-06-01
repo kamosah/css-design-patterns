@@ -1,0 +1,41 @@
+:root {
+  --min-root-mobile: 14px;
+  --max-root-mobile: 18px;
+  --min-root-desktop: 18px;
+  --max-root-desktop: 24px;
+  --scale-h1: 2.2;
+  --scale-p: 1;
+
+  /* slope = (18 - 14) / (768 - 320) = 4 / 448 = 0.0089285714 */
+  --fluid-root-mobile: clamp(
+    var(--min-root-mobile),
+    calc(var(--min-root-mobile) + 0.0089285714 * (clamp(320px, 100vw, 768px) - 320px)),
+    var(--max-root-mobile)
+  );
+}
+
+h1 {
+  font-size: calc(var(--fluid-root-mobile) * var(--scale-h1));
+}
+
+p {
+  font-size: calc(var(--fluid-root-mobile) * var(--scale-p));
+}
+
+@media (min-width: 768px) {
+  :root {
+    /* slope = (24 - 18) / (1440 - 768) = 6 / 672 = 0.0089285714 */
+    --fluid-root-desktop: clamp(
+      var(--min-root-desktop),
+      calc(var(--min-root-desktop) + 0.0089285714 * (clamp(768px, 100vw, 1440px) - 768px)),
+      var(--max-root-desktop)
+    );
+  }
+
+  h1 {
+    font-size: calc(var(--fluid-root-desktop) * var(--scale-h1));
+  }
+  p {
+    font-size: calc(var(--fluid-root-desktop) * var(--scale-p));
+  }
+}
