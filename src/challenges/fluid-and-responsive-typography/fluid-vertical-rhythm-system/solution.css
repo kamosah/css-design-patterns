@@ -1,0 +1,51 @@
+:root {
+  --min-root: 16px;
+  --max-root: 20px;
+  --min-line-height: 1.4;
+  --max-line-height: 1.8;
+  --spacing-multiplier: 1.5;
+
+  /* (20 - 16) / (1440 - 360) = 4 / 1080 = 0.0037037037 */
+  --fluid-root: clamp(
+    var(--min-root),
+    calc(var(--min-root) + 0.0037037037 * (clamp(360px, 100vw, 1440px) - 360px)),
+    var(--max-root)
+  );
+
+  /* (1.8 - 1.4) / (1440 - 360) = 0.4 / 1080 = 0.0003703704 */
+  --fluid-line: clamp(
+    var(--min-line-height),
+    calc(var(--min-line-height) + 0.0003703704 * (clamp(360px, 100vw, 1440px) - 360px)),
+    var(--max-line-height)
+  );
+
+  --fluid-space: calc(var(--fluid-root) * var(--spacing-multiplier));
+}
+
+body {
+  font-size: var(--fluid-root);
+  line-height: var(--fluid-line);
+}
+
+.post h1,
+.post h2,
+.post p {
+  margin-bottom: var(--fluid-space);
+}
+
+@supports not (font-size: clamp(1rem, 1vw + 1rem, 2rem)) {
+  :root {
+    --fluid-root: var(--min-root);
+    --fluid-line: var(--min-line-height);
+    --fluid-space: calc(var(--min-root) * var(--spacing-multiplier));
+  }
+  body {
+    font-size: var(--fluid-root);
+    line-height: var(--fluid-line);
+  }
+  .post h1,
+  .post h2,
+  .post p {
+    margin-bottom: var(--fluid-space);
+  }
+}
