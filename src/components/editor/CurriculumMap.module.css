@@ -1,0 +1,221 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  z-index: 40;
+  pointer-events: none;
+  transition: background 0.2s ease;
+}
+
+.backdropVisible {
+  background: rgba(0, 0, 0, 0.45);
+  pointer-events: auto;
+}
+
+/* Slide-in drawer */
+.drawer {
+  position: fixed;
+  inset-block: 0;
+  inset-inline-end: 0;
+  width: 300px;
+  background: var(--bg-surface);
+  border-inline-start: 1px solid var(--border);
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.22s ease;
+  overflow: hidden;
+}
+
+.drawerOpen {
+  transform: translateX(0);
+}
+
+/* Header */
+.drawerHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px 0 16px;
+  height: 44px;
+  border-block-end: 1px solid var(--border);
+  flex-shrink: 0;
+  background: var(--bg-surface);
+}
+
+.drawerTitle {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.closeBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s, border-color 0.12s;
+}
+
+.closeBtn:hover {
+  background: var(--bg-inset);
+  border-color: var(--border);
+  color: var(--text-primary);
+}
+
+.closeBtn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Scrollable body */
+.drawerBody {
+  flex: 1;
+  overflow-y: auto;
+  padding-block: 6px;
+}
+
+/* Topic row */
+.topic {
+  /* flush — no extra margin */
+}
+
+.topicHeader {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  padding: 7px 12px 7px 14px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: start;
+  color: var(--text-tertiary);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  transition: background 0.1s, color 0.1s;
+}
+
+.topicHeader:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.topicHeader:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+
+.topicCurrent {
+  color: var(--accent-subtle);
+}
+
+.topicChevron {
+  flex-shrink: 0;
+  color: currentColor;
+  transition: transform 0.15s ease;
+}
+
+.topicChevronOpen {
+  transform: rotate(0deg);
+}
+
+/* chevron starts pointing right (collapsed) */
+.topicChevron:not(.topicChevronOpen) {
+  transform: rotate(-90deg);
+}
+
+.topicTitle {
+  flex: 1;
+  text-align: start;
+  line-height: 1.3;
+}
+
+.topicCount {
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+/* Challenge list */
+.challengeList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2px;
+}
+
+.challengeBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 5px 12px 5px 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: start;
+  color: var(--text-secondary);
+  font-size: 12px;
+  line-height: 1.4;
+  transition: background 0.1s, color 0.1s;
+}
+
+.challengeBtn:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.challengeBtn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+
+.challengeCurrent {
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.challengeCurrent:hover {
+  background: color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+/* Difficulty dot */
+.difficultyDot {
+  --dot-color: var(--border);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: var(--dot-color);
+}
+
+.difficultyDot[data-difficulty='easy']   { --dot-color: #22c55e; }
+.difficultyDot[data-difficulty='medium'] { --dot-color: #f59e0b; }
+.difficultyDot[data-difficulty='hard']   { --dot-color: #ef4444; }
+
+.challengeTitle {
+  flex: 1;
+}
+
+/* Visited indicator */
+.visitedDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: var(--accent-subtle);
+  opacity: 0.5;
+}

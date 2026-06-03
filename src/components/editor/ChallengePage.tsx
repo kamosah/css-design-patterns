@@ -1,10 +1,11 @@
 /* eslint-disable react-refresh/only-export-components */
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useLoaderData, useNavigate, useLocation, type LoaderFunctionArgs } from 'react-router-dom'
 import { Panel, Group as PanelGroup, Separator } from 'react-resizable-panels'
 import { findChallenge, findNextChallenge } from '../../curriculum'
 import { useEditorStore } from '../../store/editorStore'
 import { ThemeToggle } from '../ThemeToggle'
+import { CurriculumMap } from './CurriculumMap'
 import { InstructionsPanel } from './InstructionsPanel'
 import { EditorArea } from './EditorArea'
 import { PreviewFrame } from './PreviewFrame'
@@ -71,6 +72,8 @@ export function ChallengePage() {
     reset,
   } = useEditorStore()
 
+  const [isMapOpen, setIsMapOpen] = useState(false)
+
   const challengeKey = `${topicId}:${challengeId}`
   const nextChallenge = findNextChallenge(topicId, challengeId)
 
@@ -90,6 +93,13 @@ export function ChallengePage() {
 
   return (
     <div className={s.page}>
+      <CurriculumMap
+        isOpen={isMapOpen}
+        onClose={() => setIsMapOpen(false)}
+        currentTopicId={topicId}
+        currentChallengeId={challengeId}
+        onNavigate={(tId, cId) => navigate(`/challenge/${tId}/${cId}`)}
+      />
       <header className={s.header}>
         <button className={s.headerBtn} onClick={() => navigate('/')}>
           ← Back
@@ -106,6 +116,18 @@ export function ChallengePage() {
           onClick={() => reset(challengeKey, challenge.starterHtml, challenge.starterCss, challenge.solutionHtml, challenge.solutionCss)}
         >
           Reset
+        </button>
+
+        <button
+          className={s.headerBtn}
+          onClick={() => setIsMapOpen(true)}
+          aria-label="Open curriculum map"
+        >
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M1 2.5h4M1 7h4M1 11.5h4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
+            <path d="M7 5h5.5M7 9.5h5.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
+            <path d="M5 2.5v2.5M5 7v2.5M5 11.5V9.5" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round"/>
+          </svg>
         </button>
 
         <ThemeToggle />
