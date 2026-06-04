@@ -1,4 +1,4 @@
-import type { Topic } from '../../types/challenge'
+import type { Topic, PatternIntroduction } from '../../types/challenge'
 import { challenge as horizontalCentering } from './horizontal-centering-margin-auto/meta'
 import { challenge as inlineBlockGroupCentering } from './inline-block-group-centering/meta'
 import { challenge as verticalCentering } from './vertical-centering-flexbox/meta'
@@ -15,8 +15,70 @@ import { challenge as parallaxContainerCentering } from './parallax-container-ce
 import { challenge as flexboxEvenSpacingCentering } from './flexbox-even-spacing-centering/meta'
 import { challenge as nestedMultiLevelCentering } from './nested-multi-level-centering/meta'
 
+const patternIntro: PatternIntroduction = {
+  tagline: 'Explore centering and alignment in CSS and understand why they are essential to every layout.',
+
+  overview: `<p><strong>Centering and alignment</strong> are fundamental design principles that bring order and visual harmony to an interface. Proper alignment transforms scattered elements into clear communication, providing structure and hierarchy to a layout. Centering content along a central axis creates a sense of balance and draws immediate attention to key UI elements. By aligning elements consistently, UIs become easier to scan and understand, reducing cognitive load on users. In short, a well-centered and aligned design appears clearer, more balanced, and more professional, which builds user trust and focus.</p>`,
+
+  howItWorks: `<p>This pattern leverages modern CSS layout modules and alignment properties to center content both horizontally and vertically. For inline content, <code>text-align: center</code> centers inline children. To center block-level elements horizontally, we use <code>margin: 0 auto</code> with a defined width. For full two-axis centering, Flexbox uses <code>justify-content: center</code> and <code>align-items: center</code>, while Grid offers <code>place-items: center</code>. These approaches allow for flexible, responsive centering with minimal CSS.</p>`,
+
+  previewHtml: `<div class="card">
+  <img src="https://ui-avatars.com/api/?name=John+Doe&background=4f46e5&color=fff&size=80" alt="John Doe">
+  <div class="info">
+    <strong>John Doe</strong>
+    <p>Bio paragraph goes here.</p>
+  </div>
+</div>`,
+
+  previewCss: `* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: system-ui, sans-serif; height: 100vh; display: flex; align-items: center; justify-content: center; }
+.card { display: flex; justify-content: center; align-items: center; gap: 20px; }
+.card img { width: 72px; height: 72px; border-radius: 50%; }
+.info strong { display: block; font-size: 16px; margin-bottom: 4px; }
+.info p { font-size: 13px; color: #64748b; }`,
+
+  previewCaption: 'An image and placeholder text are vertically and horizontally centered inside a container',
+
+  anatomyLabel: 'This pattern typically involves applying layout model properties and alignment rules to a parent container. A common setup is:',
+
+  anatomyCss: `.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}`,
+
+  anatomyCaption: 'Example CSS for the Centering and Alignment pattern',
+
+  anatomyExplanation: `<p>This centers all child elements both horizontally and vertically using Flexbox. For Grid, use <code>display: grid</code> and <code>place-items: center</code>. These setups are reusable and consistent across projects.</p>`,
+
+  diveDeep: [
+    {
+      title: 'Strengths and tradeoffs',
+      content: `<p>Flexbox and Grid centering are declarative and easy to reason about — one or two properties handle both axes. The tradeoff is that vertical centering requires a height constraint on the parent; without it, the container collapses and centering has no effect. <code>margin: 0 auto</code> is rock-solid for horizontal block centering but only works with an explicit width. <code>text-align: center</code> is simple but affects all inline descendants, not just direct children.</p>`,
+    },
+    {
+      title: 'Common pitfalls',
+      content: `<ul>
+  <li>Forgetting to set a height on the flex or grid container — vertical centering only works when there is space to fill.</li>
+  <li>Using <code>text-align: center</code> on a block element expecting block children to center — it only affects inline content.</li>
+  <li>Setting <code>align-items: center</code> without <code>justify-content: center</code> (or vice versa) and wondering why only one axis is centered.</li>
+  <li>Nesting multiple centering containers, causing unexpected behavior when child elements have their own layout context.</li>
+</ul>`,
+    },
+    {
+      title: 'Alternate approaches',
+      content: `<p>Beyond Flexbox and Grid, absolutely positioned elements can be centered with <code>position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%)</code> — this works independently of document flow. Another option is <code>margin: auto</code> on all sides inside a flex or grid container, letting the element center itself. For single-line text, matching <code>line-height</code> to container height achieves vertical centering without layout modules.</p>`,
+    },
+    {
+      title: 'Where you\'ve seen it before',
+      content: `<p>Centering is everywhere in real interfaces: loading spinners centered in their container, login forms centered on the page, hero headlines centered over a full-bleed background, modal dialogs centered in the viewport, empty-state illustrations centered in a content area, and avatar images aligned inline with usernames in nav bars. Any UI that needs balance and focus relies on centering as a core tool.</p>`,
+    },
+  ],
+}
+
 export const topic: Topic = {
   id: 'centering-alignment',
   title: 'Centering & Alignment',
   challenges: [horizontalCentering, inlineBlockGroupCentering, verticalCentering, fullCentering, fullCenteringGrid, baselineAlignmentImageText, mediaObjectAlignment, toolbarSpaceBetween, flexboxCenteringMixedHeight, absolutePositionCenteringPadded, cssModalCenteringFallbacks, rotatedCenterTransform, parallaxContainerCentering, flexboxEvenSpacingCentering, nestedMultiLevelCentering],
+  patternIntro,
 }
