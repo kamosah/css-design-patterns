@@ -30,10 +30,7 @@ export function PatternIntroPage() {
   const isDark = theme === 'dark'
   const intro = topic.patternIntro!
 
-  const [activeDiveDeep, setActiveDiveDeep] = useState<string | null>(null)
   const [isMapOpen, setIsMapOpen] = useState(false)
-
-  const activeSection = intro.diveDeep.find((d) => d.title === activeDiveDeep)
 
   const srcdoc = useMemo(
     () => `<!DOCTYPE html>
@@ -49,10 +46,6 @@ export function PatternIntroPage() {
   )
 
   const firstChallenge = topic.challenges[0]
-
-  function toggleDiveDeep(title: string) {
-    setActiveDiveDeep((prev) => (prev === title ? null : title))
-  }
 
   return (
     <div className={s.page}>
@@ -167,45 +160,6 @@ export function PatternIntroPage() {
                 className={s.anatomyExplanation}
                 dangerouslySetInnerHTML={{ __html: intro.anatomyExplanation }}
               />
-            </section>
-
-            <section className={s.section}>
-              <div className={s.diveDeepHeader}>
-                <span className={s.diveDeepLabel}>◆ Dive Deep</span>
-                <div className={s.diveDeepPills}>
-                  {intro.diveDeep.map((section) => (
-                    <button
-                      key={section.title}
-                      className={s.deepPill}
-                      data-active={activeDiveDeep === section.title ? 'true' : undefined}
-                      onClick={() => toggleDiveDeep(section.title)}
-                    >
-                      {section.title}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {activeSection && (
-                <div className={s.diveDeepPanel}>
-                  <div className={s.diveDeepPanelHeader}>
-                    <span className={s.diveDeepPanelTitle}>{activeSection.title}</span>
-                    <button
-                      className={s.diveDeepClose}
-                      onClick={() => setActiveDiveDeep(null)}
-                      aria-label="Close dive deep panel"
-                    >
-                      <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
-                        <path d="M1 1l8 8M9 1L1 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                      </svg>
-                    </button>
-                  </div>
-                  <div
-                    className={s.diveDeepPanelContent}
-                    dangerouslySetInnerHTML={{ __html: activeSection.content }}
-                  />
-                </div>
-              )}
             </section>
 
             <div className={s.bottomSpacer} />

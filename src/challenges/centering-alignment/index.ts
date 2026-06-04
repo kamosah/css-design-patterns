@@ -50,30 +50,6 @@ body { font-family: system-ui, sans-serif; height: 100vh; display: flex; align-i
   anatomyCaption: 'Example CSS for the Centering and Alignment pattern',
 
   anatomyExplanation: `<p>This centers all child elements both horizontally and vertically using Flexbox. For Grid, use <code>display: grid</code> and <code>place-items: center</code>. These setups are reusable and consistent across projects.</p>`,
-
-  diveDeep: [
-    {
-      title: 'Strengths and tradeoffs',
-      content: `<p>Flexbox and Grid centering are declarative and easy to reason about — one or two properties handle both axes. The tradeoff is that vertical centering requires a height constraint on the parent; without it, the container collapses and centering has no effect. <code>margin: 0 auto</code> is rock-solid for horizontal block centering but only works with an explicit width. <code>text-align: center</code> is simple but affects all inline descendants, not just direct children.</p>`,
-    },
-    {
-      title: 'Common pitfalls',
-      content: `<ul>
-  <li>Forgetting to set a height on the flex or grid container — vertical centering only works when there is space to fill.</li>
-  <li>Using <code>text-align: center</code> on a block element expecting block children to center — it only affects inline content.</li>
-  <li>Setting <code>align-items: center</code> without <code>justify-content: center</code> (or vice versa) and wondering why only one axis is centered.</li>
-  <li>Nesting multiple centering containers, causing unexpected behavior when child elements have their own layout context.</li>
-</ul>`,
-    },
-    {
-      title: 'Alternate approaches',
-      content: `<p>Beyond Flexbox and Grid, absolutely positioned elements can be centered with <code>position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%)</code> — this works independently of document flow. Another option is <code>margin: auto</code> on all sides inside a flex or grid container, letting the element center itself. For single-line text, matching <code>line-height</code> to container height achieves vertical centering without layout modules.</p>`,
-    },
-    {
-      title: 'Where you\'ve seen it before',
-      content: `<p>Centering is everywhere in real interfaces: loading spinners centered in their container, login forms centered on the page, hero headlines centered over a full-bleed background, modal dialogs centered in the viewport, empty-state illustrations centered in a content area, and avatar images aligned inline with usernames in nav bars. Any UI that needs balance and focus relies on centering as a core tool.</p>`,
-    },
-  ],
 }
 
 export const topic: Topic = {
