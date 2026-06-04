@@ -98,7 +98,7 @@ export function ChallengePage() {
         onClose={() => setIsMapOpen(false)}
         currentTopicId={topicId}
         currentChallengeId={challengeId}
-        onNavigate={(tId, cId) => navigate(`/challenge/${tId}/${cId}`)}
+        onNavigate={(tId, cId) => navigate(cId ? `/challenge/${tId}/${cId}` : `/topic/${tId}`)}
       />
       <header className={s.header}>
         <button className={s.headerBtn} onClick={() => navigate('/')}>

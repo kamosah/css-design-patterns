@@ -1,0 +1,420 @@
+.page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-base);
+}
+
+/* ── Header ──────────────────────────────────────────────────────────────── */
+
+.header {
+  display: flex;
+  align-items: center;
+  padding-inline: 16px;
+  height: 44px;
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border);
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.headerBtn {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-tertiary);
+  padding-block: 4px;
+  padding-inline: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.headerBtn:hover {
+  border-color: var(--accent);
+  color: var(--text-primary);
+}
+
+.headerTitle {
+  flex: 1;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+/* ── Main (holds scroll + dive deep panel + bottom bar) ─────────────────── */
+
+.main {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.scroll {
+  flex: 1;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+}
+
+.container {
+  max-width: 760px;
+  margin-inline: auto;
+  padding: 32px 24px 16px;
+}
+
+/* ── Breadcrumb ──────────────────────────────────────────────────────────── */
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+.breadcrumbLink {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.breadcrumbLink:hover {
+  color: var(--text-primary);
+}
+
+.breadcrumbSep {
+  color: var(--text-muted);
+}
+
+/* ── Title row ───────────────────────────────────────────────────────────── */
+
+.titleRow {
+  margin-bottom: 8px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-heading);
+  line-height: 1.2;
+  margin: 0;
+}
+
+/* ── Intro text ──────────────────────────────────────────────────────────── */
+
+.tagline {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin: 0 0 24px;
+}
+
+.overview {
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--text-body);
+  margin-bottom: 36px;
+}
+
+/* ── Sections ────────────────────────────────────────────────────────────── */
+
+.section {
+  margin-bottom: 40px;
+}
+
+.sectionHeading {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin: 0 0 12px;
+}
+
+.howItWorks {
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--text-body);
+  margin-bottom: 20px;
+}
+
+/* Inline <code> in authored HTML strings */
+.overview code,
+.howItWorks code,
+.anatomyExplanation code {
+  font-family: ui-monospace, 'Cascadia Code', Consolas, monospace;
+  font-size: 12.5px;
+  background: var(--code-bg);
+  color: var(--code-text);
+  padding-block: 1px;
+  padding-inline: 5px;
+  border-radius: 3px;
+}
+
+/* ── Output preview ──────────────────────────────────────────────────────── */
+
+.previewBox {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.previewHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 8px;
+  padding-inline: 14px;
+  background: var(--bg-elevated);
+  border-bottom: 1px solid var(--border);
+  color: var(--text-secondary);
+}
+
+.previewLabel {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.previewIframe {
+  width: 100%;
+  height: 200px;
+  border: none;
+  background: var(--bg-surface);
+  display: block;
+}
+
+.previewCaption {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  text-align: center;
+  padding-block: 10px;
+  padding-inline: 14px;
+  background: var(--bg-base);
+  margin: 0;
+  border-top: 1px solid var(--border-subtle);
+}
+
+/* ── Code anatomy ────────────────────────────────────────────────────────── */
+
+.anatomyLabel {
+  font-size: 14px;
+  color: var(--text-body);
+  line-height: 1.75;
+  margin: 0 0 12px;
+}
+
+.codeWrapper {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.codeHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 8px;
+  padding-inline: 14px;
+  background: var(--bg-elevated);
+  border-bottom: 1px solid var(--border);
+}
+
+.codeFilename {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.codeLang {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: var(--bg-inset);
+  padding-block: 2px;
+  padding-inline: 6px;
+  border-radius: 3px;
+}
+
+.codeCaption {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  text-align: center;
+  margin: 0 0 16px;
+  padding-block: 8px;
+}
+
+.anatomyExplanation {
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--text-body);
+}
+
+.bottomSpacer {
+  height: 24px;
+}
+
+/* ── Dive Deep (inline content section) ─────────────────────────────────── */
+
+.diveDeepHeader {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.diveDeepLabel {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.diveDeepPills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.deepPill {
+  --pill-border: var(--border);
+  --pill-color: var(--text-secondary);
+  background: none;
+  border: 1px solid var(--pill-border);
+  color: var(--pill-color);
+  padding-block: 4px;
+  padding-inline: 10px;
+  border-radius: 9999px;
+  cursor: pointer;
+  font-size: 12px;
+  white-space: nowrap;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+
+.deepPill:hover {
+  --pill-border: var(--accent-subtle);
+  --pill-color: var(--text-primary);
+}
+
+.deepPill[data-active] {
+  --pill-border: var(--accent);
+  --pill-color: var(--accent-subtle);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+}
+
+.diveDeepPanel {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg-elevated);
+  overflow: hidden;
+}
+
+.diveDeepPanelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 10px;
+  padding-inline: 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.diveDeepPanelTitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.diveDeepClose {
+  background: none;
+  border: none;
+  color: var(--text-tertiary);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  transition: color 0.15s;
+}
+
+.diveDeepClose:hover {
+  color: var(--text-primary);
+}
+
+.diveDeepPanelContent {
+  padding: 12px 16px 16px;
+  font-size: 13px;
+  line-height: 1.75;
+  color: var(--text-body);
+}
+
+.diveDeepPanelContent p {
+  margin: 0 0 10px;
+}
+
+.diveDeepPanelContent p:last-child {
+  margin-bottom: 0;
+}
+
+.diveDeepPanelContent ul {
+  margin: 0 0 10px;
+  padding-inline-start: 18px;
+}
+
+.diveDeepPanelContent li {
+  margin-bottom: 6px;
+}
+
+.diveDeepPanelContent code {
+  font-family: ui-monospace, 'Cascadia Code', Consolas, monospace;
+  font-size: 12px;
+  background: var(--code-bg);
+  color: var(--code-text);
+  padding-block: 1px;
+  padding-inline: 5px;
+  border-radius: 3px;
+}
+
+/* ── Bottom action bar ───────────────────────────────────────────────────── */
+
+.bottomBar {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-block: 10px;
+  padding-inline: 16px;
+  background: var(--bg-surface);
+  border-top: 1px solid var(--border);
+}
+
+.cta {
+  background: var(--accent);
+  border: none;
+  color: #fff;
+  padding-block: 8px;
+  padding-inline: 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+
+.cta:hover {
+  background: var(--accent-hover);
+}
+
+.cta:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}

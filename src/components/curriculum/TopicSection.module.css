@@ -102,3 +102,4 @@
 .badge[data-difficulty='easy']   { --badge-color: #22c55e; }
 .badge[data-difficulty='medium'] { --badge-color: #f59e0b; }
 .badge[data-difficulty='hard']   { --badge-color: #ef4444; }
+.badge[data-difficulty='intro']  { --badge-color: var(--accent-subtle); }

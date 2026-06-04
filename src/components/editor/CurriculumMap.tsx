@@ -7,8 +7,8 @@ interface CurriculumMapProps {
   isOpen: boolean
   onClose: () => void
   currentTopicId: string
-  currentChallengeId: string
-  onNavigate: (topicId: string, challengeId: string) => void
+  currentChallengeId: string | null
+  onNavigate: (topicId: string, challengeId: string | null) => void
 }
 
 export function CurriculumMap({
@@ -105,6 +105,29 @@ export function CurriculumMap({
 
                 {isExpanded && (
                   <ul className={s.challengeList} role="list">
+                    {topic.patternIntro && (() => {
+                      const isIntroCurrent =
+                        topic.id === currentTopicId && currentChallengeId === null
+                      return (
+                        <li key="__intro__">
+                          <button
+                            className={`${s.challengeBtn} ${isIntroCurrent ? s.challengeCurrent : ''}`}
+                            onClick={() => {
+                              if (!isIntroCurrent) onNavigate(topic.id, null)
+                              onClose()
+                            }}
+                            aria-current={isIntroCurrent ? 'page' : undefined}
+                          >
+                            <span
+                              className={s.difficultyDot}
+                              data-difficulty="intro"
+                              aria-label="intro"
+                            />
+                            <span className={s.challengeTitle}>Pattern Introduction</span>
+                          </button>
+                        </li>
+                      )
+                    })()}
                     {topic.challenges.map((challenge) => {
                       const key = `${topic.id}:${challenge.id}`
                       const isCurrent =

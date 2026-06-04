@@ -205,6 +205,7 @@
 .difficultyDot[data-difficulty='easy']   { --dot-color: #22c55e; }
 .difficultyDot[data-difficulty='medium'] { --dot-color: #f59e0b; }
 .difficultyDot[data-difficulty='hard']   { --dot-color: #ef4444; }
+.difficultyDot[data-difficulty='intro']  { --dot-color: var(--accent-subtle); }
 
 .challengeTitle {
   flex: 1;
