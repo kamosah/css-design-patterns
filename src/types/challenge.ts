@@ -13,11 +13,6 @@ export interface Challenge {
   solutionCss: string
 }
 
-export interface DiveDeepSection {
-  title: string
-  content: string
-}
-
 export interface PatternIntroduction {
   tagline: string
   overview: string
@@ -29,7 +24,6 @@ export interface PatternIntroduction {
   anatomyCss: string
   anatomyCaption: string
   anatomyExplanation: string
-  diveDeep: DiveDeepSection[]
 }
 
 export interface Topic {
