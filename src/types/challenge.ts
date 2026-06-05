@@ -13,6 +13,12 @@ export interface Challenge {
   solutionCss: string
 }
 
+export interface AnatomyBlock {
+  label: string
+  css: string
+  caption: string
+}
+
 export interface PatternIntroduction {
   tagline: string
   overview: string
@@ -20,9 +26,7 @@ export interface PatternIntroduction {
   previewHtml: string
   previewCss: string
   previewCaption: string
-  anatomyLabel: string
-  anatomyCss: string
-  anatomyCaption: string
+  anatomyBlocks: AnatomyBlock[]
   anatomyExplanation: string
 }
 

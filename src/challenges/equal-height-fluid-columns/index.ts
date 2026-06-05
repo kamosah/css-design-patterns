@@ -34,9 +34,10 @@ body { font-family: system-ui, sans-serif; padding: 20px; font-size: 13px; line-
 
   previewCaption: 'A paragraph split into two equal-height columns',
 
-  anatomyLabel: 'A common implementation uses Flexbox:',
-
-  anatomyCss: `.columns {
+  anatomyBlocks: [
+    {
+      label: 'A common implementation uses Flexbox:',
+      css: `.columns {
   display: flex;
   gap: 1rem;
 }
@@ -44,8 +45,9 @@ body { font-family: system-ui, sans-serif; padding: 20px; font-size: 13px; line-
 .column {
   flex: 1;
 }`,
-
-  anatomyCaption: 'Example CSS for the Equal Height and Fluid Columns pattern',
+      caption: 'Example CSS for the Equal Height and Fluid Columns pattern',
+    },
+  ],
 
   anatomyExplanation: `<p>Each column is given <code>flex: 1</code>, so they grow equally within the row. The <code>gap</code> defines the spacing between them. Flexbox aligns items by height automatically (unless otherwise constrained), therefore, all columns will match the height of the tallest one. For a grid-based approach, <code>display: grid</code> with <code>grid-auto-rows</code> or <code>align-items: stretch</code> can accomplish similar results.</p>`,
 }

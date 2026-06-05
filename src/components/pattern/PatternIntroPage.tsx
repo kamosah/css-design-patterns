@@ -121,40 +121,44 @@ export function PatternIntroPage() {
 
             <section className={s.section}>
               <h2 className={s.sectionHeading}>Pattern anatomy in CSS</h2>
-              <p className={s.anatomyLabel}>{intro.anatomyLabel}</p>
 
-              <div className={s.codeWrapper}>
-                <div className={s.codeHeader}>
-                  <span className={s.codeFilename}>
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                      <path d="M2 1h6l3 3v7a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1Z" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round"/>
-                      <path d="M8 1v3h3" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round"/>
-                    </svg>
-                    main.css
-                  </span>
-                  <span className={s.codeLang}>CSS</span>
+              {intro.anatomyBlocks.map((block, i) => (
+                <div key={i}>
+                  <p className={s.anatomyLabel}>{block.label}</p>
+                  <div className={s.codeWrapper}>
+                    <div className={s.codeHeader}>
+                      <span className={s.codeFilename}>
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                          <path d="M2 1h6l3 3v7a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1Z" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round"/>
+                          <path d="M8 1v3h3" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round"/>
+                        </svg>
+                        main.css
+                      </span>
+                      <span className={s.codeLang}>CSS</span>
+                    </div>
+                    <SyntaxHighlighter
+                      language="css"
+                      style={isDark ? vscDarkPlus : vs}
+                      showLineNumbers
+                      customStyle={{
+                        background: 'var(--bg-code)',
+                        border: 'none',
+                        borderRadius: '0 0 6px 6px',
+                        margin: 0,
+                        fontSize: '13px',
+                        lineHeight: '1.6',
+                        overflowX: 'auto',
+                      }}
+                      codeTagProps={{
+                        style: { fontFamily: "ui-monospace, 'Cascadia Code', Consolas, monospace" },
+                      }}
+                    >
+                      {block.css}
+                    </SyntaxHighlighter>
+                  </div>
+                  <p className={s.codeCaption}>{block.caption}</p>
                 </div>
-                <SyntaxHighlighter
-                  language="css"
-                  style={isDark ? vscDarkPlus : vs}
-                  showLineNumbers
-                  customStyle={{
-                    background: 'var(--bg-code)',
-                    border: 'none',
-                    borderRadius: '0 0 6px 6px',
-                    margin: 0,
-                    fontSize: '13px',
-                    lineHeight: '1.6',
-                    overflowX: 'auto',
-                  }}
-                  codeTagProps={{
-                    style: { fontFamily: "ui-monospace, 'Cascadia Code', Consolas, monospace" },
-                  }}
-                >
-                  {intro.anatomyCss}
-                </SyntaxHighlighter>
-              </div>
-              <p className={s.codeCaption}>{intro.anatomyCaption}</p>
+              ))}
 
               <div
                 className={s.anatomyExplanation}
