@@ -1,4 +1,6 @@
 export { Button } from './Button/Button'
+export { Kbd } from './Kbd/Kbd'
+export { Tooltip } from './Tooltip/Tooltip'
 export { Badge } from './Badge/Badge'
 export { Toggle } from './Toggle/Toggle'
 export { RangeSlider } from './RangeSlider/RangeSlider'
