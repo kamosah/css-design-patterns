@@ -1,0 +1,24 @@
+.kbd {
+  --kbd-bg:     var(--bg-elevated);
+  --kbd-border: var(--border);
+  --kbd-color:  var(--text-secondary);
+  --kbd-size:   10px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: ui-monospace, 'Cascadia Code', Consolas, monospace;
+  font-size: var(--kbd-size);
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--kbd-color);
+  background: var(--kbd-bg);
+  border: 1px solid var(--kbd-border);
+  border-bottom-width: 2px; /* keycap depth */
+  border-radius: 3px;
+  padding-block: 2px;
+  padding-inline: 5px;
+  min-width: 18px;
+  user-select: none;
+}

@@ -4,6 +4,7 @@ import { useLoaderData, useNavigate, useLocation, type LoaderFunctionArgs } from
 import { Panel, Group as PanelGroup, Separator } from 'react-resizable-panels'
 import { findChallenge, findNextChallenge } from '../../curriculum'
 import { useEditorStore } from '../../store/editorStore'
+import { Kbd, Tooltip } from '../ui'
 import { ThemeToggle } from '../ThemeToggle'
 import { CurriculumMap } from './CurriculumMap'
 import { InstructionsPanel } from './InstructionsPanel'
@@ -74,6 +75,19 @@ export function ChallengePage() {
 
   const [isMapOpen, setIsMapOpen] = useState(false)
 
+  const modKey = /Mac/.test(navigator.platform) ? '⌘' : 'Ctrl'
+
+  useEffect(() => {
+    function handleKeyDown(e: KeyboardEvent) {
+      if ((e.metaKey || e.ctrlKey) && e.key === '.') {
+        e.preventDefault()
+        setIsMapOpen((prev) => !prev)
+      }
+    }
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [])
+
   const challengeKey = `${topicId}:${challengeId}`
   const nextChallenge = findNextChallenge(topicId, challengeId)
 
@@ -118,17 +132,19 @@ export function ChallengePage() {
           Reset
         </button>
 
-        <button
-          className={s.headerBtn}
-          onClick={() => setIsMapOpen(true)}
-          aria-label="Open curriculum map"
-        >
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-            <path d="M1 2.5h4M1 7h4M1 11.5h4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
-            <path d="M7 5h5.5M7 9.5h5.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
-            <path d="M5 2.5v2.5M5 7v2.5M5 11.5V9.5" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round"/>
-          </svg>
-        </button>
+        <Tooltip placement="bottom" content={<><Kbd>{modKey}</Kbd><Kbd>.</Kbd></>}>
+          <button
+            className={s.headerBtn}
+            onClick={() => setIsMapOpen(true)}
+            aria-label="Open curriculum map"
+          >
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M1 2.5h4M1 7h4M1 11.5h4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
+              <path d="M7 5h5.5M7 9.5h5.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
+              <path d="M5 2.5v2.5M5 7v2.5M5 11.5V9.5" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round"/>
+            </svg>
+          </button>
+        </Tooltip>
 
         <ThemeToggle />
       </header>

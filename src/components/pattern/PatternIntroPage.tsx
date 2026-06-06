@@ -1,11 +1,12 @@
 /* eslint-disable react-refresh/only-export-components */
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { Link, useLoaderData, useNavigate, type LoaderFunctionArgs } from 'react-router-dom'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { vscDarkPlus, vs } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import { findTopic } from '../../curriculum'
 import { useThemeStore } from '../../store/themeStore'
 import type { Topic } from '../../types/challenge'
+import { Kbd, Tooltip } from '../ui'
 import { CurriculumMap } from '../editor/CurriculumMap'
 import { ThemeToggle } from '../ThemeToggle'
 import s from './PatternIntroPage.module.css'
@@ -31,6 +32,19 @@ export function PatternIntroPage() {
   const intro = topic.patternIntro!
 
   const [isMapOpen, setIsMapOpen] = useState(false)
+
+  const modKey = /Mac/.test(navigator.platform) ? '⌘' : 'Ctrl'
+
+  useEffect(() => {
+    function handleKeyDown(e: KeyboardEvent) {
+      if ((e.metaKey || e.ctrlKey) && e.key === '.') {
+        e.preventDefault()
+        setIsMapOpen((prev) => !prev)
+      }
+    }
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [])
 
   const srcdoc = useMemo(
     () => `<!DOCTYPE html>
@@ -61,17 +75,19 @@ export function PatternIntroPage() {
           ← Back
         </button>
         <span className={s.headerTitle}>{topic.title}</span>
-        <button
-          className={s.headerBtn}
-          onClick={() => setIsMapOpen(true)}
-          aria-label="Open curriculum map"
-        >
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-            <path d="M1 2.5h4M1 7h4M1 11.5h4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
-            <path d="M7 5h5.5M7 9.5h5.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
-            <path d="M5 2.5v2.5M5 7v2.5M5 11.5V9.5" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round"/>
-          </svg>
-        </button>
+        <Tooltip placement="bottom" content={<><Kbd>{modKey}</Kbd><Kbd>.</Kbd></>}>
+          <button
+            className={s.headerBtn}
+            onClick={() => setIsMapOpen(true)}
+            aria-label="Open curriculum map"
+          >
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M1 2.5h4M1 7h4M1 11.5h4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
+              <path d="M7 5h5.5M7 9.5h5.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
+              <path d="M5 2.5v2.5M5 7v2.5M5 11.5V9.5" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round"/>
+            </svg>
+          </button>
+        </Tooltip>
         <ThemeToggle />
       </header>
 
