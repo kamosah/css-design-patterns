@@ -39,15 +39,17 @@ body { font-family: system-ui, sans-serif; height: 100vh; display: flex; align-i
 
   previewCaption: 'An image and placeholder text are vertically and horizontally centered inside a container',
 
-  anatomyLabel: 'This pattern typically involves applying layout model properties and alignment rules to a parent container. A common setup is:',
-
-  anatomyCss: `.center {
+  anatomyBlocks: [
+    {
+      label: 'This pattern typically involves applying layout model properties and alignment rules to a parent container. A common setup is:',
+      css: `.center {
   display: flex;
   justify-content: center;
   align-items: center;
 }`,
-
-  anatomyCaption: 'Example CSS for the Centering and Alignment pattern',
+      caption: 'Example CSS for the Centering and Alignment pattern',
+    },
+  ],
 
   anatomyExplanation: `<p>This centers all child elements both horizontally and vertically using Flexbox. For Grid, use <code>display: grid</code> and <code>place-items: center</code>. These setups are reusable and consistent across projects.</p>`,
 }
