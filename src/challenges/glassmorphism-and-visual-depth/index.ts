@@ -30,14 +30,14 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #0f3460 70%, #533483 100%);
+  background: #ffffff;
 }
 .scene {
   perspective: 800px;
 }
 .card {
   width: 220px;
-  height: 140px;
+  height: 180px;
   position: relative;
   transform-style: preserve-3d;
   transition: transform 0.7s ease;
@@ -53,20 +53,19 @@ body {
   align-items: center;
   justify-content: center;
   font-family: system-ui, sans-serif;
-  font-weight: 600;
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.9);
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.15);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #0f172a;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
   backface-visibility: hidden;
 }
 .back {
   transform: rotateY(180deg);
-  background: rgba(255, 255, 255, 0.1);
 }`,
 
   previewCaption: 'A glass card that flips upon hover',
